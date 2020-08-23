@@ -35,7 +35,7 @@ Database .sql file is also included in the directory.
 
 <hr>
 
-# setup
+# Setup
 1. Download the project source code.
 2. Create SQL database named "UCSMPOS"
 3. Import the UCSMPOS.sql file to the database. 
@@ -78,6 +78,17 @@ ER Diagram
 <hr>
 
 # Report Samples
+Voucher Sample
+![alt text](https://github.com/hanlinag/point-of-sale-system/blob/master/images/voucher.png?raw=true)
+
+Daily Report Sample
+![alt text](https://github.com/hanlinag/point-of-sale-system/blob/master/images/dailysale.png?raw=true)
+
+Monthly Report Sample
+![alt text](https://github.com/hanlinag/point-of-sale-system/blob/master/images/monthlysale.png?raw=true)
+
+Popular Item Sample
+![alt text](https://github.com/hanlinag/point-of-sale-system/blob/master/images/popularitem.png?raw=true) 
 
 
 <hr>
