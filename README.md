@@ -86,7 +86,7 @@ Admin Panel
 ![alt text](https://github.com/hanlinag/point-of-sale-system/blob/master/images/admin.png?raw=true)
 
 Chart View
-![alt text]()
+![alt text](https://github.com/hanlinag/point-of-sale-system/blob/master/images/chart.png?raw=true)
 
 
 <hr>
