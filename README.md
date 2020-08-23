@@ -10,6 +10,7 @@ In card, we put each card’s QR-code. We included this function because we beli
 This project is implemented with Model–view–controller (MVC) software design pattern.
 
 For enduser use, check out the enduserguide.pdf file. 
+Database .sql file is also included in the directory.
 
 <hr>
 
@@ -32,9 +33,9 @@ For enduser use, check out the enduserguide.pdf file.
 
 <hr>
 
-# Barcode scanner
-- We developed Barcode/QR code scanner android app that scans the Barcode/QRcode from the item and sent that code to the computer via TCP.
-![alt text]()
+# Barcode/QRcode scanner
+- We developed Barcode/QR code scanner android app that scans the Barcode/QRcode from the item and sent that code to the computer via TCP. You can find the android app repository here : 
+![alt text](https://github.com/hanlinag/point-of-sale-system/blob/master/images/barcode.png?raw=true)
 
 # Diagrams
 System flowchart (Admin)
@@ -59,10 +60,15 @@ ER Diagram
 
 # Report Samples
 
+
 <hr>
 
 # Gift Card Design
+Front side
+![alt text]()
 
+Back side
+![alt text]()
 <hr>
 
 # Conclusion
