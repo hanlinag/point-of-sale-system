@@ -9,12 +9,31 @@ In card, we put each card’s QR-code. We included this function because we beli
 
 This project is implemented with Model–view–controller (MVC) software design pattern.
 
+For enduser use, check out the enduserguide.pdf file. 
+
 <hr>
 
 # Libraries/Dependencies Used
 - Java FX
 - Jasper iReport
 - mySQL 
+
+<hr>
+
+# Features 
+- User authorization (admin, cashier)
+- Stock management (add/delete/modify inventory item)
+- Create own barcode and QR code
+- Customer cash card (provide discount)
+- Easily create promotion
+- Supplier management (company info, supply date, supply amount)
+- Track popular item over customer interest (i.e. Most selling item)
+- Report generation
+
+<hr>
+
+# Barcode scanner
+- We developed Barcode/QR code scanner 
 
 # Diagrams
 System flowchart (Admin)
@@ -29,3 +48,21 @@ Usecase Diagram
 
 ER Diagram
 ![alt text](https://github.com/hanlinag/point-of-sale-system/blob/master/images/ER%20Final.png?raw=true)
+
+<hr>
+
+# Screenshots
+
+
+<hr>
+
+# Report Samples
+
+<hr>
+
+# Gift Card Design
+
+<hr>
+
+# Conclusion
+This system is user-friendly and reliable computer based standalone system for mini-convenience stores. It has been designed to manage the whole store’s information and general reports (daily, monthly, popular items). It is capable of managing product items, product categories, cashier information, customer information, card information and supplier information. It is also available for calculating promotions, viewing popular items and sale charts. The developed system provides solution to the manual convenience stores’ problems and so provides special functions such as using the card payment system, calculating promotion or viewing sale charts. The software offers stability, cost-effectiveness and usability. It provides the most flexible and adaptable standard management system solutions for convenience stores.
