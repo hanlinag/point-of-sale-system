@@ -20,4 +20,12 @@ This project is implemented with Model–view–controller (MVC) software design
 System flowchart (Admin)
 ![alt text](https://raw.githubusercontent.com/hanlinag/point-of-sale-system/master/images/adminflowchart.png)
 
+System flowchart (Cashier)
+![alt text](https://github.com/hanlinag/point-of-sale-system/blob/master/images/cashierflowchart.png?raw=true)
 
+Usecase Diagram
+![alt text](https://github.com/hanlinag/point-of-sale-system/blob/master/images/ucscasefinal.png?raw=true)
+
+
+ER Diagram
+![alt text](https://github.com/hanlinag/point-of-sale-system/blob/master/images/ER%20Final.png?raw=true)
