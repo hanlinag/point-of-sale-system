@@ -7,6 +7,8 @@ In the cashier panel, the user will be provided with interfaces to sell items to
 
 In card, we put each card’s QR-code. We included this function because we believe that the card payment system is more convenient than the cash payment. Cashless made effortless.
 
+This project is implemented with Model–view–controller (MVC) software design pattern.
+
 <hr>
 
 # Libraries/Dependencies Used
@@ -14,5 +16,7 @@ In card, we put each card’s QR-code. We included this function because we beli
 - Jasper iReport
 - mySQL 
 
-
+# Diagrams
+System flowchart (Admin)
+https://github.com/hanlinag/point-of-sale-system.git/images/adminflowchart.png
 
