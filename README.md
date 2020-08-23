@@ -9,5 +9,10 @@ In card, we put each card’s QR-code. We included this function because we beli
 
 <hr>
 
-#cashier panel
+# Libraries/Dependencies Used
+- Java FX
+- Jasper iReport
+- mySQL 
+
+
 
