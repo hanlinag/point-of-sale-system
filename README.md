@@ -117,3 +117,7 @@ Back side
 
 # Conclusion
 This system is user-friendly and reliable computer based standalone system for mini-convenience stores. It has been designed to manage the whole store’s information and general reports (daily, monthly, popular items). It is capable of managing product items, product categories, cashier information, customer information, card information and supplier information. It is also available for calculating promotions, viewing popular items and sale charts. The developed system provides solution to the manual convenience stores’ problems and so provides special functions such as using the card payment system, calculating promotion or viewing sale charts. The software offers stability, cost-effectiveness and usability. It provides the most flexible and adaptable standard management system solutions for convenience stores.
+
+# LICENSE
+[MIT License](LICENSE)
+
