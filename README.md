@@ -65,10 +65,10 @@ ER Diagram
 
 # Gift Card Design
 Front side
-![alt text]()
+![alt text](https://github.com/hanlinag/point-of-sale-system/blob/master/images/cardfinalfront.png?raw=true)
 
 Back side
-![alt text]()
+![alt text](https://github.com/hanlinag/point-of-sale-system/blob/master/images/cardfinalback.png?raw=true)
 <hr>
 
 # Conclusion
