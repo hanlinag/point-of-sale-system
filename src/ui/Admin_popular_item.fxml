@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="660.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminPopularItemController">
+   <children>
+      <TableView fx:id="tb_popular" layoutX="8.0" layoutY="44.0" prefHeight="610.0" prefWidth="1282.0" />
+      <Label layoutX="466.0" layoutY="7.0" style="-fx-font-size: 30;" text="Popular Items Over The Store" />
+   </children>
+</AnchorPane>

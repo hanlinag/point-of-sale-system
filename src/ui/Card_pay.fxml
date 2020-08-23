@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="344.0" prefWidth="531.0" style="-fx-background-color: #c1b44d;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CardPayController">
+   <children>
+      <Label layoutX="118.0" layoutY="77.0" text="Purchase ID" />
+      <Label layoutX="205.0" layoutY="27.0" style="-fx-font-size: 21;" text="Card Payment" />
+      <JFXTextField fx:id="tf_purchase_id" editable="false" layoutX="237.0" layoutY="65.0" prefHeight="27.0" prefWidth="211.0" promptText="10001" />
+      <Label layoutX="109.0" layoutY="127.0" text="Total Amount" />
+      <JFXTextField fx:id="tf_total_amount" alignment="BOTTOM_RIGHT" editable="false" layoutX="236.0" layoutY="114.0" prefHeight="27.0" prefWidth="211.0" promptText="5000" />
+      <Label layoutX="108.0" layoutY="181.0" text="Card Number" />
+      <JFXTextField fx:id="tf_card_no" editable="false" layoutX="238.0" layoutY="166.0" prefHeight="27.0" prefWidth="211.0" promptText="777 777 xxx xxx " />
+      <JFXButton fx:id="bt_pay" layoutX="408.0" layoutY="275.0" onAction="#onbtPayAction" prefHeight="37.0" prefWidth="74.0" style="-fx-background-color: #31720d;" text="Pay" textFill="WHITE" />
+      <Label layoutX="70.0" layoutY="285.0" text="Card user will get 15% discount over total amount." textFill="#5e5c5c" />
+      <Label layoutX="111.0" layoutY="228.0" text="Pay Amount" />
+      <JFXTextField fx:id="tf_pay_amount" editable="false" layoutX="237.0" layoutY="215.0" prefHeight="27.0" prefWidth="211.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,701 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.14.0.final using JasperReports Library version 6.14.0-2ab0d8625be255bf609c78e1181801213e51db8f  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="daily_report" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="11e07119-0de2-4c9e-950c-22ba410a6afa">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 2_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 2_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 2_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="CategoryDataset" whenResourceMissingType="Empty" uuid="45e17ac3-3a34-4e38-8ebe-12f2e5093023">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="categoryname" class="java.lang.String"/>
+		<field name="salecount" class="java.lang.Integer"/>
+		<field name="categorytotalamount" class="java.lang.Double"/>
+	</subDataset>
+	<subDataset name="DailyDataset" uuid="d524ecdc-2dcb-44fe-bf34-a1ed003478bf">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="date" class="java.lang.String"/>
+		<field name="itemcount" class="java.lang.String"/>
+		<field name="netsale" class="java.lang.String"/>
+	</subDataset>
+	<subDataset name="Dataset1" uuid="e10097e4-7083-452f-a3b1-90de7da5e8f4">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="barcode" class="java.lang.String"/>
+		<field name="name" class="java.lang.String"/>
+		<field name="category" class="java.lang.String"/>
+		<field name="salecount" class="java.lang.String"/>
+		<field name="saleamount" class="java.lang.String"/>
+	</subDataset>
+	<parameter name="DS" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<parameter name="DSItem" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<parameter name="DS1" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<parameter name="totalsaleamount" class="java.lang.Double"/>
+	<parameter name="CategoryDateset" class="java.lang.String"/>
+	<parameter name="DailyDateset" class="java.lang.String"/>
+	<parameter name="totalsaleitemcount" class="java.lang.Integer"/>
+	<parameter name="cardcustomer" class="java.lang.Integer"/>
+	<parameter name="cashpaidcustomer" class="java.lang.Integer"/>
+	<parameter name="initialsale" class="java.lang.String"/>
+	<parameter name="netsale" class="java.lang.String"/>
+	<parameter name="promotion" class="java.lang.String"/>
+	<parameter name="categorysale" class="java.lang.String"/>
+	<parameter name="dailysalee" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="categoryname" class="java.lang.String"/>
+	<field name="salecount" class="java.lang.Integer"/>
+	<field name="categorytotalamount" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="138" splitType="Stretch">
+			<staticText>
+				<reportElement x="176" y="0" width="203" height="31" uuid="da9d98a2-12e1-4fbb-992b-476324dcd588"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Monthly Sale Report]]></text>
+			</staticText>
+			<image>
+				<reportElement x="417" y="1" width="141" height="135" uuid="aceae212-66cb-49d4-99b5-88b397ba4e4c"/>
+				<imageExpression><![CDATA["../POSSystem/src/graphic/poslogorect.png"]]></imageExpression>
+			</image>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="46" y="17" width="100" height="20" uuid="1945ee84-e868-4fd0-8af0-38a6ac9f1e94"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH:mm">
+				<reportElement x="46" y="39" width="100" height="20" uuid="5a52b961-1bf0-4ac9-a43c-60556cc8de9f"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="237" y="31" width="80" height="21" uuid="b8bccbb5-0405-45dc-956a-630b3dd0a655"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[AA Store]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="12" y="17" width="34" height="20" uuid="c99b33de-123a-4482-b79a-2c39051cb68c"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Date : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="12" y="39" width="34" height="20" uuid="29324b57-bfb8-4a65-a38d-80f4f2ab6d98"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Time : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="9" y="67" width="141" height="17" uuid="3e398f03-6dce-4ac3-bdfe-c5251c8c43fe"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Address]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="9" y="84" width="211" height="13" uuid="d3b88904-11eb-4f33-9953-c0f0ce0799c7"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[78* 77 33 street, Mandalay]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="121" width="205" height="15" uuid="9f947863-7aec-4cf8-a76a-6154e3770b50"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Open Daily (9am-8pm)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="9" y="99" width="211" height="21" uuid="160efd9a-88dd-4841-84bc-8fa037496f9f"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Phone: 09- 443031502]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="650" splitType="Stretch">
+			<staticText>
+				<reportElement x="11" y="6" width="542" height="120" uuid="a35b5879-0217-4782-b16e-f50b1483f496"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[	This is the report of the sale for this month. It include the total sale amount, sold items count based on their category, cash pay count and cash pay count. Total sale amount is the total amount of sale (income) for this month. Total sale item count is the number of items (products) that are sold for this month.  Card paid customer refers the number of customer that are purchase buy card while cash paid customer refers the number of customer that are paid by cash. The initial sale amount is the total of calculated amount with the item price. The net sale amount is the actual sale amount that are already reduce with promotion (item promotion and card promotion). The promotion is the amount of money of the store that are provided to the customer as promotion or discount.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="129" width="143" height="21" uuid="d72fb78e-592e-40cb-bb68-b58a808ba737"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Sale Amount : ]]></text>
+			</staticText>
+			<componentElement>
+				<reportElement positionType="Float" x="5" y="223" width="550" height="126" uuid="e65867c7-f5c2-4b7d-8575-2997d472ea1f">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="CategoryDataset" uuid="3b3d502b-eb99-4e0d-b932-b9d4b9ea72d2">
+						<dataSourceExpression><![CDATA[$P{DS}]]></dataSourceExpression>
+					</datasetRun>
+					<jr:columnGroup width="550" uuid="dc4286ea-5f1b-49fd-93b4-a8ecd5addf8c">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Columns [3]"/>
+						<jr:tableHeader style="Table_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="550" height="30" uuid="c6e79f8a-c6e2-4e51-9a27-e03100fe2813"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="12" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Category Sale]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:column width="270" uuid="e415698f-03e1-4897-912e-92c967d39e58">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+							<jr:tableHeader style="Table_TH" height="20" rowSpan="1"/>
+							<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+								<staticText>
+									<reportElement x="0" y="0" width="270" height="30" uuid="9f4558da-d716-4d14-b7fc-bc9ee8c10da9"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Arial" size="14" isBold="true"/>
+									</textElement>
+									<text><![CDATA[Category Name]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="Table_TD" height="20">
+								<textField>
+									<reportElement x="0" y="0" width="270" height="20" uuid="bee64105-eeda-49f6-95df-fdd968f6e053"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Arial"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{categoryname}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="120" uuid="50566735-c274-4b3a-ad67-902db263ff84">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+							<jr:tableHeader style="Table_TH" height="20" rowSpan="1"/>
+							<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+								<staticText>
+									<reportElement x="0" y="0" width="120" height="30" uuid="86f9117b-33da-4312-9d4e-be379bb9bc1a"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Arial" size="14" isBold="true"/>
+									</textElement>
+									<text><![CDATA[Sale Count]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="Table_TD" height="20">
+								<textField>
+									<reportElement x="0" y="0" width="120" height="20" uuid="3ad65e85-f4e8-4b35-81df-668cb41c9022"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Arial"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{salecount}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="160" uuid="bd39d733-8d70-4640-9add-2bee5a9c0e05">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
+							<jr:tableHeader style="Table_TH" height="20" rowSpan="1"/>
+							<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+								<staticText>
+									<reportElement x="0" y="0" width="160" height="30" uuid="84fbbe8f-d4a4-4ca7-997d-45236a3bc25c"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Arial" size="14" isBold="true"/>
+									</textElement>
+									<text><![CDATA[Total Amount]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="Table_TD" height="20">
+								<textField>
+									<reportElement x="0" y="0" width="160" height="20" uuid="7f4cdce4-b61d-4485-9de0-2e037b3a328b"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Arial" isBold="false"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{categorytotalamount}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+					</jr:columnGroup>
+				</jr:table>
+			</componentElement>
+			<textField>
+				<reportElement x="150" y="129" width="100" height="21" uuid="6e5f6007-8d04-438e-9cc8-51f5b9f3ddf3"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{totalsaleamount}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="3" y="151" width="142" height="21" uuid="4836c567-4d90-452b-a3d7-56768ede4bbc"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Sale Item Count : ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="150" y="151" width="114" height="21" uuid="91058fa8-a459-411d-84de-979ab99a8ce4"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{totalsaleitemcount}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="2" y="174" width="142" height="21" uuid="771e2afd-3f4e-487d-b8fb-1ad50d8afc13"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Card Paid Customer : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="196" width="142" height="21" uuid="5cea2c3a-dd64-4a28-945a-f5051e6710c7"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cash Paid Customer : ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="151" y="173" width="100" height="21" uuid="405798cf-f222-4107-b98c-a9cf5cf7abc6"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cardcustomer}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="151" y="195" width="115" height="21" uuid="3b896e74-352e-448f-9381-15a465b5f2e3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{cashpaidcustomer}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="251" y="129" width="60" height="21" uuid="f29ff4b1-b0f3-41f5-975f-a99cdd9cd49f"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Kyats]]></text>
+			</staticText>
+			<componentElement>
+				<reportElement positionType="Float" x="5" y="367" width="551" height="139" uuid="ffcaf37c-84ad-4a7f-8016-414973613bf4">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table 2_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table 2_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table 2_TD"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Dataset1" uuid="9b036899-029b-4d38-bf5d-945ffa508847">
+						<dataSourceExpression><![CDATA[$P{DSItem}]]></dataSourceExpression>
+					</datasetRun>
+					<jr:columnGroup width="550" uuid="fc65e19f-6573-4483-9af4-a0561f984f84">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Columns [5]"/>
+						<jr:tableHeader style="Table 2_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="550" height="30" uuid="985b867c-0c4e-4d41-ae2d-495037176517"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="12" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Item Sale]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:column width="130" uuid="b7c42b28-f14c-46b8-8c41-8f51cf48641b">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+							<jr:tableHeader style="Table 2_TH" height="20" rowSpan="1"/>
+							<jr:columnHeader style="Table 2_CH" height="30" rowSpan="1">
+								<staticText>
+									<reportElement x="0" y="0" width="130" height="30" uuid="8c7c62dd-479d-40c6-a0e8-d4e89fc80f88"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Arial" size="10" isBold="true"/>
+									</textElement>
+									<text><![CDATA[Barcode]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="Table 2_TD" height="20">
+								<textField>
+									<reportElement x="0" y="0" width="130" height="20" uuid="0ff664b7-97a9-4eb5-81e9-d50d51e1bc36"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Arial" size="10"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{barcode}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="140" uuid="3b2c2c57-6349-4f03-b299-72ec8fbd1f5c">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+							<jr:tableHeader style="Table 2_TH" height="20" rowSpan="1"/>
+							<jr:columnHeader style="Table 2_CH" height="30" rowSpan="1">
+								<staticText>
+									<reportElement x="0" y="0" width="140" height="30" uuid="0ef95f8c-ece6-433d-a942-5de0d3910e89"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Arial" size="10" isBold="true"/>
+									</textElement>
+									<text><![CDATA[Name]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="Table 2_TD" height="20">
+								<textField>
+									<reportElement x="0" y="0" width="140" height="20" uuid="2fa153c1-72e9-4aa0-b261-66f894ff891a"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Arial" size="10"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="120" uuid="18945596-84e0-41a0-8bc6-2be30ffcd818">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
+							<jr:tableHeader style="Table 2_TH" height="20" rowSpan="1"/>
+							<jr:columnHeader style="Table 2_CH" height="30" rowSpan="1">
+								<staticText>
+									<reportElement x="0" y="0" width="120" height="30" uuid="ff8f04b5-7484-4980-9aef-474e95b73486"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Arial" size="10" isBold="true"/>
+									</textElement>
+									<text><![CDATA[Category]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="Table 2_TD" height="20">
+								<textField>
+									<reportElement x="0" y="0" width="120" height="20" uuid="d9185ae8-d9e8-4e5f-b62f-0deb2907cbdc"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Arial" size="10"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{category}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="60" uuid="3bf26c00-899c-45ce-8f64-623fedeba5ea">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column4"/>
+							<jr:tableHeader style="Table 2_TH" height="20" rowSpan="1"/>
+							<jr:columnHeader style="Table 2_CH" height="30" rowSpan="1">
+								<staticText>
+									<reportElement x="0" y="0" width="60" height="30" uuid="096f82cc-1c72-472d-9a89-e738050582d7"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Arial" size="10" isBold="true"/>
+									</textElement>
+									<text><![CDATA[Sale Count]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="Table 2_TD" height="20">
+								<textField>
+									<reportElement x="0" y="0" width="60" height="20" uuid="8fefdf00-da6c-41ed-bee3-b22bcdfb6482"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Arial" size="10"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{salecount}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="100" uuid="a5bb48b9-c17a-4e54-a064-3c686a1618fe">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column5"/>
+							<jr:tableHeader style="Table 2_TH" height="20" rowSpan="1"/>
+							<jr:columnHeader style="Table 2_CH" height="30" rowSpan="1">
+								<staticText>
+									<reportElement x="0" y="0" width="100" height="30" uuid="3b00c69c-e3d2-400d-be53-f87e2b39dcad"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Arial" size="10" isBold="true"/>
+									</textElement>
+									<text><![CDATA[Sale Amount]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="Table 2_TD" height="20">
+								<textField>
+									<reportElement x="0" y="0" width="100" height="20" uuid="1e174fbf-b56b-4f6e-9905-28e25268efc0"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Arial" size="10"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{saleamount}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+					</jr:columnGroup>
+				</jr:table>
+			</componentElement>
+			<componentElement>
+				<reportElement positionType="Float" x="6" y="520" width="551" height="119" uuid="65e3666b-44dc-4351-8088-c1f763ad5bae">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table 1_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table 1_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table 1_TD"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="DailyDataset" uuid="57580e7e-a632-46df-b255-7ac167441162">
+						<dataSourceExpression><![CDATA[$P{DS1}]]></dataSourceExpression>
+					</datasetRun>
+					<jr:columnGroup width="551" uuid="d310f6da-b589-4ed7-8320-2013440ed871">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Columns [3]"/>
+						<jr:tableHeader style="Table 1_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="551" height="30" uuid="f24ed156-52fa-4da5-8064-cf5fd01de064"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="12" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Daily Sale]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:column width="184" uuid="190de9bc-4b6e-47e2-92b9-b6dafab881ef">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+							<jr:tableHeader style="Table 1_TH" height="19" rowSpan="1"/>
+							<jr:columnHeader style="Table 1_CH" height="30" rowSpan="1">
+								<staticText>
+									<reportElement x="0" y="0" width="184" height="30" uuid="4eada37f-0ed4-4bb4-8528-bed808354ad9"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Arial" size="11"/>
+									</textElement>
+									<text><![CDATA[Date]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="Table 1_TD" height="19">
+								<textField>
+									<reportElement x="0" y="0" width="184" height="19" uuid="33732bc0-6167-4a0e-a456-11f18152c26b"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Arial" size="10" isBold="false"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="133" uuid="c9a69475-037a-412e-a47e-7661bd049adc">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+							<jr:tableHeader style="Table 1_TH" height="19" rowSpan="1"/>
+							<jr:columnHeader style="Table 1_CH" height="30" rowSpan="1">
+								<staticText>
+									<reportElement x="0" y="0" width="133" height="30" uuid="715d4dae-0ad2-4657-a717-3492011d4f71"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Arial" size="11"/>
+									</textElement>
+									<text><![CDATA[Item Count]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="Table 1_TD" height="19">
+								<textField>
+									<reportElement x="0" y="0" width="133" height="19" uuid="dda5266b-7ddf-451d-922e-a191be4d9f13"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Arial" size="10" isBold="false"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{itemcount}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="234" uuid="b7130c2d-626c-4222-8abf-a24056f9bfa3">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
+							<jr:tableHeader style="Table 1_TH" height="19" rowSpan="1"/>
+							<jr:columnHeader style="Table 1_CH" height="30" rowSpan="1">
+								<staticText>
+									<reportElement x="0" y="0" width="234" height="30" uuid="a5437b63-fd4e-496a-b7f1-89997758d47b"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Arial" size="11"/>
+									</textElement>
+									<text><![CDATA[Net Sale]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="Table 1_TD" height="19">
+								<textField>
+									<reportElement x="0" y="0" width="234" height="19" uuid="5c8b1340-dff8-4227-938d-4e644db98a06"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Arial" size="10" isBold="false"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{netsale}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+					</jr:columnGroup>
+				</jr:table>
+			</componentElement>
+		</band>
+	</detail>
+	<summary>
+		<band height="139" splitType="Stretch">
+			<staticText>
+				<reportElement x="14" y="115" width="48" height="19" uuid="966a05a9-fa3f-4ac0-aea7-47e0b7618eb4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sign : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="62" y="115" width="160" height="19" uuid="d236f32d-732a-48ee-a831-4ed3f3a67285"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[_____________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="372" y="117" width="180" height="20" uuid="f76d9d06-387f-483e-a2f2-674d72a25c6a"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Arial" size="7" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Provided by Tyler's POS System]]></text>
+			</staticText>
+			<image>
+				<reportElement x="401" y="2" width="149" height="110" uuid="9f7a5fd4-318a-4a5c-a483-04507026ef48"/>
+				<imageExpression><![CDATA["../POSSystem/src/graphic/tm.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="215" y="80" width="53" height="21" uuid="3c5e0d81-5b93-41c2-8eb8-c7e7b2e90681"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Kyats]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="14" y="66" width="256" height="10" uuid="945945b8-b033-47fa-a7d8-d51ff6ec0b39"/>
+				<textElement verticalAlignment="Top">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[______________________________________________________________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="16" y="80" width="111" height="21" uuid="ec160cb1-7e06-483f-995c-7a44f1a99ac3"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Discount Amount : ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="131" y="81" width="84" height="20" uuid="4115060d-0271-4b71-959d-cddacba1e052"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{promotion}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="215" y="45" width="53" height="21" uuid="8b937f10-4056-439a-80f2-07dbcc4aa46c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Kyats]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="215" y="23" width="53" height="21" uuid="f980fd2f-1bb7-4262-97bf-d2f311c8a1b7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Kyats]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="131" y="23" width="84" height="20" uuid="9e70d559-77b7-4edf-af49-36d17a8422ed"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{initialsale}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="131" y="46" width="84" height="20" uuid="02aa4683-3af3-4cde-8e67-9a554a06e877"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{netsale}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="16" y="45" width="111" height="21" uuid="cefe0413-e313-4caa-9dc5-64a353bb8c69"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Net Sale Amount : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="16" y="22" width="111" height="21" uuid="ca557554-0890-44f2-a0bb-526b55eb654c"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Initial Sale Amount : ]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

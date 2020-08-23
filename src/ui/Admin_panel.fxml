@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1304.0" style="-fx-background-color: #878584;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainAdminController">
+   <children>
+      <AnchorPane layoutX="-2.0" layoutY="-8.0" prefHeight="71.0" prefWidth="1320.0" style="-fx-background-color: #fff;">
+         <children>
+            <JFXButton fx:id="bt_report" layoutX="1103.0" layoutY="14.0" onAction="#onReportAction" prefHeight="56.0" prefWidth="100.0" style="-fx-background-color: #000;" text="Report" textFill="WHITE" />
+            <JFXButton fx:id="bt_popular" layoutX="735.0" layoutY="14.0" onAction="#onPopularAction" prefHeight="56.0" prefWidth="115.0" style="-fx-background-color: #000;" text="Popular Items" textFill="WHITE" />
+            <JFXButton fx:id="bt_chart" layoutX="967.0" layoutY="14.0" onAction="#onChartAction" prefHeight="56.0" prefWidth="131.0" style="-fx-background-color: #000;" text="View Charts" textFill="WHITE" />
+            <JFXButton fx:id="bt_promotion" layoutX="635.0" layoutY="14.0" onAction="#onPromotionAction" prefHeight="56.0" prefWidth="94.0" style="-fx-background-color: #000;" text="Promotions" textFill="WHITE" />
+            <JFXButton fx:id="bt_category" layoutX="125.0" layoutY="14.0" onAction="#onCategoryAction" prefHeight="56.0" prefWidth="130.0" style="-fx-background-color: #000;" text="Product Category" textFill="WHITE" />
+            <JFXButton fx:id="bt_customer" layoutX="389.0" layoutY="14.0" onAction="#onCustomerAction" prefHeight="56.0" prefWidth="133.0" style="-fx-background-color: #000;" text="Manage Customer" textFill="WHITE" />
+            <JFXButton fx:id="bt_logout" layoutX="1209.0" layoutY="15.0" onAction="#onLogoutAction" prefHeight="56.0" prefWidth="93.0" style="-fx-background-color: #ba7734;" text="Log Out" textFill="#141414" />
+            <JFXButton fx:id="bt_product" layoutX="17.0" layoutY="14.0" onAction="#onProductAction" prefHeight="55.0" prefWidth="101.0" ripplerFill="#f2f2f2" style="-fx-background-color: #000;" text="Product Item" textFill="WHITE" />
+            <JFXButton fx:id="bt_cashier" layoutX="260.0" layoutY="14.0" onAction="#onCashierAction" prefHeight="56.0" prefWidth="121.0" style="-fx-background-color: #000;" text="Manage Cashier" textFill="WHITE" />
+            <JFXButton fx:id="bt_supplier" layoutX="855.0" layoutY="14.0" onAction="#onSupplierAction" prefHeight="56.0" prefWidth="107.0" style="-fx-background-color: #000;" text="Supplier" textFill="WHITE" />
+            <JFXButton fx:id="bt_card" layoutX="528.0" layoutY="14.0" onAction="#onManageCardAction" prefHeight="56.0" prefWidth="101.0" style="-fx-background-color: #000;" text="Manage Card" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="common_pane" layoutX="-3.0" layoutY="57.0" prefHeight="660.0" prefWidth="1320.0" style="-fx-background-color: #fff;" />
+   </children>
+</AnchorPane>

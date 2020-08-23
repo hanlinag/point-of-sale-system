@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="660.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminViewChartController">
+   <children>
+      <AnchorPane fx:id="ch_dailySale" layoutX="1.0" layoutY="6.0" prefHeight="322.0" prefWidth="335.0" style="-fx-background-color: #e2edff;" />
+      <AnchorPane fx:id="ch_month" layoutX="60.0" layoutY="330.0" prefHeight="314.0" prefWidth="350.0" style="-fx-background-color: #e2edff;" />
+      <AnchorPane fx:id="ch_category" layoutX="517.0" layoutY="7.0" prefHeight="322.0" prefWidth="350.0" style="-fx-background-color: #e2edff;" />
+      <AnchorPane fx:id="ch_customer_age" layoutX="945.0" layoutY="6.0" prefHeight="331.0" prefWidth="293.0" style="-fx-background-color: #e2edff;" />
+      <AnchorPane fx:id="ch_cash_vs_card" layoutX="724.0" layoutY="333.0" prefHeight="322.0" prefWidth="358.0" style="-fx-background-color: #e2edff;" />
+   </children>
+</AnchorPane>

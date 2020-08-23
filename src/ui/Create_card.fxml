@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="444.0" prefWidth="562.0" style="-fx-background-color: #a59f2e;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CreateCardController">
+   <children>
+      <JFXTextField fx:id="tf_phone" focusColor="#6571c2" layoutX="110.0" layoutY="134.0" promptText="0912344578" unFocusColor="#171616" />
+      <Label layoutX="22.0" layoutY="147.0" text="Phone" textFill="#222121" />
+      <Label layoutX="21.0" layoutY="193.0" text="Address" textFill="#0d0d0d" />
+      <Label layoutX="22.0" layoutY="236.0" text="Email" textFill="#141313" />
+      <Label layoutX="23.0" layoutY="284.0" text="PIN" textFill="#1e1e1e" />
+      <Label layoutX="22.0" layoutY="374.0" text="Top Up" textFill="#282828" />
+      <Label layoutX="22.0" layoutY="326.0" text="Amount" textFill="#141414" />
+      <JFXButton fx:id="bt_create" layoutX="471.0" layoutY="400.0" onAction="#onBtCreateAction" prefHeight="27.0" prefWidth="61.0" style="-fx-background-color: #372f99;" text="Create" textFill="#f2f2f2" />
+      <JFXButton fx:id="bt_cancel" layoutX="386.0" layoutY="400.0" onAction="#onBtCancelAction" prefHeight="27.0" prefWidth="61.0" style="-fx-background-color: #26234c;" text="Cancel" textFill="#f2f2f2" />
+      <JFXTextField fx:id="tf_name" layoutX="109.0" layoutY="82.0" promptText="Alex" unFocusColor="#252424" />
+      <JFXTextField fx:id="tf_address" layoutX="110.0" layoutY="178.0" promptText="Mandalay" unFocusColor="#1e1e1e" />
+      <JFXTextField fx:id="tf_email" layoutX="110.0" layoutY="221.0" promptText="example@gmail.com" unFocusColor="#0d0d0d" />
+      <JFXTextField fx:id="tf_pin" editable="false" layoutX="111.0" layoutY="269.0" promptText="1234" unFocusColor="#1b1a1a" />
+      <JFXTextField fx:id="tf_amount" editable="false" layoutX="112.0" layoutY="310.0" promptText="50000" unFocusColor="#141414" />
+      <JFXTextField fx:id="tf_top_up" layoutX="111.0" layoutY="357.0" promptText="50000" unFocusColor="#141414" />
+      <JFXButton fx:id="bt_redeem" layoutX="273.0" layoutY="360.0" onAction="#onBtRedeemAction" ripplerFill="#f7f8fc" style="-fx-background-color: #372f99;" text="Redeem" textFill="#fff7f7" />
+      <Label layoutX="307.0" layoutY="98.0" text="Gender" />
+      <Label layoutX="312.0" layoutY="141.0" text="Age" />
+      <Label layoutX="280.0" layoutY="185.0" text="Date Created" />
+      <Label layoutX="283.0" layoutY="234.0" text="Expired date" />
+      <JFXTextField fx:id="tf_age" layoutX="376.0" layoutY="125.0" promptText="13" />
+      <JFXRadioButton fx:id="rdo_male" layoutX="376.0" layoutY="95.0" selected="true" text="male">
+         <toggleGroup>
+            <ToggleGroup fx:id="gender" />
+         </toggleGroup>
+      </JFXRadioButton>
+      <JFXRadioButton fx:id="rdo_female" layoutX="452.0" layoutY="95.0" text="female" toggleGroup="$gender" />
+      <Label layoutX="22.0" layoutY="95.0" text="Name" />
+      <JFXTextField fx:id="tf_date_created" editable="false" layoutX="378.0" layoutY="170.0" promptText="dd/mm/yyyy" />
+      <Label layoutX="229.0" layoutY="4.0" style="-fx-font-size: 18;" text="Register Form" />
+      <Label layoutX="266.0" layoutY="41.0" text="Card Number" />
+      <JFXTextField fx:id="tf_card_number" layoutX="370.0" layoutY="26.0" onAction="#tfCardNumberAction" prefHeight="27.0" prefWidth="170.0" />
+      <Label layoutX="17.0" layoutY="42.0" text="Customer ID - " />
+      <Label fx:id="lb_new_id" layoutX="110.0" layoutY="42.0" text="1*****" />
+      <JFXButton fx:id="bt_new" layoutX="303.0" layoutY="400.0" onAction="#onNewAction" prefHeight="27.0" prefWidth="58.0" style="-fx-background-color: #372f99;" text="New" textFill="WHITE" />
+      <JFXTextField fx:id="tf_expired_date" layoutX="378.0" layoutY="221.0" prefHeight="27.0" prefWidth="151.0" promptText="dd/mm/yyyy" />
+   </children>
+</AnchorPane>

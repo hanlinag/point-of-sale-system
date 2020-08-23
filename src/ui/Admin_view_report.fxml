@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="660.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminViewReportController">
+   <children>
+      <Label layoutX="602.0" layoutY="71.0" text="Report Generator">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="bt_daily_re" layoutX="391.0" layoutY="125.0" onAction="#onDailyAction" prefHeight="87.0" prefWidth="519.0" style="-fx-background-color: #184589;" text="Generate Daily Report" textFill="WHITE">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="bt_month_re" layoutX="391.0" layoutY="230.0" onAction="#onMonthlyAction" prefHeight="87.0" prefWidth="519.0" style="-fx-background-color: #184589;" text="Generate Monthly Report" textFill="WHITE">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="bt_popu_re" layoutX="390.0" layoutY="336.0" onAction="#onPopularAction" prefHeight="87.0" prefWidth="519.0" style="-fx-background-color: #184589;" text="Generate Popular Item" textFill="WHITE">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

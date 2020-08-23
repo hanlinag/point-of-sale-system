@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1300.0" style="-fx-background-color: #FFF; -fx-font-size: 25;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainCashierController">
+   <children>
+      <AnchorPane layoutY="-10.0" prefHeight="70.0" prefWidth="1300.0" style="-fx-background-color: #21000e;">
+         <children>
+            <ImageView fitHeight="48.0" fitWidth="57.0" layoutX="51.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../graphic/poslogorect.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="141.0" layoutY="9.0" prefHeight="61.0" prefWidth="332.0" style="-fx-text-fill: #FFF; -fx-font-size: 35;" text="UCSM POS System" />
+            <Label fx:id="lb_cashier_name" layoutX="936.0" layoutY="27.0" style="-fx-text-fill: #FFF; -fx-font-size: 25;" text="Cashier Name" />
+            <JFXButton fx:id="bt_logout" layoutX="1131.0" layoutY="18.0" onAction="#onLogoutClick" prefHeight="41.0" prefWidth="154.0" style="-fx-background-color: #9b7f18;" text="Log Out" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+      <SplitPane dividerPositions="0.5833333333333334" layoutX="4.0" layoutY="64.0" prefHeight="642.0" prefWidth="1343.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="1300.0">
+               <children>
+                  <JFXTextField fx:id="tf_barcode_search" layoutX="18.0" layoutY="3.0" onKeyReleased="#tfTypeSearchAction" prefHeight="48.0" prefWidth="247.0" promptText="Search by barcode" unFocusColor="#252525" />
+                  <JFXButton fx:id="bt_create_card" layoutX="590.0" layoutY="571.0" onAction="#onbtCreateCardClick" style="-fx-background-color: #000; -fx-text-fill: #FFF;" text="Create Card" />
+                  <TableView fx:id="tb_total_item" layoutX="11.0" layoutY="58.0" prefHeight="504.0" prefWidth="758.0" />
+                  <JFXTextField fx:id="tf_name_search" layoutX="312.0" layoutY="3.0" onKeyReleased="#tfNameSearchAction" promptText="Search by name" />
+                  <JFXButton fx:id="bt_redeem" layoutX="38.0" layoutY="571.0" onAction="#onbtRedeemClick" style="-fx-background-color: #000; -fx-text-fill: #FFF;" text="Topup Card" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="675.0" prefWidth="561.0">
+               <children>
+                  <AnchorPane layoutX="-2.0" layoutY="-7.0" prefHeight="70.0" prefWidth="508.0" style="-fx-background-color: #21000e;">
+                     <children>
+                        <Label layoutX="234.0" layoutY="6.0" prefHeight="35.0" prefWidth="90.0" style="-fx-font-size: 20;" text="AA Store" textFill="#f8f8f8" />
+                        <Label layoutX="211.0" layoutY="29.0" prefHeight="49.0" prefWidth="127.0" text="Sale Items" textFill="#f2f2f2" />
+                        <Label layoutX="9.0" layoutY="54.0" style="-fx-font-size: 11;" text="Slip No:" textFill="#f5f5f5" />
+                        <Label fx:id="lb_slip_no" layoutX="62.0" layoutY="53.0" style="-fx-font-size: 13;" text="113" textFill="WHITE" />
+                        <JFXButton fx:id="bt_new" graphicTextGap="3.0" layoutX="392.0" layoutY="15.0" onAction="#onbtNewClick" prefHeight="48.0" prefWidth="104.0" style="-fx-background-color: #727272;" text="New" textFill="WHITE" />
+                     </children>
+                  </AnchorPane>
+                  <ScrollPane layoutX="-2.0" layoutY="71.0" prefHeight="416.0" prefWidth="508.0" style="-fx-background-color: #21000e;">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="413.0" prefWidth="427.0">
+                           <children>
+                              <TableView fx:id="tb_sale" prefHeight="411.0" prefWidth="508.0" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </ScrollPane>
+                  <JFXButton fx:id="bt_pay" layoutX="384.0" layoutY="500.0" onAction="#onBtPayClick" prefHeight="40.0" prefWidth="104.0" style="-fx-background-color: #000; -fx-font-size: 16;" text="Card Pay" textFill="WHITE" />
+                  <Label layoutX="23.0" layoutY="504.0" style="-fx-font-size: 18;" text="Total" />
+                  <JFXTextField fx:id="tf_total" editable="false" layoutX="145.0" layoutY="484.0" prefHeight="48.0" prefWidth="220.0" />
+                  <Label layoutX="20.0" layoutY="550.0" style="-fx-font-size: 18;" text="Pay Amount" />
+                  <JFXTextField fx:id="tf_pay_amount" layoutX="141.0" layoutY="529.0" onAction="#onEnterButtonClick" prefHeight="48.0" prefWidth="220.0" />
+                  <Label layoutX="23.0" layoutY="598.0" style="-fx-font-size: 18;" text="Change" />
+                  <JFXTextField fx:id="tf_change" editable="false" layoutX="141.0" layoutY="572.0" prefHeight="48.0" prefWidth="220.0" />
+                  <JFXButton fx:id="btPrint" layoutX="384.0" layoutY="567.0" onAction="#onbtPrintClick" prefHeight="40.0" prefWidth="104.0" style="-fx-background-color: #000; -fx-font-size: 16;" text="Print" textFill="WHITE" />
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

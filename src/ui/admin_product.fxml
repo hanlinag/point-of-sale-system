@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="660.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminProductController">
+   <children>
+      <TableView fx:id="tb_product_item" layoutX="297.0" layoutY="36.0" prefHeight="621.0" prefWidth="995.0" />
+      <Label layoutX="23.0" layoutY="222.0" text="Barcode" />
+      <JFXTextField fx:id="tf_barcode" editable="true" layoutX="112.0" layoutY="206.0" prefHeight="27.0" prefWidth="166.0" promptText="777 xxx xxx" />
+      <Label layoutX="23.0" layoutY="263.0" text="Name" />
+      <JFXTextField fx:id="tf_name" layoutX="112.0" layoutY="247.0" prefHeight="27.0" prefWidth="166.0" promptText="Water" />
+      <Label layoutX="14.0" layoutY="304.0" text="Category Name" />
+      <Label layoutX="23.0" layoutY="347.0" text="Price" />
+      <JFXTextField fx:id="tf_price" layoutX="112.0" layoutY="336.0" prefHeight="27.0" prefWidth="166.0" promptText="1000" />
+      <Label layoutX="18.0" layoutY="388.0" text="Supplier Name" />
+      <Label layoutX="23.0" layoutY="432.0" text="Date Added" />
+      <JFXTextField fx:id="tf_date_added" layoutX="112.0" layoutY="416.0" prefHeight="27.0" prefWidth="166.0" promptText="dd/mm/yyyy" />
+      <Label layoutX="20.0" layoutY="476.0" text="Stock Amount" />
+      <JFXTextField fx:id="tf_stock" layoutX="112.0" layoutY="460.0" prefHeight="27.0" prefWidth="166.0" promptText="300" />
+      <Label layoutX="23.0" layoutY="522.0" text="Expired Date" />
+      <JFXTextField fx:id="tf_expired_date" layoutX="112.0" layoutY="506.0" prefHeight="27.0" prefWidth="166.0" promptText="dd/mm/yyyy" />
+      <JFXButton fx:id="bt_add" layoutX="122.0" layoutY="568.0" onAction="#onbtAddAction" prefHeight="27.0" prefWidth="63.0" style="-fx-background-color: #273a91;" text="Add" textFill="#fcfafa" />
+      <JFXButton fx:id="bt_update" layoutX="221.0" layoutY="568.0" onAction="#onBtUpdateAction" style="-fx-background-color: #273a91;" text="Update" textFill="WHITE" />
+      <Label layoutX="491.0" style="-fx-font-size: 30;" text="Manage Product Items" />
+      <JFXComboBox fx:id="cbo_category" layoutX="112.0" layoutY="298.0" prefHeight="27.0" prefWidth="166.0" promptText="Snack" style="-fx-background-color: #ededed;" />
+      <JFXComboBox fx:id="cbo_supplier" layoutX="112.0" layoutY="378.0" prefHeight="27.0" prefWidth="166.0" style="-fx-background-color: #ededed;" />
+      <JFXButton fx:id="bt_new" layoutX="27.0" layoutY="568.0" onAction="#onbtNewAction" prefHeight="27.0" prefWidth="63.0" style="-fx-background-color: #273a91;" text="New" textFill="WHITE" />
+      <JFXTextField fx:id="tf_name_search" layoutX="21.0" layoutY="66.0" onKeyReleased="#onNameSearchAction" prefHeight="27.0" prefWidth="266.0" promptText="Search By Name" />
+      <JFXTextField fx:id="tf_barcode_search" layoutX="22.0" layoutY="131.0" onKeyReleased="#onBarcodeSearchActionn" prefHeight="27.0" prefWidth="266.0" promptText="Search By Barcode" />
+   </children>
+</AnchorPane>

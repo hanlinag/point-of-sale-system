@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="660.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminPromotionController">
+   <children>
+      <TableView fx:id="tb_promo" layoutX="325.0" layoutY="36.0" prefHeight="618.0" prefWidth="970.0" />
+      <Label layoutX="517.0" layoutY="-1.0" style="-fx-font-size: 30;" text="Manage Promotion" />
+      <Label layoutX="36.0" layoutY="197.0" text="ID" />
+      <Label layoutX="33.0" layoutY="242.0" text="Promotion Name" />
+      <Label layoutX="31.0" layoutY="293.0" text="Product ID" />
+      <Label layoutX="153.0" layoutY="421.0" style="-fx-font-size: 18;" text="More" />
+      <JFXTextField fx:id="tf_id" layoutX="145.0" layoutY="187.0" prefHeight="27.0" prefWidth="171.0" promptText="10001" />
+      <JFXTextField fx:id="tf_name" layoutX="145.0" layoutY="229.0" prefHeight="27.0" prefWidth="171.0" promptText="Seasonal Promotion" />
+      <JFXTextField fx:id="tf_product_id" layoutX="143.0" layoutY="280.0" onAction="#onProductIDSearch" prefHeight="27.0" prefWidth="171.0" promptText="777 xxx xxx" />
+      <JFXTextField fx:id="tf_percentage" layoutX="142.0" layoutY="377.0" prefHeight="27.0" prefWidth="171.0" promptText="15" />
+      <JFXTextField fx:id="tf_buy" alignment="BOTTOM_RIGHT" layoutX="85.0" layoutY="447.0" prefColumnCount="10" prefHeight="27.0" prefWidth="71.0" promptText="0" />
+      <JFXTextField fx:id="tf_get" alignment="BOTTOM_RIGHT" layoutX="227.0" layoutY="447.0" prefColumnCount="10" prefHeight="27.0" prefWidth="71.0" promptText="0" />
+      <Label layoutX="40.0" layoutY="452.0" text="Buy" />
+      <Label layoutX="179.0" layoutY="452.0" text="Get" />
+      <JFXButton fx:id="bt_add" layoutX="140.0" layoutY="502.0" onAction="#onAddAction" prefHeight="27.0" prefWidth="58.0" style="-fx-background-color: #273a91;" text="Add" textFill="#f8f8f8" />
+      <JFXButton layoutX="230.0" layoutY="502.0" onAction="#onUpdateAction" style="-fx-background-color: #273a91;" text="Update" textFill="WHITE" />
+      <Label layoutX="30.0" layoutY="390.0" text="Percentage" />
+      <JFXTextField fx:id="tf_product_name" layoutX="142.0" layoutY="327.0" prefHeight="27.0" prefWidth="171.0" promptText="Water" />
+      <Label layoutX="22.0" layoutY="346.0" text="Product Name" />
+      <JFXButton fx:id="bt_new" layoutX="46.0" layoutY="502.0" onAction="#onNewAction" prefHeight="27.0" prefWidth="58.0" style="-fx-background-color: #273a91;" text="New" textFill="WHITE" />
+   </children>
+</AnchorPane>
