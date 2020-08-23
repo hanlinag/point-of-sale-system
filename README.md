@@ -18,6 +18,6 @@ This project is implemented with Model–view–controller (MVC) software design
 
 # Diagrams
 System flowchart (Admin)
-![alt text](https://github.com/hanlinag/point-of-sale-system.git/images/adminflowchart.png)
+![alt text](https://raw.githubusercontent.com/hanlinag/point-of-sale-system/master/images/adminflowchart.png)
 
 
