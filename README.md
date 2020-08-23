@@ -53,7 +53,7 @@ mysql> set @@global.show_compatibility_56=ON;
 <hr>
 
 # Barcode/QRcode scanner
-- We developed Barcode/QR code scanner android app that scans the Barcode/QRcode from the item and sent that code to the computer via TCP. You can find the android app repository here : 
+- We developed Barcode/QR code scanner android app that scans the Barcode/QRcode from the item and sent that code to the computer via TCP. You can find the android app repository here : https://github.com/hanlinag/pos-barcode-scanner.git 
 ![alt text](https://github.com/hanlinag/point-of-sale-system/blob/master/images/barcode.png?raw=true)
 
 # Diagrams
