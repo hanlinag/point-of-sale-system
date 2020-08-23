@@ -33,7 +33,8 @@ For enduser use, check out the enduserguide.pdf file.
 <hr>
 
 # Barcode scanner
-- We developed Barcode/QR code scanner 
+- We developed Barcode/QR code scanner android app that scans the Barcode/QRcode from the item and sent that code to the computer via TCP.
+![alt text]()
 
 # Diagrams
 System flowchart (Admin)
