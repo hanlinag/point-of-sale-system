@@ -73,6 +73,20 @@ ER Diagram
 <hr>
 
 # Screenshots
+Home Screen
+![alt text](https://github.com/hanlinag/point-of-sale-system/blob/master/images/home.png?raw=true)
+
+Cashier Panel
+![alt text](https://github.com/hanlinag/point-of-sale-system/blob/master/images/cashier.png?raw=true)
+
+Card Payment
+![alt text](https://github.com/hanlinag/point-of-sale-system/blob/master/images/cardpayment.png?raw=true)
+
+Admin Panel
+![alt text](https://github.com/hanlinag/point-of-sale-system/blob/master/images/admin.png?raw=true)
+
+Chart View
+![alt text]()
 
 
 <hr>
