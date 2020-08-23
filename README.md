@@ -16,8 +16,10 @@ Database .sql file is also included in the directory.
 
 # Libraries/Dependencies Used
 - Java FX
-- Jasper iReport
-- mySQL 
+- Jaspersoft iReport
+- mySQL JDBC
+- JFoenix for material design UI
+- JDK 1.8
 
 <hr>
 
@@ -30,6 +32,23 @@ Database .sql file is also included in the directory.
 - Supplier management (company info, supply date, supply amount)
 - Track popular item over customer interest (i.e. Most selling item)
 - Report generation
+
+<hr>
+
+# setup
+1. Download the project source code.
+2. Create SQL database named "UCSMPOS"
+3. Import the UCSMPOS.sql file to the database. 
+4. Import the source code project to the IDE. (I used Eclipse to develop this project.)
+5. Import the Jar library files to the project build path.
+6. Go to the market place in Eclipse. Install Jasper iReport (https://community.jaspersoft.com/project/ireport-designer) library. 
+7. Run the project. (If the project with login.java cannot find the main class/method, create new Java project with the same name and copy all the files in the new project.)
+8. If Database connection is not establish, run the following command into your SQL console:
+```
+mysql> set @@global.show_compatibility_56=ON;
+```
+9. Admin username and password: usernaem: pos-2018-ad; pw: admin@2018.
+10. Now, you're good to go!!! Modify it for your own usecase. 
 
 <hr>
 
