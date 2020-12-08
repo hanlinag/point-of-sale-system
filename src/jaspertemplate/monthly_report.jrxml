@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.14.0.final using JasperReports Library version 6.14.0-2ab0d8625be255bf609c78e1181801213e51db8f  -->
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="daily_report" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="11e07119-0de2-4c9e-950c-22ba410a6afa">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
 	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
@@ -143,7 +143,7 @@
 			</staticText>
 			<image>
 				<reportElement x="417" y="1" width="141" height="135" uuid="aceae212-66cb-49d4-99b5-88b397ba4e4c"/>
-				<imageExpression><![CDATA["../POSSystem/src/graphic/poslogorect.png"]]></imageExpression>
+				<imageExpression><![CDATA["/src/graphic/poslogorect.png"]]></imageExpression>
 			</image>
 			<textField pattern="MMMMM dd, yyyy">
 				<reportElement x="46" y="17" width="100" height="20" uuid="1945ee84-e868-4fd0-8af0-38a6ac9f1e94"/>
@@ -164,7 +164,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
-				<text><![CDATA[AA Store]]></text>
+				<text><![CDATA[ACPCE Store]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="12" y="17" width="34" height="20" uuid="c99b33de-123a-4482-b79a-2c39051cb68c"/>
@@ -192,21 +192,21 @@
 				<textElement textAlignment="Left" verticalAlignment="Middle">
 					<font fontName="Arial" size="11"/>
 				</textElement>
-				<text><![CDATA[78* 77 33 street, Mandalay]]></text>
+				<text><![CDATA[42, House-1680, Sec-19c, KoperKhairne]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="10" y="121" width="205" height="15" uuid="9f947863-7aec-4cf8-a76a-6154e3770b50"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial"/>
 				</textElement>
-				<text><![CDATA[Open Daily (9am-8pm)]]></text>
+				<text><![CDATA[Open Daily (9AM-8PM)]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="9" y="99" width="211" height="21" uuid="160efd9a-88dd-4841-84bc-8fa037496f9f"/>
 				<textElement textAlignment="Left" verticalAlignment="Middle">
 					<font fontName="Arial"/>
 				</textElement>
-				<text><![CDATA[Phone: 09- 443031502]]></text>
+				<text><![CDATA[Phone: 022- 16942069]]></text>
 			</staticText>
 		</band>
 	</title>
@@ -369,7 +369,7 @@
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial"/>
 				</textElement>
-				<text><![CDATA[Kyats]]></text>
+				<text><![CDATA[₹]]></text>
 			</staticText>
 			<componentElement>
 				<reportElement positionType="Float" x="5" y="367" width="551" height="139" uuid="ffcaf37c-84ad-4a7f-8016-414973613bf4">
@@ -620,18 +620,18 @@
 				<textElement textAlignment="Center" verticalAlignment="Bottom">
 					<font fontName="Arial" size="7" isItalic="true"/>
 				</textElement>
-				<text><![CDATA[Provided by Tyler's POS System]]></text>
+				<text><![CDATA[Provided by ACPCE POS System]]></text>
 			</staticText>
 			<image>
 				<reportElement x="401" y="2" width="149" height="110" uuid="9f7a5fd4-318a-4a5c-a483-04507026ef48"/>
-				<imageExpression><![CDATA["../POSSystem/src/graphic/tm.png"]]></imageExpression>
+				<imageExpression><![CDATA["/src/graphic/tm.png"]]></imageExpression>
 			</image>
 			<staticText>
-				<reportElement x="215" y="80" width="53" height="21" uuid="3c5e0d81-5b93-41c2-8eb8-c7e7b2e90681"/>
+				<reportElement x="127" y="80" width="53" height="21" uuid="3c5e0d81-5b93-41c2-8eb8-c7e7b2e90681"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial"/>
 				</textElement>
-				<text><![CDATA[Kyats]]></text>
+				<text><![CDATA[₹]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="14" y="66" width="256" height="10" uuid="945945b8-b033-47fa-a7d8-d51ff6ec0b39"/>
@@ -648,35 +648,35 @@
 				<text><![CDATA[Discount Amount : ]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="131" y="81" width="84" height="20" uuid="4115060d-0271-4b71-959d-cddacba1e052"/>
+				<reportElement x="180" y="80" width="84" height="20" uuid="4115060d-0271-4b71-959d-cddacba1e052"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{promotion}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="215" y="45" width="53" height="21" uuid="8b937f10-4056-439a-80f2-07dbcc4aa46c"/>
+				<reportElement x="127" y="45" width="53" height="21" uuid="8b937f10-4056-439a-80f2-07dbcc4aa46c"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial"/>
 				</textElement>
-				<text><![CDATA[Kyats]]></text>
+				<text><![CDATA[₹]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="215" y="23" width="53" height="21" uuid="f980fd2f-1bb7-4262-97bf-d2f311c8a1b7"/>
+				<reportElement x="127" y="23" width="53" height="21" uuid="f980fd2f-1bb7-4262-97bf-d2f311c8a1b7"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial"/>
 				</textElement>
-				<text><![CDATA[Kyats]]></text>
+				<text><![CDATA[₹]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="131" y="23" width="84" height="20" uuid="9e70d559-77b7-4edf-af49-36d17a8422ed"/>
+				<reportElement x="180" y="22" width="84" height="20" uuid="9e70d559-77b7-4edf-af49-36d17a8422ed"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{initialsale}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="131" y="46" width="84" height="20" uuid="02aa4683-3af3-4cde-8e67-9a554a06e877"/>
+				<reportElement x="180" y="45" width="84" height="20" uuid="02aa4683-3af3-4cde-8e67-9a554a06e877"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial"/>
 				</textElement>

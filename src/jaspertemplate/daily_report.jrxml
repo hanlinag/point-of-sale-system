@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.14.0.final using JasperReports Library version 6.14.0-2ab0d8625be255bf609c78e1181801213e51db8f  -->
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="daily_report" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="11e07119-0de2-4c9e-950c-22ba410a6afa">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
 	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
@@ -126,7 +126,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
-				<text><![CDATA[AA Store]]></text>
+				<text><![CDATA[ACPCE Store]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="12" y="17" width="34" height="20" uuid="c99b33de-123a-4482-b79a-2c39051cb68c"/>
@@ -154,21 +154,21 @@
 				<textElement textAlignment="Left" verticalAlignment="Middle">
 					<font fontName="Arial" size="10"/>
 				</textElement>
-				<text><![CDATA[78* 77 33 street, Mandalay]]></text>
+				<text><![CDATA[42, House-1680, Sec-19c, KoperKhairne]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="10" y="103" width="211" height="15" uuid="160efd9a-88dd-4841-84bc-8fa037496f9f"/>
 				<textElement textAlignment="Left" verticalAlignment="Middle">
 					<font fontName="Arial" size="10"/>
 				</textElement>
-				<text><![CDATA[Phone: 09- 443031502]]></text>
+				<text><![CDATA[Phone: 022- 16942069]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="11" y="119" width="205" height="15" uuid="9f947863-7aec-4cf8-a76a-6154e3770b50"/>
 				<textElement textAlignment="Left">
 					<font fontName="Arial" size="10"/>
 				</textElement>
-				<text><![CDATA[Open Daily (9am-8pm)]]></text>
+				<text><![CDATA[Open Daily (9AM-8PM)]]></text>
 			</staticText>
 		</band>
 	</title>
@@ -333,7 +333,7 @@
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="10"/>
 				</textElement>
-				<text><![CDATA[Kyats]]></text>
+				<text><![CDATA[₹]]></text>
 			</staticText>
 			<componentElement>
 				<reportElement positionType="Float" x="0" y="409" width="561" height="121" uuid="53589cf5-ca40-423f-8c67-6ce3e0b55c1b">
@@ -493,7 +493,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Bottom">
 					<font fontName="Arial" size="7" isItalic="true"/>
 				</textElement>
-				<text><![CDATA[Provided by Tyler's POS System]]></text>
+				<text><![CDATA[Provided by ACPCE POS System]]></text>
 			</staticText>
 			<image>
 				<reportElement x="400" y="0" width="149" height="110" uuid="9f7a5fd4-318a-4a5c-a483-04507026ef48"/>
@@ -518,14 +518,14 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial"/>
 				</textElement>
-				<text><![CDATA[Kyats]]></text>
+				<text><![CDATA[₹]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="190" y="33" width="53" height="21" uuid="8b937f10-4056-439a-80f2-07dbcc4aa46c"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial"/>
 				</textElement>
-				<text><![CDATA[Kyats]]></text>
+				<text><![CDATA[₹]]></text>
 			</staticText>
 			<textField>
 				<reportElement x="106" y="34" width="84" height="20" uuid="02aa4683-3af3-4cde-8e67-9a554a06e877"/>
@@ -560,7 +560,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial"/>
 				</textElement>
-				<text><![CDATA[Kyats]]></text>
+				<text><![CDATA[₹]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="-6" y="54" width="256" height="10" uuid="945945b8-b033-47fa-a7d8-d51ff6ec0b39"/>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="commons-beanutils-1.9.3-javadoc.jar"/>
+	<classpathentry kind="lib" path="commons-beanutils-1.9.3.jar"/>
+	<classpathentry kind="lib" path="commons-codec-1.10.jar"/>
+	<classpathentry kind="lib" path="commons-collections-3.2.jar"/>
+	<classpathentry kind="lib" path="commons-collections4-4.1.jar"/>
+	<classpathentry kind="lib" path="commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="curvesapi-1.04.jar"/>
+	<classpathentry kind="lib" path="itext5-itextpdf-5.5.11.jar"/>
+	<classpathentry kind="lib" path="jfoenix.jar"/>
+	<classpathentry kind="lib" path="JFXMaterial.jar"/>
+	<classpathentry kind="lib" path="JFXMaterialDemo.jar"/>
+	<classpathentry kind="lib" path="log4j.jar"/>
+	<classpathentry kind="lib" path="mysql-connector-java-5.1.17-bin.jar"/>
+	<classpathentry kind="lib" path="poi-3.16-beta2.jar"/>
+	<classpathentry kind="lib" path="poi-3.5-FINAL.jar"/>
+	<classpathentry kind="lib" path="poi-examples-3.16-beta2.jar"/>
+	<classpathentry kind="lib" path="poi-excelant-3.16-beta2.jar"/>
+	<classpathentry kind="lib" path="poi-ooxml-3.16-beta2.jar"/>
+	<classpathentry kind="lib" path="poi-ooxml-schemas-3.16-beta2.jar"/>
+	<classpathentry kind="lib" path="poi-scratchpad-3.16-beta2.jar"/>
+	<classpathentry kind="lib" path="xmlbeans-2.6.0.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
