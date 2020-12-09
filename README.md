@@ -41,23 +41,16 @@ Database .sql file is also included in the directory.
 # Setup
 1. Download the project source code.
 2. Create SQL database named "ACPCEPOS"
-3. Import the ACPCEPOS.sql file to the database. 
-4. Import the source code project to the IDE. (We used Eclipse/VS Code to develop this project.)
-5. Import the Jar library files to the project build path.
-6. Go to the market place in Eclipse. Install Jasper iReport (https://community.jaspersoft.com/project/ireport-designer) library. 
-7. Run the project. (If the project with login.java cannot find the main class/method, create new Java project with the same name and copy all the files in the new project.)
-8. If Database connection is not established, run the following command into your SQL console:
-```
-mysql> set @@global.show_compatibility_56=ON;
-```
-9. Admin username and password: username: pos-2018-ad; pw: admin@2018.
+3. Import ACPCEPOS.sql file to the database. 
+4. Import the source code to the IDE, either from zip or directly clone from URL. (We used Eclipse/VS Code to develop this project)
+5. Import the Jar dependecies to the project build path.
+6. Install Jasper iReport from eclipse marketplace (https://community.jaspersoft.com/project/ireport-designer) 
+7. Install proper sql driver lib based on your environment and edit DBInitialize.2 with your appropriate server location
+8. Run the project. Use JRE 1.8 or Zulu 15 JDK to prevent errors as JavaFX isn't part of the standard JDK from 11
+9. Admin username: posACPCE; pw: admin123.
 10. Now, you're good to go!!! Modify it for your own usecase. 
 
 <hr>
-
-# Barcode/QRcode scanner
-- We developed Barcode/QR code scanner android app that scans the Barcode/QRcode from the item and sent that code to the computer via TCP. You can find the android app repository here : https://github.com/spandu500/pos-barcode-scanner.git 
-![alt text](https://github.com/spandu500/point-of-sale-system/blob/master/images/barcode.png?raw=true)
 
 # Diagrams
 System flowchart (Admin)
