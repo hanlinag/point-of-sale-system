@@ -7,7 +7,7 @@
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="444.0" prefWidth="562.0" style="-fx-background-color: #a59f2e;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CardRedeemController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="444.0" prefWidth="562.0" style="-fx-background-color: #E9D73E;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CardRedeemController">
    <children>
       <JFXTextField fx:id="tf_qr_search" focusColor="#2d43bf" layoutX="30.0" layoutY="25.0" onAction="#onTfQRSearchAction" promptText="QR Code search" unFocusColor="#0d0d0d" />
       <JFXTextField fx:id="tf_customer_name" focusColor="#2d43bf" layoutX="384.0" layoutY="7.0" promptText="Cusomter Name" unFocusColor="#0d0d0d" />
@@ -23,8 +23,8 @@
       <JFXTextField fx:id="tf_address" focusColor="#2d43bf" layoutX="110.0" layoutY="134.0" promptText="Mumbai" unFocusColor="#0d0d0d" />
       <JFXTextField fx:id="tf_email" focusColor="#2d43bf" layoutX="110.0" layoutY="185.0" promptText="example@mail.com" unFocusColor="#0d0d0d" />
       <JFXTextField fx:id="tf_pin" editable="false" focusColor="#2d43bf" layoutX="111.0" layoutY="233.0" promptText="1234" unFocusColor="#0d0d0d" />
-      <JFXTextField fx:id="tf_amount" editable="false" focusColor="#2d43bf" layoutX="112.0" layoutY="279.0" promptText="50000" unFocusColor="#0d0d0d" />
-      <JFXTextField fx:id="tf_top_up" focusColor="#2d43bf" layoutX="111.0" layoutY="326.0" promptText="50000" unFocusColor="#0d0d0d" />
+      <JFXTextField fx:id="tf_amount" editable="false" focusColor="#2d43bf" layoutX="112.0" layoutY="279.0" promptText="5000" unFocusColor="#0d0d0d" />
+      <JFXTextField fx:id="tf_top_up" focusColor="#2d43bf" layoutX="111.0" layoutY="326.0" promptText="5000" unFocusColor="#0d0d0d" />
       <JFXButton fx:id="bt_redeem" layoutX="273.0" layoutY="329.0" onAction="#onBtRedeemAction" ripplerFill="#f7f8fc" style="-fx-background-color: #372f99;" text="Top up" textFill="#fff7f7" />
       <Label layoutX="305.0" layoutY="100.0" text="Gender" textFill="#403e3e" />
       <Label layoutX="319.0" layoutY="149.0" text="Age" textFill="#403e3e" />

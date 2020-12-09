@@ -10,9 +10,9 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1300.0" style="-fx-background-color: #FFF; -fx-font-size: 25;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainCashierController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1400.0" style="-fx-background-color: #FFF; -fx-font-size: 25;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainCashierController">
    <children>
-      <AnchorPane layoutY="-10.0" prefHeight="70.0" prefWidth="1300.0" style="-fx-background-color: #005772;">
+      <AnchorPane layoutY="-10.0" prefHeight="70.0" prefWidth="1400.0" style="-fx-background-color: #005772;">
          <children>
             <ImageView fitHeight="48.0" fitWidth="57.0" layoutX="51.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -21,12 +21,12 @@
             </ImageView>
             <Label layoutX="141.0" layoutY="9.0" prefHeight="61.0" prefWidth="332.0" style="-fx-text-fill: #FFF; -fx-font-size: 30;" text="ACPCE POS System" />
             <Label fx:id="lb_cashier_name" layoutX="936.0" layoutY="27.0" style="-fx-text-fill: #FFF; -fx-font-size: 25;" text="Cashier Name" />
-            <JFXButton fx:id="bt_logout" layoutX="1131.0" layoutY="10.0" onAction="#onLogoutClick" prefHeight="35.0" prefWidth="154.0" style="-fx-background-color: #EC4242;" text="Log Out" textFill="WHITE" />
+            <JFXButton fx:id="bt_logout" layoutX="1131.0" layoutY="12.0" onAction="#onLogoutClick" prefHeight="35.0" prefWidth="154.0" style="-fx-background-color: #EC4242;" text="Log Out" textFill="WHITE" />
          </children>
       </AnchorPane>
       <SplitPane dividerPositions="0.5833333333333334" layoutX="4.0" layoutY="64.0" prefHeight="642.0" prefWidth="1343.0">
         <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="1300.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="1400.0">
                <children>
                   <JFXTextField fx:id="tf_barcode_search" layoutX="18.0" layoutY="3.0" onKeyReleased="#tfTypeSearchAction" prefHeight="48.0" prefWidth="247.0" promptText="Search by barcode" unFocusColor="#252525" />
                   <JFXButton fx:id="bt_create_card" layoutX="590.0" layoutY="571.0" onAction="#onbtCreateCardClick" style="-fx-background-color: #000; -fx-text-fill: #FFF;" text="Create Card" />
@@ -35,11 +35,11 @@
                   <JFXButton fx:id="bt_redeem" layoutX="38.0" layoutY="571.0" onAction="#onbtRedeemClick" style="-fx-background-color: #000; -fx-text-fill: #FFF;" text="Topup Card" />
                </children>
             </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="675.0" prefWidth="561.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="675.0" prefWidth="570.0">
                <children>
                   <AnchorPane layoutX="-2.0" layoutY="-7.0" prefHeight="70.0" prefWidth="508.0" style="-fx-background-color: #005772;">
                      <children>
-                        <Label layoutX="234.0" layoutY="6.0" prefHeight="35.0" prefWidth="90.0" style="-fx-font-size: 20;" text="ACPCE Store" textFill="#f8f8f8" />
+                        <Label layoutX="211.0" layoutY="6.0" prefHeight="35.0" prefWidth="190.0" style="-fx-font-size: 20;" text="ACPCE Store" textFill="#f8f8f8" />
                         <Label layoutX="211.0" layoutY="29.0" prefHeight="49.0" prefWidth="127.0" text="Sale Items" textFill="#FFF" />
                         <Label layoutX="9.0" layoutY="54.0" style="-fx-font-size: 11;" text="Slip No:" textFill="#f5f5f5" />
                         <Label fx:id="lb_slip_no" layoutX="62.0" layoutY="53.0" style="-fx-font-size: 13;" text="113" textFill="WHITE" />

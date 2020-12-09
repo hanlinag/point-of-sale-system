@@ -8,7 +8,7 @@
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="660.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminCustomerController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="690.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminCustomerController">
    <children>
       <TableView fx:id="tb_customer" layoutX="334.0" layoutY="37.0" prefHeight="609.0" prefWidth="960.0" />
       <Label layoutX="38.0" layoutY="157.0" text="ID" />
@@ -31,7 +31,7 @@
       <JFXTextField fx:id="tf_phone" layoutX="124.0" layoutY="319.0" prefHeight="27.0" prefWidth="201.0" promptText="09123463033" />
       <JFXTextField fx:id="tf_mail" layoutX="123.0" layoutY="355.0" prefHeight="27.0" prefWidth="201.0" promptText="example@mail.com" />
       <JFXTextField fx:id="tf_card_no" layoutX="26.0" layoutY="94.0" prefHeight="27.0" prefWidth="241.0" promptText="Enter Card Number" />
-      <JFXTextField fx:id="tf_amount" layoutX="121.0" layoutY="393.0" prefHeight="27.0" prefWidth="201.0" promptText="50000" />
+      <JFXTextField fx:id="tf_amount" layoutX="121.0" layoutY="393.0" prefHeight="27.0" prefWidth="201.0" promptText="5000" />
       <JFXTextField fx:id="tf_last_date_used" layoutX="121.0" layoutY="428.0" prefHeight="27.0" prefWidth="201.0" promptText="00/00/0000" />
       <JFXTextField fx:id="tf_pin" layoutX="117.0" layoutY="545.0" prefHeight="27.0" prefWidth="201.0" promptText="1234" />
       <JFXTextField fx:id="tf_date_created" editable="false" layoutX="120.0" layoutY="507.0" prefHeight="27.0" prefWidth="201.0" promptText="00/00/0000" />

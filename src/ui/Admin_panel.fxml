@@ -20,6 +20,6 @@
             <JFXButton fx:id="bt_card" layoutX="528.0" layoutY="14.0" onAction="#onManageCardAction" prefHeight="56.0" prefWidth="101.0" style="-fx-background-color: #000;" text="Manage Card" textFill="WHITE" />
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="common_pane" layoutX="-3.0" layoutY="57.0" prefHeight="660.0" prefWidth="1320.0" style="-fx-background-color: #fff;" />
+      <AnchorPane fx:id="common_pane" layoutX="-3.0" layoutY="57.0" prefHeight="690.0" prefWidth="1320.0" style="-fx-background-color: #fff;" />
    </children>
 </AnchorPane>
