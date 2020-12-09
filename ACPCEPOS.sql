@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.3
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Dec 06, 2020 at 03:37 AM
--- Server version: 5.7.26
--- PHP Version: 7.4.2
+-- Host: 127.0.0.1:3306
+-- Generation Time: Dec 09, 2020 at 10:44 AM
+-- Server version: 8.0.21
+-- PHP Version: 7.3.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -17,48 +18,49 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `ACPCEPOS`
+-- Database: `acpcepos`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Card`
+-- Table structure for table `card`
 --
 
-CREATE TABLE `Card` (
+DROP TABLE IF EXISTS `card`;
+CREATE TABLE IF NOT EXISTS `card` (
   `cardnumber` varchar(20) NOT NULL DEFAULT '',
   `customerid` varchar(20) NOT NULL,
   `amount` varchar(20) NOT NULL,
   `lastuseddate` varchar(15) NOT NULL,
   `registerdate` varchar(15) NOT NULL,
   `expireddate` varchar(15) NOT NULL,
-  `pin` int(4) NOT NULL
+  `pin` int NOT NULL,
+  PRIMARY KEY (`cardnumber`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `Card`
+-- Dumping data for table `card`
 --
 
-INSERT INTO `Card` (`cardnumber`, `customerid`, `amount`, `lastuseddate`, `registerdate`, `expireddate`, `pin`) VALUES
-('7777771117770001122', '11001', '383784.0', '23/08/2020', '01/02/2019', '02/08/2020', 8756),
-('7777771117770001123', '11002', '476394.0', '19/08/2019', '01/01/2019', '02/08/2020', 4574),
-('7777771117770001124', '11003', '17035.0', '23/08/2020', '07/07/2019', '02/08/2020', 9764),
-('7777771117770001125', '11004', '56900.0', '06/08/2019', '22/07/2019', '02/08/2020', 1245),
-('7777771117770001126', '11006', '38646.0', '12/08/2019', '30/07/2019', '02/08/2020', 8728),
+INSERT INTO `card` (`cardnumber`, `customerid`, `amount`, `lastuseddate`, `registerdate`, `expireddate`, `pin`) VALUES
+('7777771117770001122', '11001', '383784.0', '23/08/2020', '01/02/2019', '02/08/2021', 8756),
+('7777771117770001123', '11002', '476394.0', '19/08/2019', '01/01/2019', '02/08/2021', 4574),
+('7777771117770001124', '11003', '17035.0', '23/08/2020', '07/07/2019', '02/08/2021', 9764),
+('7777771117770001125', '11004', '56900.0', '06/08/2019', '22/07/2019', '02/08/2021', 1245),
+('7777771117770001126', '11006', '38646.0', '12/08/2019', '30/07/2019', '02/08/2021', 8728),
 ('7777771117770001127', '11012', '50000', '09/08/2019', '09/08/2019', '09/08/2021', 2356),
-('7777771117770001128', '11005', '20000', '22/07/2019', '22/07/2019', '22/07/2020', 7354),
-('7777771117770001129', '11007', '26373.0', '19/08/2019', '01/08/2019', '01/08/2020', 3258),
-('7777771117770001130', '11008', '67114.0', '19/08/2019', '01/08/2019', '01/08/2020', 5696),
-('7777771117770001131', '11009', '98290.0', '19/08/2019', '01/08/2019', '01/08/2020', 8450),
-('7777771117770001132', '11010', '25000', '19/08/2019', '02/08/2019', '02/08/2020', 2233),
-('7777771117770001133', '11011', '150000.0', '19/08/2019', '04/08/2019', '01/01/1970', 6833),
+('7777771117770001128', '11005', '20000', '22/07/2019', '22/07/2019', '22/07/2021', 7354),
+('7777771117770001129', '11007', '26373.0', '19/08/2019', '01/08/2019', '01/08/2021', 3258),
+('7777771117770001130', '11008', '67114.0', '19/08/2019', '01/08/2019', '01/08/2021', 5696),
+('7777771117770001131', '11009', '98290.0', '19/08/2019', '01/08/2019', '01/08/2021', 8450),
+('7777771117770001132', '11010', '25000', '19/08/2019', '02/08/2019', '02/08/2021', 2233),
+('7777771117770001133', '11011', '150000.0', '19/08/2019', '04/08/2019', '04/08/2021', 6833),
 ('7777771117770001137', '11013', '5000', '19/08/2019', '09/08/2019', '09/08/2021', 3697),
 ('7777771117770001138', '11014', '50000', '19/08/2019', '09/08/2019', '09/08/2021', 7623),
 ('7777771117770001139', '11015', '110000.0', '20/08/2019', '19/08/2019', '19/08/2021', 4855),
 ('7777771117770001141', '11017', '60000.0', '19/08/2019', '19/08/2019', '19/08/2021', 9324),
 ('7777771117770001142', '11018', '50000.0', '19/08/2019', '19/08/2019', '19/08/2021', 9849);
-
 
 -- --------------------------------------------------------
 
@@ -66,16 +68,18 @@ INSERT INTO `Card` (`cardnumber`, `customerid`, `amount`, `lastuseddate`, `regis
 -- Table structure for table `cashier`
 --
 
-CREATE TABLE `cashier` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `cashier`;
+CREATE TABLE IF NOT EXISTS `cashier` (
+  `id` int NOT NULL,
   `name` varchar(30) DEFAULT NULL,
-  `age` int(10) NOT NULL,
+  `age` int NOT NULL,
   `gender` varchar(10) NOT NULL,
   `address` varchar(40) NOT NULL,
   `phone` varchar(20) NOT NULL,
   `email` varchar(30) NOT NULL,
   `password` varchar(20) NOT NULL,
-  `date created` varchar(20) NOT NULL
+  `date created` varchar(20) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -83,8 +87,8 @@ CREATE TABLE `cashier` (
 --
 
 INSERT INTO `cashier` (`id`, `name`, `age`, `gender`, `address`, `phone`, `email`, `password`, `date created`) VALUES
-(11001, 'Spandan', 19, 'male', 'Koperkhairne', '09082138328', 'spandu500@gmail.com', 'cashier', '12/12/2019'),
-(11002, 'Anuj', 20, 'male', 'Nerul', '5345311313', 'agop@gmail.com', 'cashier', '07/07/2020'),
+(11001, 'Spandan', 19, 'male', 'Koperkhairne', '09082138328', 'spandu500@gmail.com', 'hyperwebster', '12/12/2019'),
+(11002, 'Parth', 18, 'male', 'Anushati Nagar', '5345311313', 'pygadekar@acpce.ac.in', 'cashier', '07/07/2020'),
 (11003, 'Mayur', 19, 'male', 'Sanpada', '09698763333', 'mayur69@mail.com', 'cashier', '21/07/2020'),
 (11004, 'Abhishek', 20, 'male', 'Kharghar', '09796656567', 'AKG99@gmail.com', 'cashier', '21/10/2020'),
 (11005, 'Harsh', 20, 'male', 'Chembur', '09896649118', 'harshmakwana2805@gmail.com', 'cashier', '07/08/2020');
@@ -92,35 +96,36 @@ INSERT INTO `cashier` (`id`, `name`, `age`, `gender`, `address`, `phone`, `email
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Customer`
+-- Table structure for table `customer`
 --
 
-CREATE TABLE `Customer` (
+DROP TABLE IF EXISTS `customer`;
+CREATE TABLE IF NOT EXISTS `customer` (
   `id` varchar(20) NOT NULL,
   `name` varchar(30) NOT NULL,
   `age` varchar(10) NOT NULL,
   `gender` varchar(11) NOT NULL,
   `address` varchar(30) NOT NULL,
   `phone` varchar(20) NOT NULL,
-  `email` varchar(40) NOT NULL
+  `email` varchar(40) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `Customer`
+-- Dumping data for table `customer`
 --
 
-INSERT INTO `Customer` (`id`, `name`, `age`, `gender`, `address`, `phone`, `email`) VALUES
+INSERT INTO `customer` (`id`, `name`, `age`, `gender`, `address`, `phone`, `email`) VALUES
 ('11001', 'John Doe', '21', 'male', 'abc street', '09256048382', 'jd@gmail.com'),
 ('11002', 'Carl Johnson', '20', 'male', 'grove street', '09433143333', 'cj@pm.me'),
 ('11003', 'Lewis', '20', 'male', 'hill street', '09399391187', 'unboxt@gmail.com'),
 ('11004', 'Parth G', '18', 'male', 'BARC', '09733434398', 'pygadekar@acpce.ac.in'),
 ('11005', 'Neha', '21', 'female', 'N.A', '0945343544', 'n95@gmail.com'),
-('11006', 'Umya', '52', 'male', 'Thane', '095345353888', 'umya@yahoo.com'),
+('11006', 'Mitesh', '52', 'male', 'Thane', '095345353888', 'umya@yahoo.com'),
 ('11007', 'Varun B', '19', 'male', 'Ghatkoper', '097848583453', 'bolide69@mail.com'),
 ('11008', 'Arun M', '33', 'male', 'Riverdale', '0956465463', 'mrboss@gmail.com'),
 ('11009', 'Ashish B', '19', 'male', 'Vashi', '09435353400', 'ahbruh@gmail.com'),
 ('11010', 'Arthur M', '45', 'male', 'Horseshoe Overlook', '0935345345', 'armrdr2@rockstar.north');
-
 
 -- --------------------------------------------------------
 
@@ -128,10 +133,12 @@ INSERT INTO `Customer` (`id`, `name`, `age`, `gender`, `address`, `phone`, `emai
 -- Table structure for table `productcategory`
 --
 
-CREATE TABLE `productcategory` (
-  `id` int(20) NOT NULL DEFAULT '0',
+DROP TABLE IF EXISTS `productcategory`;
+CREATE TABLE IF NOT EXISTS `productcategory` (
+  `id` int NOT NULL DEFAULT '0',
   `name` varchar(30) NOT NULL,
-  `datecreated` varchar(20) NOT NULL
+  `datecreated` varchar(20) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -140,13 +147,13 @@ CREATE TABLE `productcategory` (
 
 INSERT INTO `productcategory` (`id`, `name`, `datecreated`) VALUES
 (10001, 'Commodity', '20/06/2019'),
-(10002, 'Cosmetic', '20/06/2019'),
+(10002, 'Healthcare', '20/06/2019'),
 (10003, 'Stationary', '20/06/2019'),
 (10004, 'Beverages', '20/06/2019'),
 (10005, 'Snacks', '20/06/2019'),
 (10006, 'Diary Products', '20/06/2019'),
-(10007, 'Bread And Cake', '20/06/2019'),
-(10008, 'Medicine', '20/06/2019');
+(10007, 'Bakery', '20/06/2019'),
+(10008, 'Chemist', '20/06/2019');
 
 -- --------------------------------------------------------
 
@@ -154,16 +161,18 @@ INSERT INTO `productcategory` (`id`, `name`, `datecreated`) VALUES
 -- Table structure for table `productitems`
 --
 
-CREATE TABLE `productitems` (
+DROP TABLE IF EXISTS `productitems`;
+CREATE TABLE IF NOT EXISTS `productitems` (
   `name` varchar(100) NOT NULL,
-  `categoryid` int(20) NOT NULL,
+  `categoryid` int NOT NULL,
   `dateadded` varchar(20) NOT NULL,
   `expireddate` varchar(20) NOT NULL,
   `price` varchar(30) NOT NULL,
   `barcode` varchar(30) NOT NULL,
-  `supplierid` int(20) NOT NULL,
+  `supplierid` int NOT NULL,
   `stockamount` varchar(30) NOT NULL,
-  `count` int(100) NOT NULL
+  `count` int NOT NULL,
+  PRIMARY KEY (`barcode`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -191,7 +200,7 @@ INSERT INTO `productitems` (`name`, `categoryid`, `dateadded`, `expireddate`, `p
 ('Soy Milk 1L', 10004, '04/08/2019', '04/08/2020', '60', '777456236013', 11003, '447', 211),
 ('Unit Eraser', 10003, '06/08/2019', '00/00/0000', '3', '777456236014', 11008, '490', 23),
 ('Tissue', 10001, '07/08/2019', '07/08/2020', '70', '777456236015', 11005, '463', 56),
-('Honey', 10005, '23/08/2020', '12/08/2022', '250', '777456236016', 11004, '1000', 0);
+('Honey', 10005, '23/08/2020', '12/08/2022', '250', '777456236016', 11004, '1000', 13);
 
 -- --------------------------------------------------------
 
@@ -199,12 +208,14 @@ INSERT INTO `productitems` (`name`, `categoryid`, `dateadded`, `expireddate`, `p
 -- Table structure for table `promotion`
 --
 
-CREATE TABLE `promotion` (
+DROP TABLE IF EXISTS `promotion`;
+CREATE TABLE IF NOT EXISTS `promotion` (
   `id` varchar(20) NOT NULL DEFAULT '',
   `name` varchar(30) NOT NULL,
   `productid` varchar(30) DEFAULT NULL,
   `percentage` varchar(10) NOT NULL,
-  `description` varchar(50) NOT NULL
+  `description` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -228,14 +239,16 @@ INSERT INTO `promotion` (`id`, `name`, `productid`, `percentage`, `description`)
 -- Table structure for table `purchase`
 --
 
-CREATE TABLE `purchase` (
-  `id` int(30) NOT NULL,
+DROP TABLE IF EXISTS `purchase`;
+CREATE TABLE IF NOT EXISTS `purchase` (
+  `id` int NOT NULL,
   `date` varchar(20) NOT NULL,
   `time` varchar(20) NOT NULL,
-  `cashierid` int(30) NOT NULL,
+  `cashierid` int NOT NULL,
   `barcode` varchar(700) NOT NULL,
   `quantity` varchar(300) NOT NULL,
-  `totalamount` varchar(50) NOT NULL
+  `totalamount` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -254,7 +267,7 @@ INSERT INTO `purchase` (`id`, `date`, `time`, `cashierid`, `barcode`, `quantity`
 (11012, '02/08/2020', '13:24:40', 11001, '777456236001,777456236000,777456235997,777456235995,777456235994,777456235993,777456235992,777456235991,777456235990,777456235989,777456235988,777456235987,777456235986,', '2,2,1,8,10,1,8,3,2,1,1,1,6,', '158760.0'),
 (11115, '08/08/2020', '13:24:40', 11002, '777456236012,', '1,', '2000.0'),
 (11116, '08/08/2020', '13:24:40', 11003, '777456236010,', '1,', '5500.0'),
-(11117, '08/08/2020', '23 : 1', 11003, '777456236014,', '1,', '229.5'),
+(11117, '08/08/2020', '23 : 01', 11003, '777456236014,', '1,', '229.5'),
 (11118, '09/08/2020', '13:24:40', 11002, '777456236013,', '1,', '420.0'),
 (11119, '09/08/2020', '13:24:40', 11002, '777456236008,', '1,', '500.0'),
 (11120, '09/08/2020', '10 : 32', 11002, '777456236012,', '1,', '1700.0'),
@@ -335,10 +348,12 @@ INSERT INTO `purchase` (`id`, `date`, `time`, `cashierid`, `barcode`, `quantity`
 -- Table structure for table `supplier`
 --
 
-CREATE TABLE `supplier` (
-  `id` int(20) NOT NULL,
+DROP TABLE IF EXISTS `supplier`;
+CREATE TABLE IF NOT EXISTS `supplier` (
+  `id` int NOT NULL,
   `companyname` varchar(30) NOT NULL,
-  `lastdatesupplied` varchar(20) NOT NULL
+  `lastdatesupplied` varchar(20) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -346,7 +361,7 @@ CREATE TABLE `supplier` (
 --
 
 INSERT INTO `supplier` (`id`, `companyname`, `lastdatesupplied`) VALUES
-(10001, 'United Carbide', '09/12/2020'),
+(10001, 'Goldstar', '09/12/2020'),
 (10002, 'JCE', '02/12/2020'),
 (11003, 'Anand Milk United Ltd', '04/11/2020'),
 (11004, 'ITC', '23/10/2020'),
@@ -361,12 +376,14 @@ INSERT INTO `supplier` (`id`, `companyname`, `lastdatesupplied`) VALUES
 -- Table structure for table `transaction`
 --
 
-CREATE TABLE `transaction` (
+DROP TABLE IF EXISTS `transaction`;
+CREATE TABLE IF NOT EXISTS `transaction` (
   `id` varchar(40) NOT NULL,
   `cashierid` varchar(40) NOT NULL,
   `cardid` varchar(30) NOT NULL,
   `purchaseid` varchar(30) NOT NULL,
-  `amount` varchar(40) NOT NULL
+  `amount` varchar(40) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -377,27 +394,27 @@ INSERT INTO `transaction` (`id`, `cashierid`, `cardid`, `purchaseid`, `amount`) 
 ('11111', '11001', '7777771117770001122', '11031', '5000'),
 ('11112', '11002', '7777771117770001122', '11032', '510.0'),
 ('11113', '11001', '7777771117770001122', '11033', '4675.0'),
-('11114', '11001', '7777771117770001131', '11035', '36720.0'),
+('11114', '11001', '7777771117770001131', '11035', '3670.0'),
 ('11115', '11001', '7777771117770001130', '11036', '12835.0'),
-('11116', '11002', '7777771117770001123', '11068', '37791.0'),
-('11117', '11002', '7777771117770001123', '11069', '44625.0'),
+('11116', '11002', '7777771117770001123', '11068', '3791.0'),
+('11117', '11002', '7777771117770001123', '11069', '4425.0'),
 ('11118', '11002', '7777771117770001123', '11073', '425.0'),
 ('11119', '11002', '7777771117770001122', '11075', '425.0'),
 ('11120', '11002', '7777771117770001122', '11076', '41429.0'),
 ('11121', '11002', '7777771117770001130', '11078', '4675.0'),
-('11122', '11003', '7777771117770001130', '11080', '70499.0'),
+('11122', '11003', '7777771117770001130', '11080', '7499.0'),
 ('11123', '11003', '7777771117770001130', '11081', '94877.0'),
-('11124', '11002', '7777771117770001122', '11083', '15300.0'),
+('11124', '11002', '7777771117770001122', '11083', '1500.0'),
 ('11125', '11003', '7777771117770001124', '11089', '22967.0'),
 ('11126', '11002', '7777771117770001125', '11091', '5100.0'),
 ('11127', '11002', '7777771117770001126', '11092', '1530.0'),
-('11128', '11002', '7777771117770001123', '11095', '36550.0'),
+('11128', '11002', '7777771117770001123', '11095', '3550.0'),
 ('11129', '11002', '7777771117770001122', '11096', '5100.0'),
-('11130', '11002', '7777771117770001123', '11098', '15300.0'),
+('11130', '11002', '7777771117770001123', '11098', '5300.0'),
 ('11131', '11002', '7777771117770001124', '11105', '1700.0'),
 ('11132', '11002', '7777771117770001124', '11106', '10098.0'),
 ('11133', '11002', '7777771117770001122', '11108', '2550.0'),
-('11134', '11002', '7777771117770001122', '11109', '469200.0'),
+('11134', '11002', '7777771117770001122', '11109', '46920.0'),
 ('11135', '11002', '7777771117770001122', '11110', '34000.0'),
 ('11136', '11002', '7777771117770001122', '11111', '91800.0'),
 ('11137', '11002', '7777771117770001122', '11112', '20825.0'),
@@ -440,64 +457,7 @@ INSERT INTO `transaction` (`id`, `cashierid`, `cardid`, `purchaseid`, `amount`) 
 ('11174', '11005', '7777771117770001122', '11185', '53142.0'),
 ('11175', '11001', '7777771117770001122', '11188', '6800.0'),
 ('11176', '11001', '7777771117770001122', '11189', '4250.0');
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `Card`
---
-ALTER TABLE `Card`
-  ADD PRIMARY KEY (`cardnumber`);
-
---
--- Indexes for table `cashier`
---
-ALTER TABLE `cashier`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `Customer`
---
-ALTER TABLE `Customer`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `productcategory`
---
-ALTER TABLE `productcategory`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `productitems`
---
-ALTER TABLE `productitems`
-  ADD PRIMARY KEY (`barcode`);
-
---
--- Indexes for table `promotion`
---
-ALTER TABLE `promotion`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `purchase`
---
-ALTER TABLE `purchase`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `supplier`
---
-ALTER TABLE `supplier`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `transaction`
---
-ALTER TABLE `transaction`
-  ADD PRIMARY KEY (`id`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
