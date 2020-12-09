@@ -1,0 +1,28 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>point-of-sale-system</groupId>
+  <artifactId>point-of-sale-system</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>ACPCE POS</name>
+  <description>Basic Point of Sale System based on javafx</description>
+  <build>
+    <sourceDirectory>src</sourceDirectory>
+    <resources>
+      <resource>
+        <directory>src</directory>
+        <excludes>
+          <exclude>**/*.java</exclude>
+        </excludes>
+      </resource>
+    </resources>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+        <configuration>
+          <release>14</release>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
