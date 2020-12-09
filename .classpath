@@ -28,7 +28,6 @@
 	<classpathentry kind="lib" path="xmlbeans-2.6.0.jar"/>
 	<classpathentry kind="lib" path="E:/Eclipse_Workspace/point-of-sale-system/mysql-connector-java-8.0.22.jar"/>
 	<classpathentry kind="con" path="net.sf.jasperreports.JR_CONTAINER"/>
-	<classpathentry kind="con" path="org.eclipse.fx.ide.jdt.core.JAVAFX_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
 		<attributes>

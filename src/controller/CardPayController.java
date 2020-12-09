@@ -160,7 +160,8 @@ public class CardPayController {
         
     }
     
-    @FXML
+    @SuppressWarnings("deprecation")
+	@FXML
     void onbtPayAction(ActionEvent event) throws ClassNotFoundException, InstantiationException, IllegalAccessException, SQLException {
  
     	
@@ -195,7 +196,8 @@ public class CardPayController {
 		System.out.println(Messages.getString("CardPayController.24")+purchasedate); //$NON-NLS-1$
 		
 		//create today current time(purhcase time)
-		 String hour = Messages.getString("CardPayController.25")+new Date().getHours(); //$NON-NLS-1$
+		 @SuppressWarnings("deprecation")
+		String hour = Messages.getString("CardPayController.25")+new Date().getHours(); //$NON-NLS-1$
 		 String min = Messages.getString("CardPayController.26")+new Date().getMinutes(); //$NON-NLS-1$
 		String time  = hour+Messages.getString("CardPayController.27")+min; //$NON-NLS-1$
 	    System.out.println(Messages.getString("CardPayController.28")+time); //$NON-NLS-1$

@@ -223,7 +223,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="11"/>
 				</textElement>
-				<text><![CDATA[78* 77 33 street, Mandalay]]></text>
+				<text><![CDATA[78* 77 33 street, Mumbai]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="180" y="40" width="211" height="21" uuid="c61382fd-67cd-46ae-bac2-fb9083b42c62"/>
