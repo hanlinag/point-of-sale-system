@@ -32,7 +32,7 @@
       </AnchorPane>
       <Label layoutX="131.0" layoutY="284.0" prefHeight="114.0" prefWidth="570.0" style="-fx-text-fill: #FFFFFF; -fx-font-size: 60; -fx-font-style: italic;" text="Tyler's POS System" />
       <Label layoutX="272.0" layoutY="391.0" prefHeight="59.0" prefWidth="403.0" style="-fx-text-fill: #FFFFFF; -fx-font-size: 27;" text="Made For Your Retail Operation" textAlignment="JUSTIFY" />
-      <Label layoutX="1090.0" layoutY="669.0" text="Developed by Tyler ©" />
-      <Label layoutX="19.0" layoutY="669.0" prefHeight="15.0" prefWidth="172.0" text=" Copyright © to UCSM 2018" />
+      <Label layoutX="1090.0" layoutY="669.0" text="Developed by ACPCE SE-IT Students ©" />
+      <Label layoutX="19.0" layoutY="669.0" prefHeight="15.0" prefWidth="172.0" text=" SEM 3 Java MiniProject" />
    </children>
 </AnchorPane>
