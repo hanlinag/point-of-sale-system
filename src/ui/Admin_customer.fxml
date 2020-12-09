@@ -25,9 +25,9 @@
       <Label layoutX="28.0" layoutY="514.0" text="Date Created" />
       <Label layoutX="36.0" layoutY="552.0" text="PIN" />
       <JFXTextField fx:id="tf_id" layoutX="125.0" layoutY="148.0" prefHeight="27.0" prefWidth="201.0" promptText="11001" />
-      <JFXTextField fx:id="tf_name" layoutX="126.0" layoutY="181.0" prefHeight="27.0" prefWidth="201.0" promptText="Alex" />
+      <JFXTextField fx:id="tf_name" layoutX="126.0" layoutY="181.0" prefHeight="27.0" prefWidth="201.0" promptText="John" />
       <JFXTextField fx:id="tf_age" layoutX="125.0" layoutY="216.0" prefHeight="27.0" prefWidth="201.0" promptText="13" />
-      <JFXTextField fx:id="tf_addr" layoutX="125.0" layoutY="281.0" prefHeight="27.0" prefWidth="201.0" promptText="Mandalay" />
+      <JFXTextField fx:id="tf_addr" layoutX="125.0" layoutY="281.0" prefHeight="27.0" prefWidth="201.0" promptText="Mumbai" />
       <JFXTextField fx:id="tf_phone" layoutX="124.0" layoutY="319.0" prefHeight="27.0" prefWidth="201.0" promptText="09123463033" />
       <JFXTextField fx:id="tf_mail" layoutX="123.0" layoutY="355.0" prefHeight="27.0" prefWidth="201.0" promptText="example@mail.com" />
       <JFXTextField fx:id="tf_card_no" layoutX="26.0" layoutY="94.0" prefHeight="27.0" prefWidth="241.0" promptText="Enter Card Number" />

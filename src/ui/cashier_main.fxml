@@ -12,16 +12,16 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1300.0" style="-fx-background-color: #FFF; -fx-font-size: 25;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainCashierController">
    <children>
-      <AnchorPane layoutY="-10.0" prefHeight="70.0" prefWidth="1300.0" style="-fx-background-color: #21000e;">
+      <AnchorPane layoutY="-10.0" prefHeight="70.0" prefWidth="1300.0" style="-fx-background-color: #005772;">
          <children>
             <ImageView fitHeight="48.0" fitWidth="57.0" layoutX="51.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../graphic/poslogorect.png" />
                </image>
             </ImageView>
-            <Label layoutX="141.0" layoutY="9.0" prefHeight="61.0" prefWidth="332.0" style="-fx-text-fill: #FFF; -fx-font-size: 35;" text="UCSM POS System" />
+            <Label layoutX="141.0" layoutY="9.0" prefHeight="61.0" prefWidth="332.0" style="-fx-text-fill: #FFF; -fx-font-size: 30;" text="ACPCE POS System" />
             <Label fx:id="lb_cashier_name" layoutX="936.0" layoutY="27.0" style="-fx-text-fill: #FFF; -fx-font-size: 25;" text="Cashier Name" />
-            <JFXButton fx:id="bt_logout" layoutX="1131.0" layoutY="18.0" onAction="#onLogoutClick" prefHeight="41.0" prefWidth="154.0" style="-fx-background-color: #9b7f18;" text="Log Out" textFill="WHITE" />
+            <JFXButton fx:id="bt_logout" layoutX="1131.0" layoutY="10.0" onAction="#onLogoutClick" prefHeight="35.0" prefWidth="154.0" style="-fx-background-color: #EC4242;" text="Log Out" textFill="WHITE" />
          </children>
       </AnchorPane>
       <SplitPane dividerPositions="0.5833333333333334" layoutX="4.0" layoutY="64.0" prefHeight="642.0" prefWidth="1343.0">
@@ -37,16 +37,16 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="675.0" prefWidth="561.0">
                <children>
-                  <AnchorPane layoutX="-2.0" layoutY="-7.0" prefHeight="70.0" prefWidth="508.0" style="-fx-background-color: #21000e;">
+                  <AnchorPane layoutX="-2.0" layoutY="-7.0" prefHeight="70.0" prefWidth="508.0" style="-fx-background-color: #005772;">
                      <children>
-                        <Label layoutX="234.0" layoutY="6.0" prefHeight="35.0" prefWidth="90.0" style="-fx-font-size: 20;" text="AA Store" textFill="#f8f8f8" />
-                        <Label layoutX="211.0" layoutY="29.0" prefHeight="49.0" prefWidth="127.0" text="Sale Items" textFill="#f2f2f2" />
+                        <Label layoutX="234.0" layoutY="6.0" prefHeight="35.0" prefWidth="90.0" style="-fx-font-size: 20;" text="ACPCE Store" textFill="#f8f8f8" />
+                        <Label layoutX="211.0" layoutY="29.0" prefHeight="49.0" prefWidth="127.0" text="Sale Items" textFill="#FFF" />
                         <Label layoutX="9.0" layoutY="54.0" style="-fx-font-size: 11;" text="Slip No:" textFill="#f5f5f5" />
                         <Label fx:id="lb_slip_no" layoutX="62.0" layoutY="53.0" style="-fx-font-size: 13;" text="113" textFill="WHITE" />
                         <JFXButton fx:id="bt_new" graphicTextGap="3.0" layoutX="392.0" layoutY="15.0" onAction="#onbtNewClick" prefHeight="48.0" prefWidth="104.0" style="-fx-background-color: #727272;" text="New" textFill="WHITE" />
                      </children>
                   </AnchorPane>
-                  <ScrollPane layoutX="-2.0" layoutY="71.0" prefHeight="416.0" prefWidth="508.0" style="-fx-background-color: #21000e;">
+                  <ScrollPane layoutX="-2.0" layoutY="71.0" prefHeight="416.0" prefWidth="508.0" style="-fx-background-color: #005772;">
                     <content>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="413.0" prefWidth="427.0">
                            <children>

@@ -16,10 +16,10 @@
       <Label layoutX="23.0" layoutY="284.0" text="PIN" textFill="#1e1e1e" />
       <Label layoutX="22.0" layoutY="374.0" text="Top Up" textFill="#282828" />
       <Label layoutX="22.0" layoutY="326.0" text="Amount" textFill="#141414" />
-      <JFXButton fx:id="bt_create" layoutX="471.0" layoutY="400.0" onAction="#onBtCreateAction" prefHeight="27.0" prefWidth="61.0" style="-fx-background-color: #372f99;" text="Create" textFill="#f2f2f2" />
-      <JFXButton fx:id="bt_cancel" layoutX="386.0" layoutY="400.0" onAction="#onBtCancelAction" prefHeight="27.0" prefWidth="61.0" style="-fx-background-color: #26234c;" text="Cancel" textFill="#f2f2f2" />
-      <JFXTextField fx:id="tf_name" layoutX="109.0" layoutY="82.0" promptText="Alex" unFocusColor="#252424" />
-      <JFXTextField fx:id="tf_address" layoutX="110.0" layoutY="178.0" promptText="Mandalay" unFocusColor="#1e1e1e" />
+      <JFXButton fx:id="bt_create" layoutX="471.0" layoutY="400.0" onAction="#onBtCreateAction" prefHeight="27.0" prefWidth="61.0" style="-fx-background-color: #372f99;" text="Create" textFill="#FFF" />
+      <JFXButton fx:id="bt_cancel" layoutX="386.0" layoutY="400.0" onAction="#onBtCancelAction" prefHeight="27.0" prefWidth="61.0" style="-fx-background-color: #26234c;" text="Cancel" textFill="#FFF" />
+      <JFXTextField fx:id="tf_name" layoutX="109.0" layoutY="82.0" promptText="John" unFocusColor="#252424" />
+      <JFXTextField fx:id="tf_address" layoutX="110.0" layoutY="178.0" promptText="Mumbai" unFocusColor="#1e1e1e" />
       <JFXTextField fx:id="tf_email" layoutX="110.0" layoutY="221.0" promptText="example@gmail.com" unFocusColor="#0d0d0d" />
       <JFXTextField fx:id="tf_pin" editable="false" layoutX="111.0" layoutY="269.0" promptText="1234" unFocusColor="#1b1a1a" />
       <JFXTextField fx:id="tf_amount" editable="false" layoutX="112.0" layoutY="310.0" promptText="50000" unFocusColor="#141414" />

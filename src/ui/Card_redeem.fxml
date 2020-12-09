@@ -17,10 +17,10 @@
       <Label layoutX="23.0" layoutY="248.0" text="PIN" textFill="#403e3e" />
       <Label layoutX="22.0" layoutY="343.0" text="Top Up" textFill="#403e3e" />
       <Label layoutX="22.0" layoutY="295.0" text="Amount" textFill="#403e3e" />
-      <JFXButton fx:id="bt_apply" layoutX="464.0" layoutY="396.0" onAction="#onBtApplyAction" prefHeight="27.0" prefWidth="61.0" style="-fx-background-color: #372f99;" text="Apply" textFill="#f2f2f2" />
-      <JFXButton fx:id="bt_cancel" layoutX="379.0" layoutY="396.0" onAction="#onBtCancelAction" prefHeight="27.0" prefWidth="61.0" style="-fx-background-color: #26234c;" text="Cancel" textFill="#f2f2f2" />
-      <JFXTextField fx:id="tf_phone" focusColor="#2d43bf" layoutX="110.0" layoutY="84.0" promptText="0912344567" unFocusColor="#0d0d0d" />
-      <JFXTextField fx:id="tf_address" focusColor="#2d43bf" layoutX="110.0" layoutY="134.0" promptText="Mandalay" unFocusColor="#0d0d0d" />
+      <JFXButton fx:id="bt_apply" layoutX="464.0" layoutY="396.0" onAction="#onBtApplyAction" prefHeight="27.0" prefWidth="61.0" style="-fx-background-color: #372f99;" text="Apply" textFill="#FFF" />
+      <JFXButton fx:id="bt_cancel" layoutX="379.0" layoutY="396.0" onAction="#onBtCancelAction" prefHeight="27.0" prefWidth="61.0" style="-fx-background-color: #26234c;" text="Cancel" textFill="#FFF" />
+      <JFXTextField fx:id="tf_phone" focusColor="#2d43bf" layoutX="110.0" layoutY="84.0" promptText="123456789" unFocusColor="#0d0d0d" />
+      <JFXTextField fx:id="tf_address" focusColor="#2d43bf" layoutX="110.0" layoutY="134.0" promptText="Mumbai" unFocusColor="#0d0d0d" />
       <JFXTextField fx:id="tf_email" focusColor="#2d43bf" layoutX="110.0" layoutY="185.0" promptText="example@mail.com" unFocusColor="#0d0d0d" />
       <JFXTextField fx:id="tf_pin" editable="false" focusColor="#2d43bf" layoutX="111.0" layoutY="233.0" promptText="1234" unFocusColor="#0d0d0d" />
       <JFXTextField fx:id="tf_amount" editable="false" focusColor="#2d43bf" layoutX="112.0" layoutY="279.0" promptText="50000" unFocusColor="#0d0d0d" />

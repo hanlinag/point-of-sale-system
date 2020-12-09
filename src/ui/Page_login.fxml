@@ -10,13 +10,13 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1320.0" style="-fx-background-color: #9C6E49;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1320.0" style="-fx-background-color: #F8B759;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController">
    <children>
-      <AnchorPane layoutX="810.0" layoutY="75.0" prefHeight="548.0" prefWidth="447.0" style="-fx-background-color: #1c2b35;">
+      <AnchorPane layoutX="810.0" layoutY="75.0" prefHeight="548.0" prefWidth="447.0" style="-fx-background-color: #005772;">
          <children>
             <JFXTextField id="txt_id" fx:id="tf_id" focusColor="#1749ad" layoutX="84.0" layoutY="215.0" prefHeight="40.0" prefWidth="280.0" promptText="Login ID" style="-fx-text-fill: #FFF;" unFocusColor="#e8e5e5" />
             <JFXPasswordField fx:id="tf_pass" layoutX="84.0" layoutY="303.0" prefHeight="47.0" prefWidth="286.0" promptText="Password" style="-fx-text-fill: #FFF;" unFocusColor="#e8e8e8" />
-            <JFXButton fx:id="bt_login" defaultButton="true" layoutX="88.0" layoutY="443.0" onAction="#bt_login_action" prefHeight="49.0" prefWidth="278.0" ripplerFill="#6578a6" style="-fx-background-color: #a09533;" text="Login" />
+            <JFXButton fx:id="bt_login" defaultButton="true" layoutX="88.0" layoutY="443.0" onAction="#bt_login_action" prefHeight="49.0" prefWidth="278.0" ripplerFill="#6578a6" style="-fx-background-color: #0F9D58;" text="Login" />
             <ImageView fitHeight="162.0" fitWidth="190.0" layoutX="146.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true" style="-fx-alignment: center;">
                <image>
                   <Image url="@../graphic/poslogorect.png" />
@@ -27,12 +27,12 @@
                   <ToggleGroup fx:id="usertype" />
                </toggleGroup>
             </JFXRadioButton>
-            <JFXRadioButton fx:id="bt_rdo_cashier" layoutX="266.0" layoutY="399.0" text="Cashier" textFill="#f2f2f2" toggleGroup="$usertype" />
+            <JFXRadioButton fx:id="bt_rdo_cashier" layoutX="266.0" layoutY="399.0" text="Cashier" textFill="#FFF" toggleGroup="$usertype" />
          </children>
       </AnchorPane>
-      <Label layoutX="131.0" layoutY="284.0" prefHeight="114.0" prefWidth="570.0" style="-fx-text-fill: #FFFFFF; -fx-font-size: 60; -fx-font-style: italic;" text="Tyler's POS System" />
-      <Label layoutX="272.0" layoutY="391.0" prefHeight="59.0" prefWidth="403.0" style="-fx-text-fill: #FFFFFF; -fx-font-size: 27;" text="Made For Your Retail Operation" textAlignment="JUSTIFY" />
-      <Label layoutX="1090.0" layoutY="669.0" text="Developed by ACPCE SE-IT Students ©" />
-      <Label layoutX="19.0" layoutY="669.0" prefHeight="15.0" prefWidth="172.0" text=" SEM 3 Java MiniProject" />
+      <Label layoutX="131.0" layoutY="284.0" prefHeight="114.0" prefWidth="570.0" style="-fx-text-fill: #FFFFFF; -fx-font-size: 60; -fx-font-style: italic;" text="JavaFX POS System" />
+      <Label layoutX="272.0" layoutY="391.0" prefHeight="59.0" prefWidth="403.0" style="-fx-text-fill: #FFFFFF; -fx-font-size: 27;" text="MiniProject 2020" textAlignment="JUSTIFY" />
+      <Label layoutX="1090.0" layoutY="669.0" text="Developed by ACPCE SE-IT Students ©" style="-fx-text-fill: #FFFFFF;"/>
+      <Label layoutX="19.0" layoutY="669.0" prefHeight="15.0" prefWidth="172.0" text=" SEM 3 Java MiniProject" style="-fx-text-fill: #FFFFFF;" />
    </children>
 </AnchorPane>

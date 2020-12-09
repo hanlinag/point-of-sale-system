@@ -21,15 +21,15 @@
       <Label layoutX="31.0" layoutY="458.0" text="Password" />
       <Label layoutX="536.0" layoutY="6.0" style="-fx-font-size: 30;" text="Manage Cashier" />
       <JFXTextField fx:id="tf_id" layoutX="115.0" layoutY="145.0" prefHeight="27.0" prefWidth="197.0" promptText="11001" />
-      <JFXTextField fx:id="tf_name" layoutX="113.0" layoutY="187.0" prefHeight="27.0" prefWidth="197.0" promptText="Alex" />
+      <JFXTextField fx:id="tf_name" layoutX="113.0" layoutY="187.0" prefHeight="27.0" prefWidth="197.0" promptText="John" />
       <JFXTextField fx:id="tf_age" layoutX="113.0" layoutY="230.0" prefHeight="27.0" prefWidth="197.0" promptText="18" />
       <JFXRadioButton fx:id="rdo_male" layoutX="113.0" layoutY="283.0" selected="true" text="Male">
          <toggleGroup>
             <ToggleGroup fx:id="gender" />
          </toggleGroup></JFXRadioButton>
       <JFXRadioButton fx:id="rdo_female" layoutX="191.0" layoutY="283.0" text="Female" toggleGroup="$gender" />
-      <JFXTextField fx:id="tf_addr" layoutX="111.0" layoutY="313.0" prefHeight="27.0" prefWidth="197.0" promptText="Mandalay" />
-      <JFXTextField fx:id="tf_phone" layoutX="109.0" layoutY="355.0" prefHeight="27.0" prefWidth="197.0" promptText="097979537858" />
+      <JFXTextField fx:id="tf_addr" layoutX="111.0" layoutY="313.0" prefHeight="27.0" prefWidth="197.0" promptText="Mumbai" />
+      <JFXTextField fx:id="tf_phone" layoutX="109.0" layoutY="355.0" prefHeight="27.0" prefWidth="197.0" promptText="0123456789" />
       <JFXTextField fx:id="tf_email" layoutX="109.0" layoutY="399.0" prefHeight="27.0" prefWidth="197.0" promptText="example@mail.com" />
       <JFXTextField fx:id="tf_password" layoutX="109.0" layoutY="444.0" prefHeight="27.0" prefWidth="197.0" promptText="cashier" />
       <Label layoutX="20.0" layoutY="500.0" text="Date Created" />
