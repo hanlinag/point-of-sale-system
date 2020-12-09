@@ -9,6 +9,7 @@ import javafx.stage.Stage;
 public class MainAdmin extends Application{
 //	public static MainCashier mainCashierTran =new MainCashier();
 
+	@Override
 	public void start(Stage primaryStage) throws Exception {
 		// TODO Auto-generated method stub
 		

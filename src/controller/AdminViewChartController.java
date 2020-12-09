@@ -449,7 +449,7 @@ public class AdminViewChartController {
 			ResultSet rsMonthAmount = DBInitialize.statement.executeQuery(monthAmountQuery);
 			while (rsMonthAmount.next()) {
 
-				amount = (double) amount + Double.parseDouble(rsMonthAmount.getString(1));
+				amount = amount + Double.parseDouble(rsMonthAmount.getString(1));
 
 			} // end of while
 			monthAmountList.add("" + amount);

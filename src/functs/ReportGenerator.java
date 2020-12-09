@@ -129,8 +129,8 @@ public class ReportGenerator {
 					String get = buyGetDataAry[3];
 					
 					if(count >= Integer.parseInt(buy)) {
-						int tempGive = (int)(count / Integer.parseInt(buy));
-						int realGive = (int)(tempGive * Integer.parseInt(get));
+						int tempGive = count / Integer.parseInt(buy);
+						int realGive = tempGive * Integer.parseInt(get);
 						
 						//get current stock amount and count
 						String getCurrentStockAndCountQuery = "SELECT `stockamount`, `count` FROM `productitems` WHERE productitems.barcode = '"+barcode+"'";

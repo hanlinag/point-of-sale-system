@@ -11,6 +11,7 @@ public class Login extends Application{
 
 	//public static Login loginTran =new Login();
 
+	@Override
 	public void start(Stage primaryStage) throws Exception {
 		// TODO Auto-generated method stub
 		

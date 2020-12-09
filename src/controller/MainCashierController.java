@@ -306,20 +306,20 @@ public class MainCashierController {
 			@SuppressWarnings("unlikely-arg-type")
 			@Override
 			public void handle(CellEditEvent<Sale, Integer> t) {
-				((Sale) t.getTableView().getItems().get(t.getTablePosition().getRow())).setQuantity((t.getNewValue()));
+				t.getTableView().getItems().get(t.getTablePosition().getRow()).setQuantity((t.getNewValue()));
 
 				System.out.println("Qty edit Working");
 
 				t.getRowValue().setQuantity(t.getNewValue());
-				double qty = ((Sale) t.getTableView().getItems().get(t.getTablePosition().getRow())).getQuantity();
+				double qty = t.getTableView().getItems().get(t.getTablePosition().getRow()).getQuantity();
 
-				Double discountpercent = ((Sale) t.getTableView().getItems().get(t.getTablePosition().getRow()))
+				Double discountpercent = t.getTableView().getItems().get(t.getTablePosition().getRow())
 						.getDiscount();
 
-				String discountmore = ((Sale) t.getTableView().getItems().get(t.getTablePosition().getRow()))
+				String discountmore = t.getTableView().getItems().get(t.getTablePosition().getRow())
 						.getDiscountmore();
 
-				String itemmId = ((Sale) t.getTableView().getItems().get(t.getTablePosition().getRow())).getBarcode();
+				String itemmId = t.getTableView().getItems().get(t.getTablePosition().getRow()).getBarcode();
 
 				double unitprice = t.getRowValue().getUnitamount();
 				double total1 = unitprice * qty;
@@ -633,7 +633,7 @@ public class MainCashierController {
 	void tfTypeSearchAction(KeyEvent event) throws ClassNotFoundException, SQLException, InterruptedException {
 
 
-		th.sleep(1);
+		Thread.sleep(1);
 
 		tf_name_search.clear();
 
@@ -687,7 +687,7 @@ public class MainCashierController {
 	@FXML
 	void tfNameSearchAction(KeyEvent event) throws InterruptedException {
 
-		th.sleep(1);
+		Thread.sleep(1);
 		tf_barcode_search.clear();
 
 		/*
