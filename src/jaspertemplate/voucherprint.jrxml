@@ -255,7 +255,7 @@
 			<staticText>
 				<reportElement positionType="Float" mode="Opaque" x="-1" y="748" width="556" height="30" backcolor="#E6E8E9" uuid="a1aef8a6-1219-452a-ba7b-f6fb6c1aa573"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Serif" size="11" isItalic="false"/>
+					<font fontName="Montserrat" size="11" isItalic="false"/>
 				</textElement>
 				<text><![CDATA[THANKYOU!! ITEMS SOLD ARE NOT EXCHANGABLE]]></text>
 			</staticText>

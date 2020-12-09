@@ -35,7 +35,6 @@ public class Cashier {
 
 
 
-
 	public String getId() {
 		return id;
 	}
