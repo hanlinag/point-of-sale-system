@@ -276,7 +276,7 @@ public class CreateCardController {
 			al.showAndWait();
     	}
 
-    else if (Double.parseDouble(tf_top_up.getText().toString()) < 50000 ) {
+    else if (Double.parseDouble(tf_top_up.getText().toString()) < 500 ) {
 			Alert al = new Alert(AlertType.ERROR, Messages.getString("CreateCardController.71")); //$NON-NLS-1$
 			al.showAndWait();
 		} else {

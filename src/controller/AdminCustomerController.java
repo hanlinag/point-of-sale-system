@@ -564,7 +564,7 @@ public class AdminCustomerController {
 				|| tf_age.getText().matches(Messages.getString("AdminCustomerController.129")) || Integer.parseInt(tf_age.getText()) < 13 //$NON-NLS-1$
 				|| tf_phone.getText().matches(Messages.getString("AdminCustomerController.130")) || tf_phone.getText().length() < 10 //$NON-NLS-1$
 				|| !tf_mail.getText().contains(Messages.getString("AdminCustomerController.131")) || !tf_mail.getText().contains(Messages.getString("AdminCustomerController.132")) //$NON-NLS-1$ //$NON-NLS-2$
-				|| tf_amount.getText().matches(Messages.getString("AdminCustomerController.133")) || Double.parseDouble(tf_amount.getText()) < 50000) { //$NON-NLS-1$
+				|| tf_amount.getText().matches(Messages.getString("AdminCustomerController.133")) || Double.parseDouble(tf_amount.getText()) < 500) { //$NON-NLS-1$
 			Alert al = new Alert(AlertType.ERROR, Messages.getString("AdminCustomerController.134")); //$NON-NLS-1$
 			al.showAndWait();
 		} else {

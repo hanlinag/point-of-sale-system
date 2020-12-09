@@ -482,10 +482,10 @@ public class AdminViewChartController {
 		// monthAmountList.get(1));
 
 		/*
-		 * series1.getData().add(new XYChart.Data(1, 2000000));
-		 * series1.getData().add(new XYChart.Data(4, 500000)); series1.getData().add(new
+		 * series1.getData().add(new XYChart.Data(1, 20000));
+		 * series1.getData().add(new XYChart.Data(4, 5000)); series1.getData().add(new
 		 * XYChart.Data(6, 2000000)); series1.getData().add(new XYChart.Data(9,
-		 * 1000000)); series1.getData().add(new XYChart.Data(11, 900000));
+		 * 10000)); series1.getData().add(new XYChart.Data(11, 900000));
 		 * series1.getData().add(new XYChart.Data(12, 4000000));
 		 */
 
@@ -577,7 +577,7 @@ public class AdminViewChartController {
 		xAxis.setLabel(Messages.getString("AdminViewChartController.87")); //$NON-NLS-1$
 
 		// Defining the y axis
-		NumberAxis yAxis = new NumberAxis(50000, 1000000, 100000);
+		NumberAxis yAxis = new NumberAxis(500, 10000, 1000);
 		yAxis.setLabel(Messages.getString("AdminViewChartController.88")); //$NON-NLS-1$
 
 		// Creating the line chart

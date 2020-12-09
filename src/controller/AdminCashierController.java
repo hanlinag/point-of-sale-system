@@ -262,7 +262,7 @@ public class AdminCashierController {
                 public void handle(ActionEvent event) {
                 	Cashier ca = tb_cashier.getSelectionModel().getSelectedItem();
 
-                	Alert alert = new Alert(AlertType.CONFIRMATION, "Are U Sure To Delete " + ca.getName() + " ?", ButtonType.YES, ButtonType.NO);
+                	Alert alert = new Alert(AlertType.CONFIRMATION, "Are You Sure To Delete " + ca.getName() + " ?", ButtonType.YES, ButtonType.NO);
                 	alert.showAndWait();
 
                 	if (alert.getResult() == ButtonType.YES) {

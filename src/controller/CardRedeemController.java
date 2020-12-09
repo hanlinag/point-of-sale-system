@@ -289,7 +289,7 @@ public class CardRedeemController {
 		 * }} catch(Exception ex) {
 		 * 
 		 * } }); thr.setPriority(Thread.MAX_PRIORITY); try {
-		 * MainCashierController.thcashier.sleep(100000); } catch (InterruptedException
+		 * MainCashierController.thcashier.sleep(1000); } catch (InterruptedException
 		 * e) { // TODO Auto-generated catch block e.printStackTrace(); } thr.start();
 		 */
 	}
@@ -312,7 +312,7 @@ public class CardRedeemController {
 			al.showAndWait();
     	}
 
-    else if (Double.parseDouble(tf_top_up.getText().toString()) < 50000 ) {
+    else if (Double.parseDouble(tf_top_up.getText().toString()) < 500 ) {
 			Alert al = new Alert(AlertType.ERROR, Messages.getString("CardRedeemController.25")); //$NON-NLS-1$
 			al.showAndWait();
 		} else {

@@ -87,10 +87,10 @@ public class LoginController {
 	 * private void dbInitialize() throws SQLException, ClassNotFoundException { //
 	 * TODO Auto-generated method stub
 	 * 
-	 * // Load the JDBC driver Class.forName("com.mysql.jdbc.Driver");
+	 * // Load the JDBC driver Class.forName("com.mysql.cj.jdbc.Driver");
 	 * System.out.println("Driver loaded"); // Connect to a database Connection
 	 * connection = DriverManager.getConnection
-	 * ("jdbc:mysql://localhost:8889/ucsmpos","root","root");
+	 * ("jdbc:mysql://localhost:3306/ACPCEpos","root","");
 	 * System.out.println("Database connected"); // Create a statement statement =
 	 * connection.createStatement(); // Execute a statement
 	 * 
