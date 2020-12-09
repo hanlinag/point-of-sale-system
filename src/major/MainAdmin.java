@@ -13,7 +13,7 @@ public class MainAdmin extends Application{
 	public void start(Stage primaryStage) throws Exception {
 		// TODO Auto-generated method stub
 		
-		FXMLLoader root = new FXMLLoader(getClass().getResource("/ui/template/Admin_main.fxml"));
+		FXMLLoader root = new FXMLLoader(getClass().getResource(Messages.getString("MainAdmin.0"))); //$NON-NLS-1$
 		
 	//	LoginController logincontroller = root.getController();
 		 

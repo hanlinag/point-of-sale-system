@@ -80,23 +80,23 @@ public class AdminPromotionController {
 
 	@FXML
 	void initialize() throws ClassNotFoundException, SQLException, InstantiationException, IllegalAccessException {
-		assert tb_promo != null : "fx:id=\"tb_promo\" was not injected: check your FXML file 'Admin_promotion.fxml'.";
-		assert tf_id != null : "fx:id=\"tf_id\" was not injected: check your FXML file 'Admin_promotion.fxml'.";
-		assert tf_name != null : "fx:id=\"tf_name\" was not injected: check your FXML file 'Admin_promotion.fxml'.";
-		assert tf_product_id != null : "fx:id=\"tf_product_id\" was not injected: check your FXML file 'Admin_promotion.fxml'.";
-		assert tf_percentage != null : "fx:id=\"tf_percentage\" was not injected: check your FXML file 'Admin_promotion.fxml'.";
-		assert tf_buy != null : "fx:id=\"tf_buy\" was not injected: check your FXML file 'Admin_promotion.fxml'.";
-		assert tf_get != null : "fx:id=\"tf_get\" was not injected: check your FXML file 'Admin_promotion.fxml'.";
-		assert bt_add != null : "fx:id=\"bt_add\" was not injected: check your FXML file 'Admin_promotion.fxml'.";
-		assert tf_product_name != null : "fx:id=\"tf_product_name\" was not injected: check your FXML file 'Admin_promotion.fxml'.";
-		assert bt_new != null : "fx:id=\"bt_new\" was not injected: check your FXML file 'Admin_promotion.fxml'.";
+		assert tb_promo != null : Messages.getString("AdminPromotionController.0"); //$NON-NLS-1$
+		assert tf_id != null : Messages.getString("AdminPromotionController.1"); //$NON-NLS-1$
+		assert tf_name != null : Messages.getString("AdminPromotionController.2"); //$NON-NLS-1$
+		assert tf_product_id != null : Messages.getString("AdminPromotionController.3"); //$NON-NLS-1$
+		assert tf_percentage != null : Messages.getString("AdminPromotionController.4"); //$NON-NLS-1$
+		assert tf_buy != null : Messages.getString("AdminPromotionController.5"); //$NON-NLS-1$
+		assert tf_get != null : Messages.getString("AdminPromotionController.6"); //$NON-NLS-1$
+		assert bt_add != null : Messages.getString("AdminPromotionController.7"); //$NON-NLS-1$
+		assert tf_product_name != null : Messages.getString("AdminPromotionController.8"); //$NON-NLS-1$
+		assert bt_new != null : Messages.getString("AdminPromotionController.9"); //$NON-NLS-1$
 
-		col_item_id = new TableColumn<Promotion, String>("ID");
-		col_item_name = new TableColumn<Promotion, String>("Name");
-		col_item_product_id = new TableColumn<Promotion, String>("Product ID");
-		col_item_product_name = new TableColumn<Promotion, String>("Product Name");
-		col_item_percentage = new TableColumn<Promotion, String>("Percentage");
-		col_item_more = new TableColumn<Promotion, String>("More");
+		col_item_id = new TableColumn<Promotion, String>(Messages.getString("AdminPromotionController.10")); //$NON-NLS-1$
+		col_item_name = new TableColumn<Promotion, String>(Messages.getString("AdminPromotionController.11")); //$NON-NLS-1$
+		col_item_product_id = new TableColumn<Promotion, String>(Messages.getString("AdminPromotionController.12")); //$NON-NLS-1$
+		col_item_product_name = new TableColumn<Promotion, String>(Messages.getString("AdminPromotionController.13")); //$NON-NLS-1$
+		col_item_percentage = new TableColumn<Promotion, String>(Messages.getString("AdminPromotionController.14")); //$NON-NLS-1$
+		col_item_more = new TableColumn<Promotion, String>(Messages.getString("AdminPromotionController.15")); //$NON-NLS-1$
 
 		col_item_id.setMinWidth(100.0);
 		col_item_name.setMinWidth(200.0);
@@ -105,25 +105,25 @@ public class AdminPromotionController {
 		col_item_percentage.setMinWidth(120.0);
 		col_item_more.setMinWidth(150.0);
 
-		col_item_id.setStyle("-fx-font-size: 18");
-		col_item_name.setStyle("-fx-font-size: 18");
-		col_item_product_id.setStyle("-fx-font-size: 18");
-		col_item_product_name.setStyle("-fx-font-size: 18");
-		col_item_percentage.setStyle("-fx-font-size: 18");
-		col_item_more.setStyle("-fx-font-size: 18");
+		col_item_id.setStyle(Messages.getString("AdminPromotionController.16")); //$NON-NLS-1$
+		col_item_name.setStyle(Messages.getString("AdminPromotionController.17")); //$NON-NLS-1$
+		col_item_product_id.setStyle(Messages.getString("AdminPromotionController.18")); //$NON-NLS-1$
+		col_item_product_name.setStyle(Messages.getString("AdminPromotionController.19")); //$NON-NLS-1$
+		col_item_percentage.setStyle(Messages.getString("AdminPromotionController.20")); //$NON-NLS-1$
+		col_item_more.setStyle(Messages.getString("AdminPromotionController.21")); //$NON-NLS-1$
 
-		col_item_id.setCellValueFactory(new PropertyValueFactory<Promotion, String>("id"));
-		col_item_name.setCellValueFactory(new PropertyValueFactory<Promotion, String>("name"));
-		col_item_product_id.setCellValueFactory(new PropertyValueFactory<Promotion, String>("productId"));
-		col_item_product_name.setCellValueFactory(new PropertyValueFactory<Promotion, String>("productName"));
-		col_item_percentage.setCellValueFactory(new PropertyValueFactory<Promotion, String>("percentage"));
-		col_item_more.setCellValueFactory(new PropertyValueFactory<Promotion, String>("more"));
+		col_item_id.setCellValueFactory(new PropertyValueFactory<Promotion, String>(Messages.getString("AdminPromotionController.22"))); //$NON-NLS-1$
+		col_item_name.setCellValueFactory(new PropertyValueFactory<Promotion, String>(Messages.getString("AdminPromotionController.23"))); //$NON-NLS-1$
+		col_item_product_id.setCellValueFactory(new PropertyValueFactory<Promotion, String>(Messages.getString("AdminPromotionController.24"))); //$NON-NLS-1$
+		col_item_product_name.setCellValueFactory(new PropertyValueFactory<Promotion, String>(Messages.getString("AdminPromotionController.25"))); //$NON-NLS-1$
+		col_item_percentage.setCellValueFactory(new PropertyValueFactory<Promotion, String>(Messages.getString("AdminPromotionController.26"))); //$NON-NLS-1$
+		col_item_more.setCellValueFactory(new PropertyValueFactory<Promotion, String>(Messages.getString("AdminPromotionController.27"))); //$NON-NLS-1$
 
 		tb_promo.getColumns().addAll(col_item_id, col_item_name, col_item_product_id, col_item_product_name,
 				col_item_percentage, col_item_more);
 
 		// get data from db
-		String query = "SELECT promotion.id, promotion.name, promotion.productid, productitems.name,promotion.percentage, promotion.description FROM promotion, productitems WHERE promotion.productid = productitems.barcode";
+		String query = Messages.getString("AdminPromotionController.28"); //$NON-NLS-1$
 		new DBInitialize().DBInitialize();
 		new DBInitialize();
 		ResultSet rs = DBInitialize.statement.executeQuery(query);
@@ -150,11 +150,11 @@ public class AdminPromotionController {
 
 				if (e.getClickCount() == 2 && (!row.isEmpty())) {
 					Promotion pro = tb_promo.getSelectionModel().getSelectedItem();
-					System.out.println("Double click is: " + pro.getName());
+					System.out.println(Messages.getString("AdminPromotionController.29") + pro.getName()); //$NON-NLS-1$
 
 					// string processing / cut buy and get
 					String more = pro.getMore();
-					String[] buy = more.split(" ");
+					String[] buy = more.split(Messages.getString("AdminPromotionController.30")); //$NON-NLS-1$
 					// String get = more;
 
 					// set data to tf
@@ -172,20 +172,20 @@ public class AdminPromotionController {
 
 			final ContextMenu rowMenu = new ContextMenu();
 
-			MenuItem removeItem = new MenuItem("Delete");
+			MenuItem removeItem = new MenuItem(Messages.getString("AdminPromotionController.31")); //$NON-NLS-1$
 			removeItem.setOnAction(new EventHandler<ActionEvent>() {
 
 				@Override
 				public void handle(ActionEvent event) {
 					Promotion pro = tb_promo.getSelectionModel().getSelectedItem();
 
-					Alert alert = new Alert(AlertType.CONFIRMATION, "Are U Sure To Delete " + pro.getName() + " ?",
+					Alert alert = new Alert(AlertType.CONFIRMATION, Messages.getString("AdminPromotionController.32") + pro.getName() + Messages.getString("AdminPromotionController.33"), //$NON-NLS-1$ //$NON-NLS-2$
 							ButtonType.YES, ButtonType.NO);
 					alert.showAndWait();
 
 					if (alert.getResult() == ButtonType.YES) {
 						// do stuff
-						String removequery = "DELETE FROM `promotion` WHERE promotion.id = '" + pro.getId() + "';";
+						String removequery = Messages.getString("AdminPromotionController.34") + pro.getId() + Messages.getString("AdminPromotionController.35"); //$NON-NLS-1$ //$NON-NLS-2$
 						try {
 							new DBInitialize().DBInitialize();
 							new DBInitialize();
@@ -194,7 +194,7 @@ public class AdminPromotionController {
 							// update table
 							// update table data
 							new DBInitialize().DBInitialize();
-							String queryupdatetable = "SELECT promotion.id, promotion.name, promotion.productid, productitems.name,promotion.percentage, promotion.description FROM promotion, productitems WHERE promotion.productid = productitems.barcode";
+							String queryupdatetable = Messages.getString("AdminPromotionController.36"); //$NON-NLS-1$
 
 							new DBInitialize();
 							ResultSet rsu = DBInitialize.statement.executeQuery(queryupdatetable);
@@ -221,7 +221,7 @@ public class AdminPromotionController {
 							 */
 
 							// show alert
-							Alert al = new Alert(AlertType.INFORMATION, "Item deleted!");
+							Alert al = new Alert(AlertType.INFORMATION, Messages.getString("AdminPromotionController.37")); //$NON-NLS-1$
 							al.showAndWait();
 
 						} catch (ClassNotFoundException | SQLException | InstantiationException
@@ -250,25 +250,25 @@ public class AdminPromotionController {
 	void onProductIDSearch(ActionEvent event)
 			throws ClassNotFoundException, InstantiationException, IllegalAccessException, SQLException {
 
-		if(tf_product_id.getText().equals("")) {
-			Alert al = new Alert(AlertType.ERROR, "Please enter product barcode!");
+		if(tf_product_id.getText().equals(Messages.getString("AdminPromotionController.38"))) { //$NON-NLS-1$
+			Alert al = new Alert(AlertType.ERROR, Messages.getString("AdminPromotionController.39")); //$NON-NLS-1$
 			al.showAndWait();
 		}else {
 			
 		
 		String productbarcode = tf_product_id.getText().toString();
-		String searchPQuery = "SELECT productitems.name FROM `productitems` WHERE productitems.barcode = '"
-				+ productbarcode + "'";
+		String searchPQuery = Messages.getString("AdminPromotionController.40") //$NON-NLS-1$
+				+ productbarcode + Messages.getString("AdminPromotionController.41"); //$NON-NLS-1$
 
 		new DBInitialize().DBInitialize();
 		new DBInitialize();
 		ResultSet rsp = DBInitialize.statement.executeQuery(searchPQuery);
-		String productname = "";
+		String productname = Messages.getString("AdminPromotionController.42"); //$NON-NLS-1$
 		if (rsp.next()) {
 			productname = rsp.getString(1);
 		}
 		else {
-			Alert al = new Alert(AlertType.ERROR, "Invaild Product Barcode!");
+			Alert al = new Alert(AlertType.ERROR, Messages.getString("AdminPromotionController.43")); //$NON-NLS-1$
 			al.showAndWait();
 		}
 
@@ -288,19 +288,19 @@ public class AdminPromotionController {
 		tf_buy.clear();
 		tf_get.clear();
 
-		String query = "SELECT promotion.id FROM promotion ORDER BY promotion.id DESC LIMIT 1";
+		String query = Messages.getString("AdminPromotionController.44"); //$NON-NLS-1$
 
-		String oldid = "";
+		String oldid = Messages.getString("AdminPromotionController.45"); //$NON-NLS-1$
 
 		new DBInitialize().DBInitialize();
 		new DBInitialize();
 		ResultSet rs = DBInitialize.statement.executeQuery(query);
 		while (rs.next()) {
-			oldid = "" + rs.getInt(1);
+			oldid = Messages.getString("AdminPromotionController.46") + rs.getInt(1); //$NON-NLS-1$
 		}
 
 		// count +1 new Id
-		String newId = "" + (Integer.parseInt(oldid) + 1);
+		String newId = Messages.getString("AdminPromotionController.47") + (Integer.parseInt(oldid) + 1); //$NON-NLS-1$
 		tf_id.setText(newId);
 
 	}
@@ -309,10 +309,10 @@ public class AdminPromotionController {
 	void onAddAction(ActionEvent event)
 			throws ClassNotFoundException, InstantiationException, IllegalAccessException, SQLException {
 		
-		if(tf_id.getText().equals("") ||tf_name.getText().equals("") || tf_product_id.getText().equals("") ||
-				tf_percentage.getText().matches(".*[a-zA-Z]+.*")   
+		if(tf_id.getText().equals(Messages.getString("AdminPromotionController.48")) ||tf_name.getText().equals(Messages.getString("AdminPromotionController.49")) || tf_product_id.getText().equals(Messages.getString("AdminPromotionController.50")) || //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				tf_percentage.getText().matches(Messages.getString("AdminPromotionController.51"))    //$NON-NLS-1$
 				) {
-			Alert al = new Alert(AlertType.ERROR, "Invalid input or data missing!");
+			Alert al = new Alert(AlertType.ERROR, Messages.getString("AdminPromotionController.52")); //$NON-NLS-1$
 			al.showAndWait();
 		}
 		else {
@@ -324,29 +324,29 @@ public class AdminPromotionController {
 		String buy = tf_buy.getText().toString();
 		String get = tf_get.getText().toString();
 
-		if (percentage.equals("")) {
-			percentage = "0";
+		if (percentage.equals(Messages.getString("AdminPromotionController.53"))) { //$NON-NLS-1$
+			percentage = Messages.getString("AdminPromotionController.54"); //$NON-NLS-1$
 		}
 
-		if (buy.equals("")) {
-			buy = "0";
+		if (buy.equals(Messages.getString("AdminPromotionController.55"))) { //$NON-NLS-1$
+			buy = Messages.getString("AdminPromotionController.56"); //$NON-NLS-1$
 		}
 
-		if (get.equals("")) {
-			get = "0";
+		if (get.equals(Messages.getString("AdminPromotionController.57"))) { //$NON-NLS-1$
+			get = Messages.getString("AdminPromotionController.58"); //$NON-NLS-1$
 		}
-		String desc = "Buy " + buy + " Get " + get;
+		String desc = Messages.getString("AdminPromotionController.59") + buy + Messages.getString("AdminPromotionController.60") + get; //$NON-NLS-1$ //$NON-NLS-2$
 
 		try {
-		String addquery = "INSERT INTO `promotion`(`id`, `name`, `productid`, `percentage`, `description`) "
-				+ "VALUES ('" + id + "','" + name + "','" + productid + "','" + percentage + "','" + desc + "')";
+		String addquery = Messages.getString("AdminPromotionController.61") //$NON-NLS-1$
+				+ Messages.getString("AdminPromotionController.62") + id + Messages.getString("AdminPromotionController.63") + name + Messages.getString("AdminPromotionController.64") + productid + Messages.getString("AdminPromotionController.65") + percentage + Messages.getString("AdminPromotionController.66") + desc + Messages.getString("AdminPromotionController.67"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$ //$NON-NLS-6$
 
 		new DBInitialize().DBInitialize();
 		new DBInitialize();
 		DBInitialize.statement.executeUpdate(addquery);
 
 		// update table
-		String query = "SELECT promotion.id, promotion.name, promotion.productid, productitems.name,promotion.percentage, promotion.description FROM promotion, productitems WHERE promotion.productid = productitems.barcode";
+		String query = Messages.getString("AdminPromotionController.68"); //$NON-NLS-1$
 		new DBInitialize().DBInitialize();
 		new DBInitialize();
 		ResultSet rs = DBInitialize.statement.executeQuery(query);
@@ -378,12 +378,12 @@ public class AdminPromotionController {
 		tf_get.clear();
 
 		// show alert
-		Alert al = new Alert(AlertType.INFORMATION, "Item added!");
+		Alert al = new Alert(AlertType.INFORMATION, Messages.getString("AdminPromotionController.69")); //$NON-NLS-1$
 		al.showAndWait();
 
 		}//end of try
     	catch(Exception ex) {
-    		Alert al = new Alert(AlertType.ERROR, ""+ex.getMessage());
+    		Alert al = new Alert(AlertType.ERROR, Messages.getString("AdminPromotionController.70")+ex.getMessage()); //$NON-NLS-1$
     		al.showAndWait();
     	}
 		
@@ -394,10 +394,10 @@ public class AdminPromotionController {
 	void onUpdateAction(ActionEvent event)
 			throws ClassNotFoundException, InstantiationException, IllegalAccessException, SQLException {
 
-		if(tf_id.getText().equals("") ||tf_name.getText().equals("") || tf_product_id.getText().equals("") ||
-				tf_percentage.getText().matches(".*[a-zA-Z]+.*")   
+		if(tf_id.getText().equals(Messages.getString("AdminPromotionController.71")) ||tf_name.getText().equals(Messages.getString("AdminPromotionController.72")) || tf_product_id.getText().equals(Messages.getString("AdminPromotionController.73")) || //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				tf_percentage.getText().matches(Messages.getString("AdminPromotionController.74"))    //$NON-NLS-1$
 				) {
-			Alert al = new Alert(AlertType.ERROR, "Invalid input or data missing!");
+			Alert al = new Alert(AlertType.ERROR, Messages.getString("AdminPromotionController.75")); //$NON-NLS-1$
 			al.showAndWait();
 		}
 		else {
@@ -410,17 +410,17 @@ public class AdminPromotionController {
 		String buy = tf_buy.getText().toString();
 		String get = tf_get.getText().toString();
 
-		String desc = "Buy " + buy + " Get " + get;
+		String desc = Messages.getString("AdminPromotionController.76") + buy + Messages.getString("AdminPromotionController.77") + get; //$NON-NLS-1$ //$NON-NLS-2$
 
-		String updatequery = "UPDATE `promotion` SET `name`='" + name + "',`productid`='" + productid
-				+ "',`percentage`='" + percentage + "',`description`='" + desc + "' WHERE promotion.id = '" + id + "';";
+		String updatequery = Messages.getString("AdminPromotionController.78") + name + Messages.getString("AdminPromotionController.79") + productid //$NON-NLS-1$ //$NON-NLS-2$
+				+ Messages.getString("AdminPromotionController.80") + percentage + Messages.getString("AdminPromotionController.81") + desc + Messages.getString("AdminPromotionController.82") + id + Messages.getString("AdminPromotionController.83"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
 
 		new DBInitialize().DBInitialize();
 		new DBInitialize();
 		DBInitialize.statement.executeUpdate(updatequery);
 
 		// update table
-		String query = "SELECT promotion.id, promotion.name, promotion.productid, productitems.name,promotion.percentage, promotion.description FROM promotion, productitems WHERE promotion.productid = productitems.barcode";
+		String query = Messages.getString("AdminPromotionController.84"); //$NON-NLS-1$
 		new DBInitialize().DBInitialize();
 		new DBInitialize();
 		ResultSet rs = DBInitialize.statement.executeQuery(query);
@@ -453,7 +453,7 @@ public class AdminPromotionController {
 		tf_get.clear();
 		
 		// show alert
-		Alert al = new Alert(AlertType.INFORMATION, "Item updated!");
+		Alert al = new Alert(AlertType.INFORMATION, Messages.getString("AdminPromotionController.85")); //$NON-NLS-1$
 		al.showAndWait();
 	}
 		

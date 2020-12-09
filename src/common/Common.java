@@ -18,10 +18,10 @@ public class Common {
 	public static String productids;
 	public static String productqtys;
 	public static String slipno;
-	public static String paidtype = "";
-	public static String buygetpromo = "";
-	public static String buygetitem = "";
-	public static String cardinfo ="";
+	public static String paidtype = Messages.getString("Common.0"); //$NON-NLS-1$
+	public static String buygetpromo = Messages.getString("Common.1"); //$NON-NLS-1$
+	public static String buygetitem = Messages.getString("Common.2"); //$NON-NLS-1$
+	public static String cardinfo =Messages.getString("Common.3"); //$NON-NLS-1$
 	public static boolean isIntegratedDevice = false;
 
 }

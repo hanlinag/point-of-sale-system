@@ -15,14 +15,14 @@ public class SearchBarcode {
 		//search by barcode action
     	//String searchKey = 	tf_barcode_search.getText().toString();
     	//System.out.println("key entered is : "+key);
-    	String query = "SELECT productitems.barcode, productitems.name, productcategory.name, productitems.price, supplier.companyname, productitems.dateadded, productitems.stockamount, productitems.expireddate FROM productitems, supplier,productcategory WHERE productitems.categoryid = productcategory.id AND productitems.supplierid = supplier.id AND productitems.barcode = '"+key+"'";
+    	String query = Messages.getString("SearchBarcode.0")+key+Messages.getString("SearchBarcode.1"); //$NON-NLS-1$ //$NON-NLS-2$
     	
     	
     //new DBInitialize().DBInitialize();
     	
     	itemsdata =FXCollections.observableArrayList();
     	itemsdata.clear();
-    	System.out.println("qr key is "+key);
+    	System.out.println(Messages.getString("SearchBarcode.2")+key); //$NON-NLS-1$
     	try {
             //ResultSet rs = st.executeQuery("SELECT * FROM USER");
     		ResultSet rs = DBInitialize.statement.executeQuery(query);
@@ -53,7 +53,7 @@ public class SearchBarcode {
 	//tb_total_item.setItems(data);
     	
 	
-	System.out.println("qr db result : "+itemsdata.get(0).getName());
+	System.out.println(Messages.getString("SearchBarcode.3")+itemsdata.get(0).getName()); //$NON-NLS-1$
 		//data.getItems().addAll(row);
     	}catch (SQLException ex) {
             

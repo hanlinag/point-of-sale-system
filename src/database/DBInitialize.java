@@ -12,11 +12,11 @@ public class DBInitialize {
 		
 		
 	 // Load the JDBC driver
-	Class.forName("com.mysql.jdbc.Driver").newInstance();
-	System.out.println("Driver loaded");
+	Class.forName(Messages.getString("DBInitialize.0")).newInstance(); //$NON-NLS-1$
+	System.out.println(Messages.getString("DBInitialize.1")); //$NON-NLS-1$
 	  // Connect to a database
-	 Connection connection = DriverManager.getConnection ("jdbc:mysql://localhost:3306/?user=root");
-	System.out.println("Database connected"); // Create a statement
+	 Connection connection = DriverManager.getConnection (Messages.getString("DBInitialize.2")); //$NON-NLS-1$
+	System.out.println(Messages.getString("DBInitialize.3")); // Create a statement //$NON-NLS-1$
 	   statement = connection.createStatement();
 	  // Execute a statement
 	}

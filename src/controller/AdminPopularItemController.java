@@ -48,18 +48,18 @@ public class AdminPopularItemController {
 
     @FXML
     void initialize() throws ClassNotFoundException, InstantiationException, IllegalAccessException, SQLException {
-        assert tb_popular != null : "fx:id=\"tb_popular\" was not injected: check your FXML file 'Admin_popular_item.fxml'.";
+        assert tb_popular != null : Messages.getString("AdminPopularItemController.0"); //$NON-NLS-1$
         
 
-        col_item_barcode = new TableColumn<ProductItem, String>("Barcode");
-        col_item_name = new TableColumn<ProductItem, String>("Name");
-        col_item_categroy = new TableColumn<ProductItem, String>("Category");
-        col_item_price = new TableColumn<ProductItem, String>("Price");
-        col_item_supplier = new TableColumn<ProductItem, String>("Supplier");
-        col_item_dateadded = new TableColumn<ProductItem, String>("Date Added");
-        col_item_stock = new TableColumn<ProductItem, String>("Stock");
-        col_item_expire_date = new TableColumn<ProductItem, String>("Expired Date");
-        col_item_count = new TableColumn<ProductItem, String>("Count");
+        col_item_barcode = new TableColumn<ProductItem, String>(Messages.getString("AdminPopularItemController.1")); //$NON-NLS-1$
+        col_item_name = new TableColumn<ProductItem, String>(Messages.getString("AdminPopularItemController.2")); //$NON-NLS-1$
+        col_item_categroy = new TableColumn<ProductItem, String>(Messages.getString("AdminPopularItemController.3")); //$NON-NLS-1$
+        col_item_price = new TableColumn<ProductItem, String>(Messages.getString("AdminPopularItemController.4")); //$NON-NLS-1$
+        col_item_supplier = new TableColumn<ProductItem, String>(Messages.getString("AdminPopularItemController.5")); //$NON-NLS-1$
+        col_item_dateadded = new TableColumn<ProductItem, String>(Messages.getString("AdminPopularItemController.6")); //$NON-NLS-1$
+        col_item_stock = new TableColumn<ProductItem, String>(Messages.getString("AdminPopularItemController.7")); //$NON-NLS-1$
+        col_item_expire_date = new TableColumn<ProductItem, String>(Messages.getString("AdminPopularItemController.8")); //$NON-NLS-1$
+        col_item_count = new TableColumn<ProductItem, String>(Messages.getString("AdminPopularItemController.9")); //$NON-NLS-1$
         
         col_item_barcode.setMinWidth(190.0);
         col_item_name.setMinWidth(200.0);
@@ -71,41 +71,41 @@ public class AdminPopularItemController {
         col_item_expire_date.setMinWidth(140.0);
         col_item_count.setMinWidth(60.0);
         
-        col_item_barcode.setStyle("-fx-font-size: 18");
-        col_item_name.setStyle("-fx-font-size: 18");
-        col_item_categroy.setStyle("-fx-font-size: 18");
-        col_item_price.setStyle("-fx-font-size: 18");
-        col_item_supplier.setStyle("-fx-font-size: 18");
-        col_item_dateadded.setStyle("-fx-font-size: 18");
-        col_item_stock.setStyle("-fx-font-size: 18");
-        col_item_expire_date.setStyle("-fx-font-size: 18");
-        col_item_count.setStyle("-fx-font-size: 18");
+        col_item_barcode.setStyle(Messages.getString("AdminPopularItemController.10")); //$NON-NLS-1$
+        col_item_name.setStyle(Messages.getString("AdminPopularItemController.11")); //$NON-NLS-1$
+        col_item_categroy.setStyle(Messages.getString("AdminPopularItemController.12")); //$NON-NLS-1$
+        col_item_price.setStyle(Messages.getString("AdminPopularItemController.13")); //$NON-NLS-1$
+        col_item_supplier.setStyle(Messages.getString("AdminPopularItemController.14")); //$NON-NLS-1$
+        col_item_dateadded.setStyle(Messages.getString("AdminPopularItemController.15")); //$NON-NLS-1$
+        col_item_stock.setStyle(Messages.getString("AdminPopularItemController.16")); //$NON-NLS-1$
+        col_item_expire_date.setStyle(Messages.getString("AdminPopularItemController.17")); //$NON-NLS-1$
+        col_item_count.setStyle(Messages.getString("AdminPopularItemController.18")); //$NON-NLS-1$
         
         col_item_barcode.setCellValueFactory(
-        	    new PropertyValueFactory<ProductItem, String>("barcode"));
+        	    new PropertyValueFactory<ProductItem, String>(Messages.getString("AdminPopularItemController.19"))); //$NON-NLS-1$
         col_item_name.setCellValueFactory(
-        	    new PropertyValueFactory<ProductItem, String>("name"));
+        	    new PropertyValueFactory<ProductItem, String>(Messages.getString("AdminPopularItemController.20"))); //$NON-NLS-1$
         col_item_categroy.setCellValueFactory(
-        	    new PropertyValueFactory<ProductItem, String>("categoryname"));
+        	    new PropertyValueFactory<ProductItem, String>(Messages.getString("AdminPopularItemController.21"))); //$NON-NLS-1$
         col_item_price.setCellValueFactory(
-        	    new PropertyValueFactory<ProductItem, String>("price"));
+        	    new PropertyValueFactory<ProductItem, String>(Messages.getString("AdminPopularItemController.22"))); //$NON-NLS-1$
         col_item_supplier.setCellValueFactory(
-        	    new PropertyValueFactory<ProductItem, String>("suppliername"));
+        	    new PropertyValueFactory<ProductItem, String>(Messages.getString("AdminPopularItemController.23"))); //$NON-NLS-1$
         col_item_dateadded.setCellValueFactory(
-        	    new PropertyValueFactory<ProductItem, String>("dateadded"));
+        	    new PropertyValueFactory<ProductItem, String>(Messages.getString("AdminPopularItemController.24"))); //$NON-NLS-1$
         col_item_stock.setCellValueFactory(
-        	    new PropertyValueFactory<ProductItem, String>("stockamount"));
+        	    new PropertyValueFactory<ProductItem, String>(Messages.getString("AdminPopularItemController.25"))); //$NON-NLS-1$
         col_item_expire_date.setCellValueFactory(
-        	    new PropertyValueFactory<ProductItem, String>("expiredate"));
+        	    new PropertyValueFactory<ProductItem, String>(Messages.getString("AdminPopularItemController.26"))); //$NON-NLS-1$
         col_item_count.setCellValueFactory(
-        	    new PropertyValueFactory<ProductItem, String>("count"));
+        	    new PropertyValueFactory<ProductItem, String>(Messages.getString("AdminPopularItemController.27"))); //$NON-NLS-1$
     
         tb_popular.getColumns().addAll(col_item_barcode, col_item_name, col_item_categroy, col_item_price, col_item_supplier, col_item_dateadded, col_item_stock, col_item_expire_date, col_item_count);
      
 
         //get table data
         new DBInitialize().DBInitialize();
-        String query = "SELECT productitems.barcode, productitems.name, productcategory.name, productitems.price, supplier.companyname, productitems.dateadded, productitems.stockamount, productitems.expireddate, productitems.count FROM productitems, supplier,productcategory WHERE productitems.categoryid = productcategory.id AND productitems.supplierid = supplier.id ORDER BY productitems.count DESC LIMIT 25";
+        String query = Messages.getString("AdminPopularItemController.28"); //$NON-NLS-1$
         
         new DBInitialize();
 		ResultSet rs = DBInitialize.statement.executeQuery(query);

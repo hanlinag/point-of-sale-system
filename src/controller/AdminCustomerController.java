@@ -129,55 +129,55 @@ public class AdminCustomerController {
 
 	@FXML
 	void initialize() throws ClassNotFoundException, SQLException, InstantiationException, IllegalAccessException {
-		assert tb_customer != null : "fx:id=\"tb_customer\" was not injected: check your FXML file 'Admin_customer.fxml'.";
-		assert tf_id != null : "fx:id=\"tf_id\" was not injected: check your FXML file 'Admin_customer.fxml'.";
-		assert tf_name != null : "fx:id=\"tf_name\" was not injected: check your FXML file 'Admin_customer.fxml'.";
-		assert tf_age != null : "fx:id=\"tf_age\" was not injected: check your FXML file 'Admin_customer.fxml'.";
-		assert tf_addr != null : "fx:id=\"tf_addr\" was not injected: check your FXML file 'Admin_customer.fxml'.";
-		assert tf_phone != null : "fx:id=\"tf_phone\" was not injected: check your FXML file 'Admin_customer.fxml'.";
-		assert tf_mail != null : "fx:id=\"tf_mail\" was not injected: check your FXML file 'Admin_customer.fxml'.";
-		assert tf_card_no != null : "fx:id=\"tf_card_no\" was not injected: check your FXML file 'Admin_customer.fxml'.";
-		assert tf_amount != null : "fx:id=\"tf_amount\" was not injected: check your FXML file 'Admin_customer.fxml'.";
-		assert tf_last_date_used != null : "fx:id=\"tf_last_date_used\" was not injected: check your FXML file 'Admin_customer.fxml'.";
-		assert tf_pin != null : "fx:id=\"tf_pin\" was not injected: check your FXML file 'Admin_customer.fxml'.";
-		assert tf_date_created != null : "fx:id=\"tf_date_created\" was not injected: check your FXML file 'Admin_customer.fxml'.";
-		assert rdo_male != null : "fx:id=\"rdo_male\" was not injected: check your FXML file 'Admin_customer.fxml'.";
-		assert gender != null : "fx:id=\"gender\" was not injected: check your FXML file 'Admin_customer.fxml'.";
-		assert rdo_female != null : "fx:id=\"rdo_female\" was not injected: check your FXML file 'Admin_customer.fxml'.";
-		assert bt_add != null : "fx:id=\"bt_add\" was not injected: check your FXML file 'Admin_customer.fxml'.";
-		assert bt_update != null : "fx:id=\"bt_update\" was not injected: check your FXML file 'Admin_customer.fxml'.";
-		assert bt_new != null : "fx:id=\"bt_new\" was not injected: check your FXML file 'Admin_customer.fxml'.";
-		assert bt_search != null : "fx:id=\"bt_search\" was not injected: check your FXML file 'Admin_customer.fxml'.";
-		assert tf_expired_date != null : "fx:id=\"tf_expired_date\" was not injected: check your FXML file 'Admin_customer.fxml'.";
+		assert tb_customer != null : Messages.getString("AdminCustomerController.0"); //$NON-NLS-1$
+		assert tf_id != null : Messages.getString("AdminCustomerController.1"); //$NON-NLS-1$
+		assert tf_name != null : Messages.getString("AdminCustomerController.2"); //$NON-NLS-1$
+		assert tf_age != null : Messages.getString("AdminCustomerController.3"); //$NON-NLS-1$
+		assert tf_addr != null : Messages.getString("AdminCustomerController.4"); //$NON-NLS-1$
+		assert tf_phone != null : Messages.getString("AdminCustomerController.5"); //$NON-NLS-1$
+		assert tf_mail != null : Messages.getString("AdminCustomerController.6"); //$NON-NLS-1$
+		assert tf_card_no != null : Messages.getString("AdminCustomerController.7"); //$NON-NLS-1$
+		assert tf_amount != null : Messages.getString("AdminCustomerController.8"); //$NON-NLS-1$
+		assert tf_last_date_used != null : Messages.getString("AdminCustomerController.9"); //$NON-NLS-1$
+		assert tf_pin != null : Messages.getString("AdminCustomerController.10"); //$NON-NLS-1$
+		assert tf_date_created != null : Messages.getString("AdminCustomerController.11"); //$NON-NLS-1$
+		assert rdo_male != null : Messages.getString("AdminCustomerController.12"); //$NON-NLS-1$
+		assert gender != null : Messages.getString("AdminCustomerController.13"); //$NON-NLS-1$
+		assert rdo_female != null : Messages.getString("AdminCustomerController.14"); //$NON-NLS-1$
+		assert bt_add != null : Messages.getString("AdminCustomerController.15"); //$NON-NLS-1$
+		assert bt_update != null : Messages.getString("AdminCustomerController.16"); //$NON-NLS-1$
+		assert bt_new != null : Messages.getString("AdminCustomerController.17"); //$NON-NLS-1$
+		assert bt_search != null : Messages.getString("AdminCustomerController.18"); //$NON-NLS-1$
+		assert tf_expired_date != null : Messages.getString("AdminCustomerController.19"); //$NON-NLS-1$
 
 		tf_pin.setEditable(false);
 
-		String pattern = "dd/MM/yyyy";
+		String pattern = Messages.getString("AdminCustomerController.20"); //$NON-NLS-1$
 		String todaydate = new SimpleDateFormat(pattern).format(new Date());
-		System.out.println("last date use is " + todaydate);
+		System.out.println(Messages.getString("AdminCustomerController.21") + todaydate); //$NON-NLS-1$
 		tf_date_created.setText(todaydate);
 
 		// count expired date to 3 years
-		String[] todaydateAry = todaydate.split("/");
+		String[] todaydateAry = todaydate.split(Messages.getString("AdminCustomerController.22")); //$NON-NLS-1$
 		String day = todaydateAry[0];
 		String month = todaydateAry[1];
 		String year = todaydateAry[2];
-		year = "" + (Integer.parseInt(year) + 3);
-		tf_expired_date.setText(day+"/"+month+"/" + year);
+		year = Messages.getString("AdminCustomerController.23") + (Integer.parseInt(year) + 3); //$NON-NLS-1$
+		tf_expired_date.setText(day+Messages.getString("AdminCustomerController.24")+month+Messages.getString("AdminCustomerController.25") + year); //$NON-NLS-1$ //$NON-NLS-2$
 
-		col_item_id = new TableColumn<CardUser, String>("ID");
-		col_item_name = new TableColumn<CardUser, String>("Name");
-		col_item_age = new TableColumn<CardUser, String>("Age");
-		col_item_gender = new TableColumn<CardUser, String>("Gender");
-		col_item_addr = new TableColumn<CardUser, String>("Address");
-		col_item_phone = new TableColumn<CardUser, String>("Phone");
-		col_item_email = new TableColumn<CardUser, String>("Email");
-		col_item_card_no = new TableColumn<CardUser, String>("Card Number");
-		col_item_amount = new TableColumn<CardUser, String>("Amount");
-		col_item_last_date_used = new TableColumn<CardUser, String>("Last Date Used");
-		col_item_expired_date = new TableColumn<CardUser, String>("Expired Date");
-		col_item_date_created = new TableColumn<CardUser, String>("Date Created");
-		col_item_pin = new TableColumn<CardUser, String>("PIN");
+		col_item_id = new TableColumn<CardUser, String>(Messages.getString("AdminCustomerController.26")); //$NON-NLS-1$
+		col_item_name = new TableColumn<CardUser, String>(Messages.getString("AdminCustomerController.27")); //$NON-NLS-1$
+		col_item_age = new TableColumn<CardUser, String>(Messages.getString("AdminCustomerController.28")); //$NON-NLS-1$
+		col_item_gender = new TableColumn<CardUser, String>(Messages.getString("AdminCustomerController.29")); //$NON-NLS-1$
+		col_item_addr = new TableColumn<CardUser, String>(Messages.getString("AdminCustomerController.30")); //$NON-NLS-1$
+		col_item_phone = new TableColumn<CardUser, String>(Messages.getString("AdminCustomerController.31")); //$NON-NLS-1$
+		col_item_email = new TableColumn<CardUser, String>(Messages.getString("AdminCustomerController.32")); //$NON-NLS-1$
+		col_item_card_no = new TableColumn<CardUser, String>(Messages.getString("AdminCustomerController.33")); //$NON-NLS-1$
+		col_item_amount = new TableColumn<CardUser, String>(Messages.getString("AdminCustomerController.34")); //$NON-NLS-1$
+		col_item_last_date_used = new TableColumn<CardUser, String>(Messages.getString("AdminCustomerController.35")); //$NON-NLS-1$
+		col_item_expired_date = new TableColumn<CardUser, String>(Messages.getString("AdminCustomerController.36")); //$NON-NLS-1$
+		col_item_date_created = new TableColumn<CardUser, String>(Messages.getString("AdminCustomerController.37")); //$NON-NLS-1$
+		col_item_pin = new TableColumn<CardUser, String>(Messages.getString("AdminCustomerController.38")); //$NON-NLS-1$
 
 		col_item_id.setMinWidth(90.0);
 		col_item_name.setMinWidth(200.0);
@@ -193,40 +193,40 @@ public class AdminCustomerController {
 		col_item_date_created.setMinWidth(110.0);
 		col_item_pin.setMinWidth(90.0);
 
-		col_item_id.setStyle("-fx-font-size: 18");
-		col_item_name.setStyle("-fx-font-size: 18");
-		col_item_age.setStyle("-fx-font-size: 18");
-		col_item_gender.setStyle("-fx-font-size: 18");
-		col_item_addr.setStyle("-fx-font-size: 18");
-		col_item_phone.setStyle("-fx-font-size: 18");
-		col_item_email.setStyle("-fx-font-size: 18");
-		col_item_card_no.setStyle("-fx-font-size: 18");
-		col_item_amount.setStyle("-fx-font-size: 18");
-		col_item_last_date_used.setStyle("-fx-font-size: 18");
-		col_item_expired_date.setStyle("-fx-font-size: 18");
-		col_item_date_created.setStyle("-fx-font-size: 18");
-		col_item_pin.setStyle("-fx-font-size: 18");
+		col_item_id.setStyle(Messages.getString("AdminCustomerController.39")); //$NON-NLS-1$
+		col_item_name.setStyle(Messages.getString("AdminCustomerController.40")); //$NON-NLS-1$
+		col_item_age.setStyle(Messages.getString("AdminCustomerController.41")); //$NON-NLS-1$
+		col_item_gender.setStyle(Messages.getString("AdminCustomerController.42")); //$NON-NLS-1$
+		col_item_addr.setStyle(Messages.getString("AdminCustomerController.43")); //$NON-NLS-1$
+		col_item_phone.setStyle(Messages.getString("AdminCustomerController.44")); //$NON-NLS-1$
+		col_item_email.setStyle(Messages.getString("AdminCustomerController.45")); //$NON-NLS-1$
+		col_item_card_no.setStyle(Messages.getString("AdminCustomerController.46")); //$NON-NLS-1$
+		col_item_amount.setStyle(Messages.getString("AdminCustomerController.47")); //$NON-NLS-1$
+		col_item_last_date_used.setStyle(Messages.getString("AdminCustomerController.48")); //$NON-NLS-1$
+		col_item_expired_date.setStyle(Messages.getString("AdminCustomerController.49")); //$NON-NLS-1$
+		col_item_date_created.setStyle(Messages.getString("AdminCustomerController.50")); //$NON-NLS-1$
+		col_item_pin.setStyle(Messages.getString("AdminCustomerController.51")); //$NON-NLS-1$
 
-		col_item_id.setCellValueFactory(new PropertyValueFactory<CardUser, String>("customrid"));
-		col_item_name.setCellValueFactory(new PropertyValueFactory<CardUser, String>("name"));
-		col_item_age.setCellValueFactory(new PropertyValueFactory<CardUser, String>("age"));
-		col_item_gender.setCellValueFactory(new PropertyValueFactory<CardUser, String>("gender"));
-		col_item_addr.setCellValueFactory(new PropertyValueFactory<CardUser, String>("address"));
-		col_item_phone.setCellValueFactory(new PropertyValueFactory<CardUser, String>("phone"));
-		col_item_email.setCellValueFactory(new PropertyValueFactory<CardUser, String>("email"));
-		col_item_card_no.setCellValueFactory(new PropertyValueFactory<CardUser, String>("cardno"));
-		col_item_amount.setCellValueFactory(new PropertyValueFactory<CardUser, String>("amount"));
-		col_item_last_date_used.setCellValueFactory(new PropertyValueFactory<CardUser, String>("lastdateused"));
-		col_item_expired_date.setCellValueFactory(new PropertyValueFactory<CardUser, String>("expireddate"));
-		col_item_date_created.setCellValueFactory(new PropertyValueFactory<CardUser, String>("registerdate"));
-		col_item_pin.setCellValueFactory(new PropertyValueFactory<CardUser, String>("pin"));
+		col_item_id.setCellValueFactory(new PropertyValueFactory<CardUser, String>(Messages.getString("AdminCustomerController.52"))); //$NON-NLS-1$
+		col_item_name.setCellValueFactory(new PropertyValueFactory<CardUser, String>(Messages.getString("AdminCustomerController.53"))); //$NON-NLS-1$
+		col_item_age.setCellValueFactory(new PropertyValueFactory<CardUser, String>(Messages.getString("AdminCustomerController.54"))); //$NON-NLS-1$
+		col_item_gender.setCellValueFactory(new PropertyValueFactory<CardUser, String>(Messages.getString("AdminCustomerController.55"))); //$NON-NLS-1$
+		col_item_addr.setCellValueFactory(new PropertyValueFactory<CardUser, String>(Messages.getString("AdminCustomerController.56"))); //$NON-NLS-1$
+		col_item_phone.setCellValueFactory(new PropertyValueFactory<CardUser, String>(Messages.getString("AdminCustomerController.57"))); //$NON-NLS-1$
+		col_item_email.setCellValueFactory(new PropertyValueFactory<CardUser, String>(Messages.getString("AdminCustomerController.58"))); //$NON-NLS-1$
+		col_item_card_no.setCellValueFactory(new PropertyValueFactory<CardUser, String>(Messages.getString("AdminCustomerController.59"))); //$NON-NLS-1$
+		col_item_amount.setCellValueFactory(new PropertyValueFactory<CardUser, String>(Messages.getString("AdminCustomerController.60"))); //$NON-NLS-1$
+		col_item_last_date_used.setCellValueFactory(new PropertyValueFactory<CardUser, String>(Messages.getString("AdminCustomerController.61"))); //$NON-NLS-1$
+		col_item_expired_date.setCellValueFactory(new PropertyValueFactory<CardUser, String>(Messages.getString("AdminCustomerController.62"))); //$NON-NLS-1$
+		col_item_date_created.setCellValueFactory(new PropertyValueFactory<CardUser, String>(Messages.getString("AdminCustomerController.63"))); //$NON-NLS-1$
+		col_item_pin.setCellValueFactory(new PropertyValueFactory<CardUser, String>(Messages.getString("AdminCustomerController.64"))); //$NON-NLS-1$
 
 		tb_customer.getColumns().addAll(col_item_id, col_item_name, col_item_age, col_item_gender, col_item_addr,
 				col_item_phone, col_item_email, col_item_card_no, col_item_amount, col_item_last_date_used,
 				col_item_date_created, col_item_expired_date, col_item_pin);
 
 		// get data from db and add into array
-		String query = "SELECT Customer.id, Customer.name, Customer.age, Customer.gender, Customer.address, Customer.phone, Customer.email, Card.cardnumber, Card.amount, Card.lastuseddate, Card.registerdate, Card.expireddate, Card.pin FROM Customer, Card WHERE Customer.id = Card.customerid ORDER BY Customer.id DESC;";
+		String query = Messages.getString("AdminCustomerController.65"); //$NON-NLS-1$
 		new DBInitialize().DBInitialize();
 		new DBInitialize();
 		ResultSet rs = DBInitialize.statement.executeQuery(query);
@@ -261,7 +261,7 @@ public class AdminCustomerController {
 
 				if (e.getClickCount() == 2 && (!row.isEmpty())) {
 					CardUser cu = tb_customer.getSelectionModel().getSelectedItem();
-					System.out.println("Double click is: " + cu.getName());
+					System.out.println(Messages.getString("AdminCustomerController.66") + cu.getName()); //$NON-NLS-1$
 
 					// set data to tf
 					tf_id.setText(cu.getCustomrid());
@@ -279,7 +279,7 @@ public class AdminCustomerController {
 
 					// rdo
 					String gender = cu.getGender();
-					if (gender.equals("male")) {
+					if (gender.equals(Messages.getString("AdminCustomerController.67"))) { //$NON-NLS-1$
 						rdo_male.setSelected(true);
 						rdo_female.setSelected(false);
 					} else {
@@ -291,7 +291,7 @@ public class AdminCustomerController {
 			});
 			final ContextMenu rowMenu = new ContextMenu();
 
-			MenuItem removeItem = new MenuItem("Delete");
+			MenuItem removeItem = new MenuItem(Messages.getString("AdminCustomerController.68")); //$NON-NLS-1$
 			removeItem.setOnAction(new EventHandler<ActionEvent>() {
 
 				@Override
@@ -299,16 +299,16 @@ public class AdminCustomerController {
 					CardUser ca = tb_customer.getSelectionModel().getSelectedItem();
 
 					Alert alert = new Alert(AlertType.CONFIRMATION,
-							"Are U Sure You Want To Delete " + ca.getName() + " from database including card ?", ButtonType.YES,
+							Messages.getString("AdminCustomerController.69") + ca.getName() + Messages.getString("AdminCustomerController.70"), ButtonType.YES, //$NON-NLS-1$ //$NON-NLS-2$
 							ButtonType.NO);
 					alert.showAndWait();
 
 					if (alert.getResult() == ButtonType.YES) {
 						// do stuff
-						String removeCustomerquery = "DELETE FROM `Customer` WHERE Customer.id = '" + ca.getCustomrid()
-								+ "';";
+						String removeCustomerquery = Messages.getString("AdminCustomerController.71") + ca.getCustomrid() //$NON-NLS-1$
+								+ Messages.getString("AdminCustomerController.72"); //$NON-NLS-1$
 						
-						String removeCardquery = "DELETE FROM `Card` WHERE Card.cardnumber = '" + ca.getCardno() + "';";
+						String removeCardquery = Messages.getString("AdminCustomerController.73") + ca.getCardno() + Messages.getString("AdminCustomerController.74"); //$NON-NLS-1$ //$NON-NLS-2$
 						try {
 							new DBInitialize().DBInitialize();
 							new DBInitialize();
@@ -317,7 +317,7 @@ public class AdminCustomerController {
 
 							// update table
 							// get tabe data
-							String getTableDataQuery = "SELECT Customer.id, Customer.name, Customer.age, Customer.gender, Customer.address, Customer.phone, Customer.email, Card.cardnumber, Card.amount, Card.lastuseddate, Card.registerdate, Card.expireddate, Card.pin FROM Customer, Card WHERE Customer.id = Card.customerid ORDER BY Customer.id DESC;";
+							String getTableDataQuery = Messages.getString("AdminCustomerController.75"); //$NON-NLS-1$
 							customerData.clear();// clear category data
 							new DBInitialize();
 							ResultSet getrs = DBInitialize.statement.executeQuery(getTableDataQuery);
@@ -335,7 +335,7 @@ public class AdminCustomerController {
 								cu.setLastdateused(getrs.getString(10));
 								cu.setRegisterdate(getrs.getString(11));
 								cu.setExpireddate(getrs.getString(12));
-								cu.setPin("" + getrs.getInt(13));
+								cu.setPin(Messages.getString("AdminCustomerController.76") + getrs.getInt(13)); //$NON-NLS-1$
 
 								customerData.add(cu);
 							}
@@ -348,7 +348,7 @@ public class AdminCustomerController {
 							 */
 
 							// show alert
-							Alert al = new Alert(AlertType.INFORMATION, "Item deleted!");
+							Alert al = new Alert(AlertType.INFORMATION, Messages.getString("AdminCustomerController.77")); //$NON-NLS-1$
 							al.showAndWait();
 
 						} catch (ClassNotFoundException | SQLException | InstantiationException
@@ -382,32 +382,32 @@ public class AdminCustomerController {
 		String cardno = tf_card_no.getText().toString();
 
 		// search card by card no and add info to the tf
-		String searchCardQuery = "SELECT * FROM `Card` WHERE Card.cardnumber = '" + cardno + "';";
+		String searchCardQuery = Messages.getString("AdminCustomerController.78") + cardno + Messages.getString("AdminCustomerController.79"); //$NON-NLS-1$ //$NON-NLS-2$
 		new DBInitialize().DBInitialize();
 		new DBInitialize();
 		ResultSet rssearch = DBInitialize.statement.executeQuery(searchCardQuery);
 
-		String datecreated = "";
-		String expireddate = "";
-		String lastDateUsed = "";
-		String customerid = "";
+		String datecreated = Messages.getString("AdminCustomerController.80"); //$NON-NLS-1$
+		String expireddate = Messages.getString("AdminCustomerController.81"); //$NON-NLS-1$
+		String lastDateUsed = Messages.getString("AdminCustomerController.82"); //$NON-NLS-1$
+		String customerid = Messages.getString("AdminCustomerController.83"); //$NON-NLS-1$
 
 		if (rssearch.next()) {
 
-			expireddate = rssearch.getString("expireddate");
-			tf_amount.setText(rssearch.getString("amount"));
-			lastDateUsed = rssearch.getString("lastuseddate");
-			datecreated = rssearch.getString("registerdate");
-			tf_pin.setText("" + rssearch.getInt("pin"));
-			customerid = rssearch.getString("customerid");
+			expireddate = rssearch.getString(Messages.getString("AdminCustomerController.84")); //$NON-NLS-1$
+			tf_amount.setText(rssearch.getString(Messages.getString("AdminCustomerController.85"))); //$NON-NLS-1$
+			lastDateUsed = rssearch.getString(Messages.getString("AdminCustomerController.86")); //$NON-NLS-1$
+			datecreated = rssearch.getString(Messages.getString("AdminCustomerController.87")); //$NON-NLS-1$
+			tf_pin.setText(Messages.getString("AdminCustomerController.88") + rssearch.getInt(Messages.getString("AdminCustomerController.89"))); //$NON-NLS-1$ //$NON-NLS-2$
+			customerid = rssearch.getString(Messages.getString("AdminCustomerController.90")); //$NON-NLS-1$
 
 		} else {
 			// show alert
-			Alert al = new Alert(AlertType.ERROR, " Invalid Card!");
+			Alert al = new Alert(AlertType.ERROR, Messages.getString("AdminCustomerController.91")); //$NON-NLS-1$
 			al.showAndWait();
 		}
 
-		System.out.println("expiredate" + expireddate);
+		System.out.println(Messages.getString("AdminCustomerController.92") + expireddate); //$NON-NLS-1$
 
 		/*
 		 * if(datecreated.equals("") || expireddate.equals("") ||
@@ -428,20 +428,20 @@ public class AdminCustomerController {
 		 */
 
 		// create today date
-		String pattern = "dd/MM/yyyy";
+		String pattern = Messages.getString("AdminCustomerController.93"); //$NON-NLS-1$
 		
 		String todaydate = new SimpleDateFormat(pattern).format(new Date());
-		System.out.println("today is " + todaydate);
+		System.out.println(Messages.getString("AdminCustomerController.94") + todaydate); //$NON-NLS-1$
 		
 		// count expired date to 3 years
-		String[] todaydateAry = todaydate.split("/");
+		String[] todaydateAry = todaydate.split(Messages.getString("AdminCustomerController.95")); //$NON-NLS-1$
 		String day = todaydateAry[0];
 		String month = todaydateAry[1];
 		String year = todaydateAry[2];
-		year = "" + (Integer.parseInt(year) + 3);
+		year = Messages.getString("AdminCustomerController.96") + (Integer.parseInt(year) + 3); //$NON-NLS-1$
 		
 
-		if (customerid.equals("")) {
+		if (customerid.equals(Messages.getString("AdminCustomerController.97"))) { //$NON-NLS-1$
 			// tf_id.clear();
 			tf_name.clear();
 			tf_addr.clear();
@@ -451,20 +451,20 @@ public class AdminCustomerController {
 
 			tf_date_created.setText(todaydate);
 			// tf_expired_date.setValue(LocalDate.parse(todaydate, formatter));
-			tf_expired_date.setText(day+"/"+month+"/" + year);
+			tf_expired_date.setText(day+Messages.getString("AdminCustomerController.98")+month+Messages.getString("AdminCustomerController.99") + year); //$NON-NLS-1$ //$NON-NLS-2$
 			tf_last_date_used.setText(todaydate);
 
 		} else {
 
-			String name = "";
-			String age = "";
-			String gender = "";
-			String addr = "";
-			String ph = "";
-			String mail = "";
+			String name = Messages.getString("AdminCustomerController.100"); //$NON-NLS-1$
+			String age = Messages.getString("AdminCustomerController.101"); //$NON-NLS-1$
+			String gender = Messages.getString("AdminCustomerController.102"); //$NON-NLS-1$
+			String addr = Messages.getString("AdminCustomerController.103"); //$NON-NLS-1$
+			String ph = Messages.getString("AdminCustomerController.104"); //$NON-NLS-1$
+			String mail = Messages.getString("AdminCustomerController.105"); //$NON-NLS-1$
 
-			String searchCustomerQuery = "SELECT  `name`, `age`, `gender`, `address`, `phone`, `email` FROM `Customer` WHERE Customer.id = '"
-					+ customerid + "';";
+			String searchCustomerQuery = Messages.getString("AdminCustomerController.106") //$NON-NLS-1$
+					+ customerid + Messages.getString("AdminCustomerController.107"); //$NON-NLS-1$
 			new DBInitialize();
 			ResultSet cusrs = DBInitialize.statement.executeQuery(searchCustomerQuery);
 			while (cusrs.next()) {
@@ -477,7 +477,7 @@ public class AdminCustomerController {
 
 			}
 
-			if (gender.equals("male")) {
+			if (gender.equals(Messages.getString("AdminCustomerController.108"))) { //$NON-NLS-1$
 				rdo_male.setSelected(true);
 				rdo_female.setSelected(false);
 			} else {
@@ -493,7 +493,7 @@ public class AdminCustomerController {
 			tf_mail.setText(mail);
 
 			// DateTimeFormatter format = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-			System.out.println("exipredddddddateeee: " + expireddate);
+			System.out.println(Messages.getString("AdminCustomerController.109") + expireddate); //$NON-NLS-1$
 			tf_date_created.setText(datecreated);
 
 			tf_expired_date.getText().toString();
@@ -524,57 +524,57 @@ public class AdminCustomerController {
 		tf_pin.clear();
 		tf_date_created.clear();
 
-		String query = "SELECT `id` FROM Customer ORDER BY Customer.id DESC LIMIT 1";
+		String query = Messages.getString("AdminCustomerController.110"); //$NON-NLS-1$
 
-		String oldid = "";
+		String oldid = Messages.getString("AdminCustomerController.111"); //$NON-NLS-1$
 
 		new DBInitialize().DBInitialize();
 		new DBInitialize();
 		ResultSet rs = DBInitialize.statement.executeQuery(query);
 		while (rs.next()) {
-			oldid = "" + rs.getString(1);
+			oldid = Messages.getString("AdminCustomerController.112") + rs.getString(1); //$NON-NLS-1$
 		}
 
 		// count +1 new Id
-		String newId = "" + (Integer.parseInt(oldid) + 1);
+		String newId = Messages.getString("AdminCustomerController.113") + (Integer.parseInt(oldid) + 1); //$NON-NLS-1$
 		tf_id.setText(newId);
 
 		// create today date
-		String pattern = "dd/MM/yyyy";
+		String pattern = Messages.getString("AdminCustomerController.114"); //$NON-NLS-1$
 		String todaydate = new SimpleDateFormat(pattern).format(new Date());
-		System.out.println("today is " + todaydate);
+		System.out.println(Messages.getString("AdminCustomerController.115") + todaydate); //$NON-NLS-1$
 		tf_date_created.setText(todaydate);
 		tf_last_date_used.setText(todaydate);
 
 		// count expired date to 3 years
-		String[] todaydateAry = todaydate.split("/");
+		String[] todaydateAry = todaydate.split(Messages.getString("AdminCustomerController.116")); //$NON-NLS-1$
 		String day = todaydateAry[0];
 		String month = todaydateAry[1];
 		String year = todaydateAry[2];
-		year = "" + (Integer.parseInt(year) + 3);
-		tf_expired_date.setText(day+"/"+month+"/" + year);
+		year = Messages.getString("AdminCustomerController.117") + (Integer.parseInt(year) + 3); //$NON-NLS-1$
+		tf_expired_date.setText(day+Messages.getString("AdminCustomerController.118")+month+Messages.getString("AdminCustomerController.119") + year); //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	@FXML
 	void onAddAction(ActionEvent event) throws SQLException {
 
-		if (tf_id.getText().equals("") || tf_name.getText().equals("") || tf_age.getText().equals("")
-				|| tf_addr.getText().equals("") || tf_phone.getText().equals("") || tf_mail.getText().equals("")
-				|| tf_card_no.getText().equals("") || tf_amount.getText().equals("") || tf_pin.getText().equals("")
-				|| tf_age.getText().matches(".*[a-zA-Z]+.*") || Integer.parseInt(tf_age.getText()) < 13
-				|| tf_phone.getText().matches(".*[a-zA-Z]+.*") || tf_phone.getText().length() < 10
-				|| !tf_mail.getText().contains("mail.com") || !tf_mail.getText().contains("@")
-				|| tf_amount.getText().matches(".*[a-zA-Z]+.*") || Double.parseDouble(tf_amount.getText()) < 50000) {
-			Alert al = new Alert(AlertType.ERROR, "Invaild Input or Data Missing!");
+		if (tf_id.getText().equals(Messages.getString("AdminCustomerController.120")) || tf_name.getText().equals(Messages.getString("AdminCustomerController.121")) || tf_age.getText().equals(Messages.getString("AdminCustomerController.122")) //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				|| tf_addr.getText().equals(Messages.getString("AdminCustomerController.123")) || tf_phone.getText().equals(Messages.getString("AdminCustomerController.124")) || tf_mail.getText().equals(Messages.getString("AdminCustomerController.125")) //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				|| tf_card_no.getText().equals(Messages.getString("AdminCustomerController.126")) || tf_amount.getText().equals(Messages.getString("AdminCustomerController.127")) || tf_pin.getText().equals(Messages.getString("AdminCustomerController.128")) //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				|| tf_age.getText().matches(Messages.getString("AdminCustomerController.129")) || Integer.parseInt(tf_age.getText()) < 13 //$NON-NLS-1$
+				|| tf_phone.getText().matches(Messages.getString("AdminCustomerController.130")) || tf_phone.getText().length() < 10 //$NON-NLS-1$
+				|| !tf_mail.getText().contains(Messages.getString("AdminCustomerController.131")) || !tf_mail.getText().contains(Messages.getString("AdminCustomerController.132")) //$NON-NLS-1$ //$NON-NLS-2$
+				|| tf_amount.getText().matches(Messages.getString("AdminCustomerController.133")) || Double.parseDouble(tf_amount.getText()) < 50000) { //$NON-NLS-1$
+			Alert al = new Alert(AlertType.ERROR, Messages.getString("AdminCustomerController.134")); //$NON-NLS-1$
 			al.showAndWait();
 		} else {
 
 			// create today date
-			String pattern = "dd/MM/yyyy";
+			String pattern = Messages.getString("AdminCustomerController.135"); //$NON-NLS-1$
 			String todaydate = new SimpleDateFormat(pattern).format(new Date());
 
 			// formatter for datepicker
-			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+			DateTimeFormatter formatter = DateTimeFormatter.ofPattern(Messages.getString("AdminCustomerController.136")); //$NON-NLS-1$
 
 			String id = tf_id.getText().toString();
 			String name = tf_name.getText().toString();
@@ -588,21 +588,21 @@ public class AdminCustomerController {
 			String expireddate = tf_expired_date.getText().toString();
 			String pin = tf_pin.getText().toString();
 			String datecreated = tf_date_created.getText().toString();
-			System.out.println("expired date is ssssss::::: " + expireddate);
-			String gender = "";
+			System.out.println(Messages.getString("AdminCustomerController.137") + expireddate); //$NON-NLS-1$
+			String gender = Messages.getString("AdminCustomerController.138"); //$NON-NLS-1$
 			if (rdo_male.isSelected()) {
-				gender = "male";
+				gender = Messages.getString("AdminCustomerController.139"); //$NON-NLS-1$
 			} else {
-				gender = "female";
+				gender = Messages.getString("AdminCustomerController.140"); //$NON-NLS-1$
 			}
 
 			try {
-			String addCustomerQuery = "INSERT INTO `Customer`(`id`, `name`, `age`, `gender`, `address`, `phone`, `email`) "
-					+ "VALUES ('" + id + "','" + name + "','" + age + "','" + gender + "','" + addr + "','" + ph + "','"
-					+ mail + "')";
-			String updateCardQuery = "UPDATE `Card` SET `customerid`='" + id + "',`amount`='" + amount
-					+ "',`lastuseddate`='" + todaydate + "',`registerdate`='" + datecreated + "',`expireddate`='"
-					+ expireddate + "',`pin`=" + pin + " WHERE `cardnumber`='" + cardno + "'";
+			String addCustomerQuery = Messages.getString("AdminCustomerController.141") //$NON-NLS-1$
+					+ Messages.getString("AdminCustomerController.142") + id + Messages.getString("AdminCustomerController.143") + name + Messages.getString("AdminCustomerController.144") + age + Messages.getString("AdminCustomerController.145") + gender + Messages.getString("AdminCustomerController.146") + addr + Messages.getString("AdminCustomerController.147") + ph + Messages.getString("AdminCustomerController.148") //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$ //$NON-NLS-6$ //$NON-NLS-7$
+					+ mail + Messages.getString("AdminCustomerController.149"); //$NON-NLS-1$
+			String updateCardQuery = Messages.getString("AdminCustomerController.150") + id + Messages.getString("AdminCustomerController.151") + amount //$NON-NLS-1$ //$NON-NLS-2$
+					+ Messages.getString("AdminCustomerController.152") + todaydate + Messages.getString("AdminCustomerController.153") + datecreated + Messages.getString("AdminCustomerController.154") //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+					+ expireddate + Messages.getString("AdminCustomerController.155") + pin + Messages.getString("AdminCustomerController.156") + cardno + Messages.getString("AdminCustomerController.157"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 
 			new DBInitialize();
 			DBInitialize.statement.executeUpdate(addCustomerQuery);
@@ -623,7 +623,7 @@ public class AdminCustomerController {
 			tf_date_created.clear();
 
 			// get tabe data
-			String getTableDataQuery = "SELECT Customer.id, Customer.name, Customer.age, Customer.gender, Customer.address, Customer.phone, Customer.email, Card.cardnumber, Card.amount, Card.lastuseddate, Card.registerdate, Card.expireddate, Card.pin FROM Customer, Card WHERE Customer.id = Card.customerid ORDER BY Customer.id DESC;";
+			String getTableDataQuery = Messages.getString("AdminCustomerController.158"); //$NON-NLS-1$
 			customerData.clear();// clear category data
 			new DBInitialize();
 			ResultSet getrs = DBInitialize.statement.executeQuery(getTableDataQuery);
@@ -641,7 +641,7 @@ public class AdminCustomerController {
 				cu.setLastdateused(getrs.getString(10));
 				cu.setRegisterdate(getrs.getString(11));
 				cu.setExpireddate(getrs.getString(12));
-				cu.setPin("" + getrs.getInt(13));
+				cu.setPin(Messages.getString("AdminCustomerController.159") + getrs.getInt(13)); //$NON-NLS-1$
 
 				customerData.add(cu);
 			}
@@ -649,12 +649,12 @@ public class AdminCustomerController {
 			tb_customer.refresh();
 			// tb_category.setItems(categoryData);
 			// show alert
-			Alert al = new Alert(AlertType.INFORMATION, "Item added!");
+			Alert al = new Alert(AlertType.INFORMATION, Messages.getString("AdminCustomerController.160")); //$NON-NLS-1$
 			al.showAndWait();
 			
 			}//end of try
 	    	catch(Exception ex) {
-	    		Alert al = new Alert(AlertType.ERROR, ""+ex.getMessage());
+	    		Alert al = new Alert(AlertType.ERROR, Messages.getString("AdminCustomerController.161")+ex.getMessage()); //$NON-NLS-1$
 	    		al.showAndWait();
 	    	}
 		} // end of else
@@ -663,23 +663,23 @@ public class AdminCustomerController {
 	@FXML
 	void onUpdateAction(ActionEvent event) throws SQLException {
 
-		if (tf_id.getText().equals("") || tf_name.getText().equals("") || tf_age.getText().equals("")
-				|| tf_addr.getText().equals("") || tf_phone.getText().equals("") || tf_mail.getText().equals("")
-				|| tf_card_no.getText().equals("") || tf_amount.getText().equals("") || tf_pin.getText().equals("")
-				|| tf_age.getText().matches(".*[a-zA-Z]+.*") || Integer.parseInt(tf_age.getText()) < 13
-				|| tf_phone.getText().matches(".*[a-zA-Z]+.*") || tf_phone.getText().length() < 10
-				|| !tf_mail.getText().contains("mail.com") || !tf_mail.getText().contains("@")
-				|| tf_amount.getText().matches(".*[a-zA-Z]+.*") || Double.parseDouble(tf_amount.getText()) < 3000) {
-			Alert al = new Alert(AlertType.ERROR, "Invaild Input or Data Missing!");
+		if (tf_id.getText().equals(Messages.getString("AdminCustomerController.162")) || tf_name.getText().equals(Messages.getString("AdminCustomerController.163")) || tf_age.getText().equals(Messages.getString("AdminCustomerController.164")) //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				|| tf_addr.getText().equals(Messages.getString("AdminCustomerController.165")) || tf_phone.getText().equals(Messages.getString("AdminCustomerController.166")) || tf_mail.getText().equals(Messages.getString("AdminCustomerController.167")) //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				|| tf_card_no.getText().equals(Messages.getString("AdminCustomerController.168")) || tf_amount.getText().equals(Messages.getString("AdminCustomerController.169")) || tf_pin.getText().equals(Messages.getString("AdminCustomerController.170")) //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				|| tf_age.getText().matches(Messages.getString("AdminCustomerController.171")) || Integer.parseInt(tf_age.getText()) < 13 //$NON-NLS-1$
+				|| tf_phone.getText().matches(Messages.getString("AdminCustomerController.172")) || tf_phone.getText().length() < 10 //$NON-NLS-1$
+				|| !tf_mail.getText().contains(Messages.getString("AdminCustomerController.173")) || !tf_mail.getText().contains(Messages.getString("AdminCustomerController.174")) //$NON-NLS-1$ //$NON-NLS-2$
+				|| tf_amount.getText().matches(Messages.getString("AdminCustomerController.175")) || Double.parseDouble(tf_amount.getText()) < 3000) { //$NON-NLS-1$
+			Alert al = new Alert(AlertType.ERROR, Messages.getString("AdminCustomerController.176")); //$NON-NLS-1$
 			al.showAndWait();
 		} else {
 
 			// create today date
-			String pattern = "dd/MM/yyyy";
+			String pattern = Messages.getString("AdminCustomerController.177"); //$NON-NLS-1$
 			String todaydate = new SimpleDateFormat(pattern).format(new Date());
 
 			// formatter for datepicker
-			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+			DateTimeFormatter formatter = DateTimeFormatter.ofPattern(Messages.getString("AdminCustomerController.178")); //$NON-NLS-1$
 
 			String id = tf_id.getText().toString();
 			String name = tf_name.getText().toString();
@@ -694,19 +694,19 @@ public class AdminCustomerController {
 			String pin = tf_pin.getText().toString();
 			String datecreated = tf_date_created.getText().toString();
 
-			String gender = "";
+			String gender = Messages.getString("AdminCustomerController.179"); //$NON-NLS-1$
 			if (rdo_male.isSelected()) {
-				gender = "male";
+				gender = Messages.getString("AdminCustomerController.180"); //$NON-NLS-1$
 			} else {
-				gender = "female";
+				gender = Messages.getString("AdminCustomerController.181"); //$NON-NLS-1$
 			}
 
-			String updateCustomerQuery = "UPDATE `Customer` SET `name`='" + name + "',`age`='" + age + "',`gender`='"
-					+ gender + "',`address`='" + addr + "',`phone`='" + ph + "',`email`='" + mail + "' WHERE `id` = '"
-					+ id + "'";
-			String updateCardQuery = "UPDATE `Card` SET `customerid`='" + id + "',`amount`='" + amount
-					+ "',`lastuseddate`='" + todaydate + "',`registerdate`='" + datecreated + "',`expireddate`='"
-					+ expireddate + "',`pin`=" + pin + " WHERE `cardnumber`='" + cardno + "'";
+			String updateCustomerQuery = Messages.getString("AdminCustomerController.182") + name + Messages.getString("AdminCustomerController.183") + age + Messages.getString("AdminCustomerController.184") //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+					+ gender + Messages.getString("AdminCustomerController.185") + addr + Messages.getString("AdminCustomerController.186") + ph + Messages.getString("AdminCustomerController.187") + mail + Messages.getString("AdminCustomerController.188") //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+					+ id + Messages.getString("AdminCustomerController.189"); //$NON-NLS-1$
+			String updateCardQuery = Messages.getString("AdminCustomerController.190") + id + Messages.getString("AdminCustomerController.191") + amount //$NON-NLS-1$ //$NON-NLS-2$
+					+ Messages.getString("AdminCustomerController.192") + todaydate + Messages.getString("AdminCustomerController.193") + datecreated + Messages.getString("AdminCustomerController.194") //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+					+ expireddate + Messages.getString("AdminCustomerController.195") + pin + Messages.getString("AdminCustomerController.196") + cardno + Messages.getString("AdminCustomerController.197"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 
 			new DBInitialize();
 			DBInitialize.statement.executeUpdate(updateCustomerQuery);
@@ -727,7 +727,7 @@ public class AdminCustomerController {
 			tf_date_created.clear();
 
 			// get tabe data
-			String getTableDataQuery = "SELECT Customer.id, Customer.name, Customer.age, Customer.gender, Customer.address, Customer.phone, Customer.email, Card.cardnumber, Card.amount, Card.lastuseddate, Card.registerdate, Card.expireddate, Card.pin FROM Customer, Card WHERE Customer.id = Card.customerid ORDER BY Customer.id DESC;";
+			String getTableDataQuery = Messages.getString("AdminCustomerController.198"); //$NON-NLS-1$
 			customerData.clear();// clear category data
 			new DBInitialize();
 			ResultSet getrs = DBInitialize.statement.executeQuery(getTableDataQuery);
@@ -745,14 +745,14 @@ public class AdminCustomerController {
 				cu.setLastdateused(getrs.getString(10));
 				cu.setRegisterdate(getrs.getString(11));
 				cu.setExpireddate(getrs.getString(12));
-				cu.setPin("" + getrs.getInt(13));
+				cu.setPin(Messages.getString("AdminCustomerController.199") + getrs.getInt(13)); //$NON-NLS-1$
 
 				customerData.add(cu);
 			}
 			// set to table
 			tb_customer.refresh();
 			// show alert
-			Alert al = new Alert(AlertType.INFORMATION, "Item updated!");
+			Alert al = new Alert(AlertType.INFORMATION, Messages.getString("AdminCustomerController.200")); //$NON-NLS-1$
 			al.showAndWait();
 		}
 	}// end of first else

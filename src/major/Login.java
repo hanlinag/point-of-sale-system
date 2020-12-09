@@ -15,7 +15,7 @@ public class Login extends Application{
 	public void start(Stage primaryStage) throws Exception {
 		// TODO Auto-generated method stub
 		
-		FXMLLoader root = new FXMLLoader(getClass().getResource("/ui/Page_login.fxml"));
+		FXMLLoader root = new FXMLLoader(getClass().getResource(Messages.getString("Login.0"))); //$NON-NLS-1$
 		
 	//	LoginController logincontroller = root.getController();
 		 
@@ -24,8 +24,8 @@ public class Login extends Application{
 		primaryStage.setScene(scene);
 		primaryStage.setResizable(false);
 		primaryStage.setMaximized(false);
-		primaryStage.setTitle("ACPCE POS System");
-		primaryStage.getIcons().add(new Image("graphic/poslogorect.png"));
+		primaryStage.setTitle(Messages.getString("Login.1")); //$NON-NLS-1$
+		primaryStage.getIcons().add(new Image(Messages.getString("Login.2"))); //$NON-NLS-1$
 		primaryStage.show();
 		
 	}

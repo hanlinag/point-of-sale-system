@@ -111,29 +111,29 @@ public class AdminProductController {
 
 	@FXML
 	void initialize() throws ClassNotFoundException, SQLException, InstantiationException, IllegalAccessException {
-		assert tb_product_item != null : "fx:id=\"tb_product_item\" was not injected: check your FXML file 'admin_product.fxml'.";
-		assert tf_barcode != null : "fx:id=\"tf_barcode\" was not injected: check your FXML file 'admin_product.fxml'.";
-		assert tf_name != null : "fx:id=\"tf_name\" was not injected: check your FXML file 'admin_product.fxml'.";
-		assert tf_price != null : "fx:id=\"tf_price\" was not injected: check your FXML file 'admin_product.fxml'.";
-		assert tf_date_added != null : "fx:id=\"tf_date_added\" was not injected: check your FXML file 'admin_product.fxml'.";
-		assert tf_stock != null : "fx:id=\"tf_stock\" was not injected: check your FXML file 'admin_product.fxml'.";
-		assert tf_expired_date != null : "fx:id=\"tf_expired_date\" was not injected: check your FXML file 'admin_product.fxml'.";
-		assert bt_add != null : "fx:id=\"bt_add\" was not injected: check your FXML file 'admin_product.fxml'.";
-		assert bt_update != null : "fx:id=\"bt_update\" was not injected: check your FXML file 'admin_product.fxml'.";
-		assert cbo_category != null : "fx:id=\"cbo_category\" was not injected: check your FXML file 'admin_product.fxml'.";
-		assert cbo_supplier != null : "fx:id=\"cbo_supplier\" was not injected: check your FXML file 'admin_product.fxml'.";
-		assert bt_new != null : "fx:id=\"bt_new\" was not injected: check your FXML file 'admin_product.fxml'.";
-		assert tf_name_search != null : "fx:id=\"tf_name_search\" was not injected: check your FXML file 'admin_product.fxml'.";
-		assert tf_barcode_search != null : "fx:id=\"tf_barcode_search\" was not injected: check your FXML file 'admin_product.fxml'.";
+		assert tb_product_item != null : Messages.getString("AdminProductController.0"); //$NON-NLS-1$
+		assert tf_barcode != null : Messages.getString("AdminProductController.1"); //$NON-NLS-1$
+		assert tf_name != null : Messages.getString("AdminProductController.2"); //$NON-NLS-1$
+		assert tf_price != null : Messages.getString("AdminProductController.3"); //$NON-NLS-1$
+		assert tf_date_added != null : Messages.getString("AdminProductController.4"); //$NON-NLS-1$
+		assert tf_stock != null : Messages.getString("AdminProductController.5"); //$NON-NLS-1$
+		assert tf_expired_date != null : Messages.getString("AdminProductController.6"); //$NON-NLS-1$
+		assert bt_add != null : Messages.getString("AdminProductController.7"); //$NON-NLS-1$
+		assert bt_update != null : Messages.getString("AdminProductController.8"); //$NON-NLS-1$
+		assert cbo_category != null : Messages.getString("AdminProductController.9"); //$NON-NLS-1$
+		assert cbo_supplier != null : Messages.getString("AdminProductController.10"); //$NON-NLS-1$
+		assert bt_new != null : Messages.getString("AdminProductController.11"); //$NON-NLS-1$
+		assert tf_name_search != null : Messages.getString("AdminProductController.12"); //$NON-NLS-1$
+		assert tf_barcode_search != null : Messages.getString("AdminProductController.13"); //$NON-NLS-1$
 
-		col_item_barcode = new TableColumn<ProductItem, String>("Barcode");
-		col_item_name = new TableColumn<ProductItem, String>("Name");
-		col_item_categroy = new TableColumn<ProductItem, String>("Category");
-		col_item_price = new TableColumn<ProductItem, String>("Price");
-		col_item_supplier = new TableColumn<ProductItem, String>("Supplier");
-		col_item_dateadded = new TableColumn<ProductItem, String>("Date Added");
-		col_item_stock = new TableColumn<ProductItem, String>("Stock");
-		col_item_expire_date = new TableColumn<ProductItem, String>("Expired Date");
+		col_item_barcode = new TableColumn<ProductItem, String>(Messages.getString("AdminProductController.14")); //$NON-NLS-1$
+		col_item_name = new TableColumn<ProductItem, String>(Messages.getString("AdminProductController.15")); //$NON-NLS-1$
+		col_item_categroy = new TableColumn<ProductItem, String>(Messages.getString("AdminProductController.16")); //$NON-NLS-1$
+		col_item_price = new TableColumn<ProductItem, String>(Messages.getString("AdminProductController.17")); //$NON-NLS-1$
+		col_item_supplier = new TableColumn<ProductItem, String>(Messages.getString("AdminProductController.18")); //$NON-NLS-1$
+		col_item_dateadded = new TableColumn<ProductItem, String>(Messages.getString("AdminProductController.19")); //$NON-NLS-1$
+		col_item_stock = new TableColumn<ProductItem, String>(Messages.getString("AdminProductController.20")); //$NON-NLS-1$
+		col_item_expire_date = new TableColumn<ProductItem, String>(Messages.getString("AdminProductController.21")); //$NON-NLS-1$
 
 		col_item_barcode.setMinWidth(190.0);
 		col_item_name.setMinWidth(200.0);
@@ -144,29 +144,29 @@ public class AdminProductController {
 		col_item_stock.setMinWidth(90.0);
 		col_item_expire_date.setMinWidth(140.0);
 
-		col_item_barcode.setStyle("-fx-font-size: 18");
-		col_item_name.setStyle("-fx-font-size: 18");
-		col_item_categroy.setStyle("-fx-font-size: 18");
-		col_item_price.setStyle("-fx-font-size: 18");
-		col_item_supplier.setStyle("-fx-font-size: 18");
-		col_item_dateadded.setStyle("-fx-font-size: 18");
-		col_item_stock.setStyle("-fx-font-size: 18");
-		col_item_expire_date.setStyle("-fx-font-size: 18");
+		col_item_barcode.setStyle(Messages.getString("AdminProductController.22")); //$NON-NLS-1$
+		col_item_name.setStyle(Messages.getString("AdminProductController.23")); //$NON-NLS-1$
+		col_item_categroy.setStyle(Messages.getString("AdminProductController.24")); //$NON-NLS-1$
+		col_item_price.setStyle(Messages.getString("AdminProductController.25")); //$NON-NLS-1$
+		col_item_supplier.setStyle(Messages.getString("AdminProductController.26")); //$NON-NLS-1$
+		col_item_dateadded.setStyle(Messages.getString("AdminProductController.27")); //$NON-NLS-1$
+		col_item_stock.setStyle(Messages.getString("AdminProductController.28")); //$NON-NLS-1$
+		col_item_expire_date.setStyle(Messages.getString("AdminProductController.29")); //$NON-NLS-1$
 
-		col_item_barcode.setCellValueFactory(new PropertyValueFactory<ProductItem, String>("barcode"));
-		col_item_name.setCellValueFactory(new PropertyValueFactory<ProductItem, String>("name"));
-		col_item_categroy.setCellValueFactory(new PropertyValueFactory<ProductItem, String>("categoryname"));
-		col_item_price.setCellValueFactory(new PropertyValueFactory<ProductItem, String>("price"));
-		col_item_supplier.setCellValueFactory(new PropertyValueFactory<ProductItem, String>("suppliername"));
-		col_item_dateadded.setCellValueFactory(new PropertyValueFactory<ProductItem, String>("dateadded"));
-		col_item_stock.setCellValueFactory(new PropertyValueFactory<ProductItem, String>("stockamount"));
-		col_item_expire_date.setCellValueFactory(new PropertyValueFactory<ProductItem, String>("expiredate"));
+		col_item_barcode.setCellValueFactory(new PropertyValueFactory<ProductItem, String>(Messages.getString("AdminProductController.30"))); //$NON-NLS-1$
+		col_item_name.setCellValueFactory(new PropertyValueFactory<ProductItem, String>(Messages.getString("AdminProductController.31"))); //$NON-NLS-1$
+		col_item_categroy.setCellValueFactory(new PropertyValueFactory<ProductItem, String>(Messages.getString("AdminProductController.32"))); //$NON-NLS-1$
+		col_item_price.setCellValueFactory(new PropertyValueFactory<ProductItem, String>(Messages.getString("AdminProductController.33"))); //$NON-NLS-1$
+		col_item_supplier.setCellValueFactory(new PropertyValueFactory<ProductItem, String>(Messages.getString("AdminProductController.34"))); //$NON-NLS-1$
+		col_item_dateadded.setCellValueFactory(new PropertyValueFactory<ProductItem, String>(Messages.getString("AdminProductController.35"))); //$NON-NLS-1$
+		col_item_stock.setCellValueFactory(new PropertyValueFactory<ProductItem, String>(Messages.getString("AdminProductController.36"))); //$NON-NLS-1$
+		col_item_expire_date.setCellValueFactory(new PropertyValueFactory<ProductItem, String>(Messages.getString("AdminProductController.37"))); //$NON-NLS-1$
 
 		tb_product_item.getColumns().addAll(col_item_barcode, col_item_name, col_item_categroy, col_item_price,
 				col_item_supplier, col_item_dateadded, col_item_stock, col_item_expire_date);
 
 		// get category and set to conmbobox
-		String categoryquery = "SELECT * FROM `productcategory`;";
+		String categoryquery = Messages.getString("AdminProductController.38"); //$NON-NLS-1$
 		new DBInitialize();
 		rsCategory = DBInitialize.statement.executeQuery(categoryquery);
 		while (rsCategory.next()) {
@@ -176,10 +176,10 @@ public class AdminProductController {
 		}
 
 		cbo_category.setItems(categoryData);
-		cbo_category.setValue("Snacks");
+		cbo_category.setValue(Messages.getString("AdminProductController.39")); //$NON-NLS-1$
 
 		// get supplier name and set to combobox
-		String supplierquery = "SELECT * FROM `supplier`;";
+		String supplierquery = Messages.getString("AdminProductController.40"); //$NON-NLS-1$
 		new DBInitialize();
 		rsSupplier = DBInitialize.statement.executeQuery(supplierquery);
 		while (rsSupplier.next()) {
@@ -192,7 +192,7 @@ public class AdminProductController {
 		cbo_supplier.setValue(supplierData.get(1));
 
 		new DBInitialize().DBInitialize();
-		String query = "SELECT productitems.barcode, productitems.name, productcategory.name, productitems.price, supplier.companyname, productitems.dateadded, productitems.stockamount, productitems.expireddate FROM productitems, supplier,productcategory WHERE productitems.categoryid = productcategory.id AND productitems.supplierid = supplier.id ORDER BY productitems.barcode DESC;";
+		String query = Messages.getString("AdminProductController.41"); //$NON-NLS-1$
 
 		new DBInitialize();
 		rs = DBInitialize.statement.executeQuery(query);
@@ -220,7 +220,7 @@ public class AdminProductController {
 
 				if (e.getClickCount() == 2 && (!row.isEmpty())) {
 					ProductItem product = tb_product_item.getSelectionModel().getSelectedItem();
-					System.out.println("Double click is: " + product.getName());
+					System.out.println(Messages.getString("AdminProductController.42") + product.getName()); //$NON-NLS-1$
 
 					// get category name
 					String categoryfromproducttable = product.getCategoryname();
@@ -254,21 +254,21 @@ public class AdminProductController {
 
 				final ContextMenu rowMenu = new ContextMenu();
 
-				MenuItem removeItem = new MenuItem("Delete");
+				MenuItem removeItem = new MenuItem(Messages.getString("AdminProductController.43")); //$NON-NLS-1$
 				removeItem.setOnAction(new EventHandler<ActionEvent>() {
 
 					@Override
 					public void handle(ActionEvent event) {
 						ProductItem p = tb_product_item.getSelectionModel().getSelectedItem();
 
-						Alert alert = new Alert(AlertType.CONFIRMATION, "Are U Sure To Delete " + p.getName() + " ?",
+						Alert alert = new Alert(AlertType.CONFIRMATION, Messages.getString("AdminProductController.44") + p.getName() + Messages.getString("AdminProductController.45"), //$NON-NLS-1$ //$NON-NLS-2$
 								ButtonType.YES, ButtonType.NO);
 						alert.showAndWait();
 
 						if (alert.getResult() == ButtonType.YES) {
 							// do stuff
-							String removequery = "DELETE FROM `productitems` WHERE productitems.barcode = '"
-									+ p.getBarcode() + "';";
+							String removequery = Messages.getString("AdminProductController.46") //$NON-NLS-1$
+									+ p.getBarcode() + Messages.getString("AdminProductController.47"); //$NON-NLS-1$
 							try {
 								new DBInitialize().DBInitialize();
 								new DBInitialize();
@@ -277,7 +277,7 @@ public class AdminProductController {
 								// update table
 								// update table data
 								new DBInitialize().DBInitialize();
-								String queryupdatetable = "SELECT productitems.barcode, productitems.name, productcategory.name, productitems.price, supplier.companyname, productitems.dateadded, productitems.stockamount, productitems.expireddate FROM productitems, supplier,productcategory WHERE productitems.categoryid = productcategory.id AND productitems.supplierid = supplier.id ORDER BY productitems.barcode DESC;";
+								String queryupdatetable = Messages.getString("AdminProductController.48"); //$NON-NLS-1$
 
 								new DBInitialize();
 								ResultSet rss = DBInitialize.statement.executeQuery(queryupdatetable);
@@ -331,13 +331,13 @@ public class AdminProductController {
 	void onBtUpdateAction(ActionEvent event)
 			throws ClassNotFoundException, SQLException, InstantiationException, IllegalAccessException {
 
-		if (tf_barcode.getText().toString().equals("") || tf_name.getText().toString().equals("")
-				|| tf_price.getText().toString().equals("") || tf_stock.getText().toString().equals("")
-				|| tf_expired_date.getText().toString().equals("") || tf_price.getText().matches(".*[a-zA-Z]+.*")
-				|| Double.parseDouble(tf_price.getText().toString()) <= 0 || tf_stock.getText().matches(".*[a-zA-Z]+.*")
+		if (tf_barcode.getText().toString().equals(Messages.getString("AdminProductController.49")) || tf_name.getText().toString().equals(Messages.getString("AdminProductController.50")) //$NON-NLS-1$ //$NON-NLS-2$
+				|| tf_price.getText().toString().equals(Messages.getString("AdminProductController.51")) || tf_stock.getText().toString().equals(Messages.getString("AdminProductController.52")) //$NON-NLS-1$ //$NON-NLS-2$
+				|| tf_expired_date.getText().toString().equals(Messages.getString("AdminProductController.53")) || tf_price.getText().matches(Messages.getString("AdminProductController.54")) //$NON-NLS-1$ //$NON-NLS-2$
+				|| Double.parseDouble(tf_price.getText().toString()) <= 0 || tf_stock.getText().matches(Messages.getString("AdminProductController.55")) //$NON-NLS-1$
 				|| Double.parseDouble(tf_stock.getText().toString()) <= 0 || tf_expired_date.getText().length() < 9) {
 
-			Alert al = new Alert(AlertType.ERROR, "Input Error or Data Missing!");
+			Alert al = new Alert(AlertType.ERROR, Messages.getString("AdminProductController.56")); //$NON-NLS-1$
 			al.showAndWait();
 		} else {
 
@@ -351,8 +351,8 @@ public class AdminProductController {
 			String stockamount = tf_stock.getText().toString();
 
 			// get category id by name
-			String categoryQuery = "SELECT `id` FROM `productcategory` WHERE productcategory.name = '" + categoryname
-					+ "'";
+			String categoryQuery = Messages.getString("AdminProductController.57") + categoryname //$NON-NLS-1$
+					+ Messages.getString("AdminProductController.58"); //$NON-NLS-1$
 			int categoryid = 0;
 			// new DBInitialize().DBInitialize();
 			new DBInitialize();
@@ -361,30 +361,30 @@ public class AdminProductController {
 				categoryid = rs.getInt(1);
 			} else {
 				// show alert
-				Alert alert = new Alert(AlertType.ERROR, "Try Again1");
+				Alert alert = new Alert(AlertType.ERROR, Messages.getString("AdminProductController.59")); //$NON-NLS-1$
 				alert.showAndWait();
 			}
 
 			// get category id by name
-			String supplierQuery = "SELECT `id` FROM `supplier` WHERE supplier.companyname = '" + suppliername + "'";
-			System.out.println("Supplier name is : " + suppliername);
+			String supplierQuery = Messages.getString("AdminProductController.60") + suppliername + Messages.getString("AdminProductController.61"); //$NON-NLS-1$ //$NON-NLS-2$
+			System.out.println(Messages.getString("AdminProductController.62") + suppliername); //$NON-NLS-1$
 			int supplierid = 0;
 			// new DBInitialize().DBInitialize();
 			new DBInitialize();
 			ResultSet r = DBInitialize.statement.executeQuery(supplierQuery);
 			if (r.next()) {
 				supplierid = r.getInt(1);
-				System.out.println("Supplier id is : " + supplierid);
+				System.out.println(Messages.getString("AdminProductController.63") + supplierid); //$NON-NLS-1$
 			} else {
 				// show alert
-				Alert alert = new Alert(AlertType.ERROR, "Try Again2");
+				Alert alert = new Alert(AlertType.ERROR, Messages.getString("AdminProductController.64")); //$NON-NLS-1$
 				alert.showAndWait();
 			}
 
-			String query = "UPDATE `productitems` SET `name`= '" + name + "',`categoryid`=" + categoryid
-					+ ",`dateadded`= '" + dateadded + "' ,`expireddate`= '" + expireddate + "' ,`price`= '" + price
-					+ "'  ,`supplierid`=" + supplierid + " ,`stockamount`= '" + stockamount + "'  WHERE `barcode`= '"
-					+ barcode + "'";
+			String query = Messages.getString("AdminProductController.65") + name + Messages.getString("AdminProductController.66") + categoryid //$NON-NLS-1$ //$NON-NLS-2$
+					+ Messages.getString("AdminProductController.67") + dateadded + Messages.getString("AdminProductController.68") + expireddate + Messages.getString("AdminProductController.69") + price //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+					+ Messages.getString("AdminProductController.70") + supplierid + Messages.getString("AdminProductController.71") + stockamount + Messages.getString("AdminProductController.72") //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+					+ barcode + Messages.getString("AdminProductController.73"); //$NON-NLS-1$
 
 			// new DBInitialize().DBInitialize();
 			new DBInitialize();
@@ -400,7 +400,7 @@ public class AdminProductController {
 
 			// update table data
 			// new DBInitialize().DBInitialize();
-			String queryupdatetable = "SELECT productitems.barcode, productitems.name, productcategory.name, productitems.price, supplier.companyname, productitems.dateadded, productitems.stockamount, productitems.expireddate FROM productitems, supplier,productcategory WHERE productitems.categoryid = productcategory.id AND productitems.supplierid = supplier.id ORDER BY productitems.barcode DESC;";
+			String queryupdatetable = Messages.getString("AdminProductController.74"); //$NON-NLS-1$
 
 			new DBInitialize();
 			ResultSet rss = DBInitialize.statement.executeQuery(queryupdatetable);
@@ -425,7 +425,7 @@ public class AdminProductController {
 			// tb_product_item.setItems(productData);
 
 			// show alert
-			Alert alert = new Alert(AlertType.INFORMATION, "Success! Item is update to database.");
+			Alert alert = new Alert(AlertType.INFORMATION, Messages.getString("AdminProductController.75")); //$NON-NLS-1$
 			alert.showAndWait();
 		} // end of else
 	}
@@ -436,13 +436,13 @@ public class AdminProductController {
 	void onbtAddAction(ActionEvent event)
 			throws SQLException, ClassNotFoundException, InstantiationException, IllegalAccessException {
 
-		if (tf_barcode.getText().toString().equals("") || tf_name.getText().toString().equals("")
-				|| tf_price.getText().toString().equals("") || tf_stock.getText().toString().equals("")
-				|| tf_expired_date.getText().toString().equals("") || tf_price.getText().matches(".*[a-zA-Z]+.*")
-				|| Double.parseDouble(tf_price.getText().toString()) <= 0 || tf_stock.getText().matches(".*[a-zA-Z]+.*")
+		if (tf_barcode.getText().toString().equals(Messages.getString("AdminProductController.76")) || tf_name.getText().toString().equals(Messages.getString("AdminProductController.77")) //$NON-NLS-1$ //$NON-NLS-2$
+				|| tf_price.getText().toString().equals(Messages.getString("AdminProductController.78")) || tf_stock.getText().toString().equals(Messages.getString("AdminProductController.79")) //$NON-NLS-1$ //$NON-NLS-2$
+				|| tf_expired_date.getText().toString().equals(Messages.getString("AdminProductController.80")) || tf_price.getText().matches(Messages.getString("AdminProductController.81")) //$NON-NLS-1$ //$NON-NLS-2$
+				|| Double.parseDouble(tf_price.getText().toString()) <= 0 || tf_stock.getText().matches(Messages.getString("AdminProductController.82")) //$NON-NLS-1$
 				|| Double.parseDouble(tf_stock.getText().toString()) <= 0 || tf_expired_date.getText().length() < 9) {
 
-			Alert al = new Alert(AlertType.ERROR, "Input Error or Data Missing!");
+			Alert al = new Alert(AlertType.ERROR, Messages.getString("AdminProductController.83")); //$NON-NLS-1$
 			al.showAndWait();
 		} else {
 
@@ -457,8 +457,8 @@ public class AdminProductController {
 
 			try {
 			// get category id by name
-			String categoryQuery = "SELECT `id` FROM `productcategory` WHERE productcategory.name = '" + categoryname
-					+ "'";
+			String categoryQuery = Messages.getString("AdminProductController.84") + categoryname //$NON-NLS-1$
+					+ Messages.getString("AdminProductController.85"); //$NON-NLS-1$
 			int categoryid = 0;
 			new DBInitialize().DBInitialize();
 			new DBInitialize();
@@ -467,41 +467,41 @@ public class AdminProductController {
 				categoryid = rs.getInt(1);
 			} else {
 				// show alert
-				Alert alert = new Alert(AlertType.ERROR, "Try Again1");
+				Alert alert = new Alert(AlertType.ERROR, Messages.getString("AdminProductController.86")); //$NON-NLS-1$
 				alert.showAndWait();
 			}
 
 			// get category id by name
-			String supplierQuery = "SELECT `id` FROM `supplier` WHERE supplier.companyname = '" + suppliername + "'";
-			System.out.println("Supplier name is : " + suppliername);
+			String supplierQuery = Messages.getString("AdminProductController.87") + suppliername + Messages.getString("AdminProductController.88"); //$NON-NLS-1$ //$NON-NLS-2$
+			System.out.println(Messages.getString("AdminProductController.89") + suppliername); //$NON-NLS-1$
 			int supplierid = 0;
 			new DBInitialize().DBInitialize();
 			new DBInitialize();
 			ResultSet r = DBInitialize.statement.executeQuery(supplierQuery);
 			if (r.next()) {
 				supplierid = r.getInt(1);
-				System.out.println("Supplier id is : " + supplierid);
+				System.out.println(Messages.getString("AdminProductController.90") + supplierid); //$NON-NLS-1$
 			} else {
 				// show alert
-				Alert alert = new Alert(AlertType.ERROR, "Try Again2");
+				Alert alert = new Alert(AlertType.ERROR, Messages.getString("AdminProductController.91")); //$NON-NLS-1$
 				alert.showAndWait();
 			}
 
-			String query = "INSERT INTO `productitems`(`name`, `categoryid`, `dateadded`, `expireddate`, `price`, `barcode`, `supplierid`, `stockamount`, `count`) VALUES"
-					+ " ('" + name + "'," + categoryid + ",'" + dateadded + "','" + expireddate + "','" + price + "','"
-					+ barcode + "'," + supplierid + ",'" + stockamount + "', 0);";
+			String query = Messages.getString("AdminProductController.92") //$NON-NLS-1$
+					+ Messages.getString("AdminProductController.93") + name + Messages.getString("AdminProductController.94") + categoryid + Messages.getString("AdminProductController.95") + dateadded + Messages.getString("AdminProductController.96") + expireddate + Messages.getString("AdminProductController.97") + price + Messages.getString("AdminProductController.98") //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$ //$NON-NLS-6$
+					+ barcode + Messages.getString("AdminProductController.99") + supplierid + Messages.getString("AdminProductController.100") + stockamount + Messages.getString("AdminProductController.101"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 
 			new DBInitialize().DBInitialize();
 			new DBInitialize();
 			DBInitialize.statement.executeUpdate(query);
 
 			// update supplier table lastsupplied date
-			String pat = "dd/MM/yyyy";
+			String pat = Messages.getString("AdminProductController.102"); //$NON-NLS-1$
 			String todaydate = new SimpleDateFormat(pat).format(new Date());
-			System.out.println("today is " + todaydate);
+			System.out.println(Messages.getString("AdminProductController.103") + todaydate); //$NON-NLS-1$
 
-			String upquery = "UPDATE `supplier` SET `lastdatesupplied`='" + todaydate + "' WHERE `id`='" + supplierid
-					+ "'";
+			String upquery = Messages.getString("AdminProductController.104") + todaydate + Messages.getString("AdminProductController.105") + supplierid //$NON-NLS-1$ //$NON-NLS-2$
+					+ Messages.getString("AdminProductController.106"); //$NON-NLS-1$
 
 			new DBInitialize().DBInitialize();
 			new DBInitialize();
@@ -517,7 +517,7 @@ public class AdminProductController {
 
 			// update table data
 			new DBInitialize().DBInitialize();
-			String queryupdatetable = "SELECT productitems.barcode, productitems.name, productcategory.name, productitems.price, supplier.companyname, productitems.dateadded, productitems.stockamount, productitems.expireddate FROM productitems, supplier,productcategory WHERE productitems.categoryid = productcategory.id AND productitems.supplierid = supplier.id  ORDER BY productitems.barcode DESC  ;";
+			String queryupdatetable = Messages.getString("AdminProductController.107"); //$NON-NLS-1$
 
 			new DBInitialize();
 			ResultSet rss = DBInitialize.statement.executeQuery(queryupdatetable);
@@ -542,12 +542,12 @@ public class AdminProductController {
 			// tb_product_item.setItems(productData);
 
 			// show alert
-			Alert alert = new Alert(AlertType.INFORMATION, "Success! One product items is added to database.");
+			Alert alert = new Alert(AlertType.INFORMATION, Messages.getString("AdminProductController.108")); //$NON-NLS-1$
 			alert.showAndWait();
 			
 			}//end of try
 	    	catch(Exception ex) {
-	    		Alert al = new Alert(AlertType.ERROR, ""+ex.getMessage());
+	    		Alert al = new Alert(AlertType.ERROR, Messages.getString("AdminProductController.109")+ex.getMessage()); //$NON-NLS-1$
 	    		al.showAndWait();
 	    	}
 		} // end of else
@@ -565,25 +565,25 @@ public class AdminProductController {
 		tf_barcode.clear();
 		tf_stock.clear();
 
-		String query = "SELECT `barcode` FROM `productitems` ORDER BY productitems.barcode DESC LIMIT 1";
+		String query = Messages.getString("AdminProductController.110"); //$NON-NLS-1$
 
-		String oldbarcode = "";
+		String oldbarcode = Messages.getString("AdminProductController.111"); //$NON-NLS-1$
 
 		new DBInitialize().DBInitialize();
 		new DBInitialize();
 		ResultSet rs = DBInitialize.statement.executeQuery(query);
 		while (rs.next()) {
-			oldbarcode = "" + rs.getString(1);
+			oldbarcode = Messages.getString("AdminProductController.112") + rs.getString(1); //$NON-NLS-1$
 		}
 
 		// count +1 new Id
-		String newbarcode = "" + (Long.parseLong(oldbarcode) + 1);
+		String newbarcode = Messages.getString("AdminProductController.113") + (Long.parseLong(oldbarcode) + 1); //$NON-NLS-1$
 		tf_barcode.setText(newbarcode);
 
 		// create today date
-		String pattern = "dd/MM/yyyy";
+		String pattern = Messages.getString("AdminProductController.114"); //$NON-NLS-1$
 		String todaydate = new SimpleDateFormat(pattern).format(new Date());
-		System.out.println("today is " + todaydate);
+		System.out.println(Messages.getString("AdminProductController.115") + todaydate); //$NON-NLS-1$
 		tf_date_added.setText(todaydate);
 	}
 
@@ -595,13 +595,13 @@ public class AdminProductController {
 
 
 		String searchKey = tf_barcode_search.getText().toString();
-		System.out.println("key entered is : " + searchKey);
-		String query = "SELECT productitems.barcode, productitems.name, productcategory.name, productitems.price, supplier.companyname, productitems.dateadded, productitems.stockamount, productitems.expireddate FROM productitems, supplier,productcategory WHERE productitems.categoryid = productcategory.id AND productitems.supplierid = supplier.id AND productitems.barcode LIKE '"
-				+ searchKey + "%'";
+		System.out.println(Messages.getString("AdminProductController.116") + searchKey); //$NON-NLS-1$
+		String query = Messages.getString("AdminProductController.117") //$NON-NLS-1$
+				+ searchKey + Messages.getString("AdminProductController.118"); //$NON-NLS-1$
 
 		// new DBInitialize().DBInitialize();
 
-		System.out.println("working");
+		System.out.println(Messages.getString("AdminProductController.119")); //$NON-NLS-1$
 		try {
 			// ResultSet rs = st.executeQuery("SELECT * FROM USER");
 			ResultSet rs = DBInitialize.statement.executeQuery(query);
@@ -627,7 +627,7 @@ public class AdminProductController {
 			// tb_total_item.getItems().clear();
 			// tb_total_item.setItems(data);
 
-			System.out.println("working2");
+			System.out.println(Messages.getString("AdminProductController.120")); //$NON-NLS-1$
 			// data.getItems().addAll(row);
 		} catch (SQLException ex) {
 
@@ -642,13 +642,13 @@ public class AdminProductController {
 	void onNameSearchAction(KeyEvent event) {
 
 		String searchKey = tf_name_search.getText().toString();
-		System.out.println("key entered is : " + searchKey);
-		String query = "SELECT productitems.barcode, productitems.name, productcategory.name, productitems.price, supplier.companyname, productitems.dateadded, productitems.stockamount, productitems.expireddate FROM productitems, supplier,productcategory WHERE productitems.categoryid = productcategory.id AND productitems.supplierid = supplier.id AND productitems.name LIKE '"
-				+ searchKey + "%'";
+		System.out.println(Messages.getString("AdminProductController.121") + searchKey); //$NON-NLS-1$
+		String query = Messages.getString("AdminProductController.122") //$NON-NLS-1$
+				+ searchKey + Messages.getString("AdminProductController.123"); //$NON-NLS-1$
 
 		// new DBInitialize().DBInitialize();
 
-		System.out.println("working");
+		System.out.println(Messages.getString("AdminProductController.124")); //$NON-NLS-1$
 		try {
 			// ResultSet rs = st.executeQuery("SELECT * FROM USER");
 			ResultSet rs = DBInitialize.statement.executeQuery(query);
@@ -668,7 +668,7 @@ public class AdminProductController {
 			}
 			tb_product_item.setItems(row);
 
-			System.out.println("working2");
+			System.out.println(Messages.getString("AdminProductController.125")); //$NON-NLS-1$
 			// data.getItems().addAll(row);
 		} catch (SQLException ex) {
 

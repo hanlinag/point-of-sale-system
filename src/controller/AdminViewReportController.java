@@ -32,9 +32,9 @@ public class AdminViewReportController {
     @FXML
     void initialize() {
         
-        assert bt_daily_re != null : "fx:id=\"bt_daily_re\" was not injected: check your FXML file 'Admin_view_report.fxml'.";
-        assert bt_month_re != null : "fx:id=\"bt_month_re\" was not injected: check your FXML file 'Admin_view_report.fxml'.";
-        assert bt_popu_re != null : "fx:id=\"bt_popu_re\" was not injected: check your FXML file 'Admin_view_report.fxml'.";
+        assert bt_daily_re != null : Messages.getString("AdminViewReportController.0"); //$NON-NLS-1$
+        assert bt_month_re != null : Messages.getString("AdminViewReportController.1"); //$NON-NLS-1$
+        assert bt_popu_re != null : Messages.getString("AdminViewReportController.2"); //$NON-NLS-1$
 
     }
     

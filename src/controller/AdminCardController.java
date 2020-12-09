@@ -56,22 +56,22 @@ public class AdminCardController {
 
 	@FXML
 	void initialize() throws ClassNotFoundException, InstantiationException, IllegalAccessException, SQLException {
-		assert tb_card != null : "fx:id=\"tb_card\" was not injected: check your FXML file 'Admin_card.fxml'.";
-		assert tf_card_no != null : "fx:id=\"tf_card_no\" was not injected: check your FXML file 'Admin_card.fxml'.";
-		assert tf_pin != null : "fx:id=\"tf_pin\" was not injected: check your FXML file 'Admin_card.fxml'.";
-		assert bt_new != null : "fx:id=\"bt_new\" was not injected: check your FXML file 'Admin_card.fxml'.";
-		assert bt_add != null : "fx:id=\"bt_add\" was not injected: check your FXML file 'Admin_card.fxml'.";
+		assert tb_card != null : Messages.getString("AdminCardController.0"); //$NON-NLS-1$
+		assert tf_card_no != null : Messages.getString("AdminCardController.1"); //$NON-NLS-1$
+		assert tf_pin != null : Messages.getString("AdminCardController.2"); //$NON-NLS-1$
+		assert bt_new != null : Messages.getString("AdminCardController.3"); //$NON-NLS-1$
+		assert bt_add != null : Messages.getString("AdminCardController.4"); //$NON-NLS-1$
 		
 		tf_card_no.setEditable(false);
 		tf_pin.setEditable(false);
 
-		col_item_card_no = new TableColumn<CardUser, String>("Card Number");
-		col_item_amount = new TableColumn<CardUser, String>("Balance Amount");
-		col_item_pin = new TableColumn<CardUser, String>("PIN");
-		col_item_customer = new TableColumn<CardUser, String>("Customer ID");
-		col_item_lastused_date = new TableColumn<CardUser, String>("Last Used Date");
-		col_item_registerdate = new TableColumn<CardUser, String>("Register Date");
-		col_item_expiredate = new TableColumn<CardUser, String>("Expired Date");
+		col_item_card_no = new TableColumn<CardUser, String>(Messages.getString("AdminCardController.5")); //$NON-NLS-1$
+		col_item_amount = new TableColumn<CardUser, String>(Messages.getString("AdminCardController.6")); //$NON-NLS-1$
+		col_item_pin = new TableColumn<CardUser, String>(Messages.getString("AdminCardController.7")); //$NON-NLS-1$
+		col_item_customer = new TableColumn<CardUser, String>(Messages.getString("AdminCardController.8")); //$NON-NLS-1$
+		col_item_lastused_date = new TableColumn<CardUser, String>(Messages.getString("AdminCardController.9")); //$NON-NLS-1$
+		col_item_registerdate = new TableColumn<CardUser, String>(Messages.getString("AdminCardController.10")); //$NON-NLS-1$
+		col_item_expiredate = new TableColumn<CardUser, String>(Messages.getString("AdminCardController.11")); //$NON-NLS-1$
 
 		col_item_card_no.setMinWidth(200.0);
 		col_item_amount.setMinWidth(200.0);
@@ -81,27 +81,27 @@ public class AdminCardController {
 		col_item_registerdate.setMinWidth(200.0);
 		col_item_expiredate.setMinWidth(200.0);
 
-		col_item_card_no.setStyle("-fx-font-size: 18");
-		col_item_amount.setStyle("-fx-font-size: 18");
-		col_item_pin.setStyle("-fx-font-size: 18");
-		col_item_customer.setStyle("-fx-font-size: 18");
-		col_item_lastused_date.setStyle("-fx-font-size: 18");
-		col_item_registerdate.setStyle("-fx-font-size: 18");
-		col_item_expiredate.setStyle("-fx-font-size: 18");
+		col_item_card_no.setStyle(Messages.getString("AdminCardController.12")); //$NON-NLS-1$
+		col_item_amount.setStyle(Messages.getString("AdminCardController.13")); //$NON-NLS-1$
+		col_item_pin.setStyle(Messages.getString("AdminCardController.14")); //$NON-NLS-1$
+		col_item_customer.setStyle(Messages.getString("AdminCardController.15")); //$NON-NLS-1$
+		col_item_lastused_date.setStyle(Messages.getString("AdminCardController.16")); //$NON-NLS-1$
+		col_item_registerdate.setStyle(Messages.getString("AdminCardController.17")); //$NON-NLS-1$
+		col_item_expiredate.setStyle(Messages.getString("AdminCardController.18")); //$NON-NLS-1$
 
-		col_item_card_no.setCellValueFactory(new PropertyValueFactory<CardUser, String>("cardno"));
-		col_item_amount.setCellValueFactory(new PropertyValueFactory<CardUser, String>("amount"));
-		col_item_pin.setCellValueFactory(new PropertyValueFactory<CardUser, String>("pin"));
-		col_item_customer.setCellValueFactory(new PropertyValueFactory<CardUser, String>("customrid"));
-		col_item_lastused_date.setCellValueFactory(new PropertyValueFactory<CardUser, String>("lastdateused"));
-		col_item_registerdate.setCellValueFactory(new PropertyValueFactory<CardUser, String>("registerdate"));
-		col_item_expiredate.setCellValueFactory(new PropertyValueFactory<CardUser, String>("expireddate"));
+		col_item_card_no.setCellValueFactory(new PropertyValueFactory<CardUser, String>(Messages.getString("AdminCardController.19"))); //$NON-NLS-1$
+		col_item_amount.setCellValueFactory(new PropertyValueFactory<CardUser, String>(Messages.getString("AdminCardController.20"))); //$NON-NLS-1$
+		col_item_pin.setCellValueFactory(new PropertyValueFactory<CardUser, String>(Messages.getString("AdminCardController.21"))); //$NON-NLS-1$
+		col_item_customer.setCellValueFactory(new PropertyValueFactory<CardUser, String>(Messages.getString("AdminCardController.22"))); //$NON-NLS-1$
+		col_item_lastused_date.setCellValueFactory(new PropertyValueFactory<CardUser, String>(Messages.getString("AdminCardController.23"))); //$NON-NLS-1$
+		col_item_registerdate.setCellValueFactory(new PropertyValueFactory<CardUser, String>(Messages.getString("AdminCardController.24"))); //$NON-NLS-1$
+		col_item_expiredate.setCellValueFactory(new PropertyValueFactory<CardUser, String>(Messages.getString("AdminCardController.25"))); //$NON-NLS-1$
 
 		tb_card.getColumns().addAll(col_item_card_no, col_item_customer, col_item_amount, col_item_pin,
 				col_item_lastused_date, col_item_registerdate, col_item_expiredate);
 
 		// get data from db
-		String query = "SELECT * FROM `Card`";
+		String query = Messages.getString("AdminCardController.26"); //$NON-NLS-1$
 		new DBInitialize().DBInitialize();
 		new DBInitialize();
 		ResultSet rs = DBInitialize.statement.executeQuery(query);
@@ -113,7 +113,7 @@ public class AdminCardController {
 			c.setLastdateused(rs.getString(4));
 			c.setRegisterdate(rs.getString(5));
 			c.setExpireddate(rs.getString(6));
-			c.setPin(""+rs.getInt(7));
+			c.setPin(Messages.getString("AdminCardController.27")+rs.getInt(7)); //$NON-NLS-1$
 			
 			
 			cardData.add(c);
@@ -130,7 +130,7 @@ public class AdminCardController {
     	
     	        if (e.getClickCount() == 2 && (! row.isEmpty()) ) {
     	        	CardUser ca = tb_card.getSelectionModel().getSelectedItem();
-    	            System.out.println("Double click is: "+ca.getCardno());
+    	            System.out.println(Messages.getString("AdminCardController.28")+ca.getCardno()); //$NON-NLS-1$
     	    
     	            //set data to tf
     	            tf_card_no.setText(ca.getCardno());
@@ -147,8 +147,8 @@ public class AdminCardController {
 	@FXML
 	void onAddAction(ActionEvent event) throws ClassNotFoundException, InstantiationException, IllegalAccessException, SQLException {
 
-		if(tf_card_no.getText().equals("") || tf_pin.getText().equals("")) {
-			Alert al = new Alert(AlertType.ERROR, "Invalid Input or Data Missing!");
+		if(tf_card_no.getText().equals(Messages.getString("AdminCardController.29")) || tf_pin.getText().equals(Messages.getString("AdminCardController.30"))) { //$NON-NLS-1$ //$NON-NLS-2$
+			Alert al = new Alert(AlertType.ERROR, Messages.getString("AdminCardController.31")); //$NON-NLS-1$
 			al.showAndWait();
 		}
 		else {
@@ -159,8 +159,8 @@ public class AdminCardController {
 		String getpin = tf_pin.getText().toString();
 		
 		try {
-		String queryAdd = "INSERT INTO `Card`(`cardnumber`, `customerid`, `amount`, `lastuseddate`, `registerdate`, `expireddate`, `pin`) "
-				+ "VALUES ('"+cardno+"','','0','','','',"+getpin+")";
+		String queryAdd = Messages.getString("AdminCardController.32") //$NON-NLS-1$
+				+ Messages.getString("AdminCardController.33")+cardno+Messages.getString("AdminCardController.34")+getpin+Messages.getString("AdminCardController.35"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		
 		new DBInitialize().DBInitialize();
     	new DBInitialize();
@@ -171,7 +171,7 @@ public class AdminCardController {
     	
     	//get data set set  to db
     	// get data from db
-    			String query = "SELECT * FROM `Card`";
+    			String query = Messages.getString("AdminCardController.36"); //$NON-NLS-1$
     			new DBInitialize().DBInitialize();
     			new DBInitialize();
     			ResultSet rs = DBInitialize.statement.executeQuery(query);
@@ -183,7 +183,7 @@ public class AdminCardController {
     				c.setLastdateused(rs.getString(4));
     				c.setRegisterdate(rs.getString(5));
     				c.setExpireddate(rs.getString(6));
-    				c.setPin(""+rs.getInt(7));
+    				c.setPin(Messages.getString("AdminCardController.37")+rs.getInt(7)); //$NON-NLS-1$
     				
     				
     				cardData.add(c);
@@ -198,12 +198,12 @@ public class AdminCardController {
     			
     			
     			//show alert
-    			Alert al = new Alert(AlertType.INFORMATION, "Item added!");
+    			Alert al = new Alert(AlertType.INFORMATION, Messages.getString("AdminCardController.38")); //$NON-NLS-1$
     			al.showAndWait();
 		
 		}//end of try
     	catch(Exception ex) {
-    		Alert al = new Alert(AlertType.ERROR, ""+ex.getMessage());
+    		Alert al = new Alert(AlertType.ERROR, Messages.getString("AdminCardController.39")+ex.getMessage()); //$NON-NLS-1$
     		al.showAndWait();
     	}
 		
@@ -216,23 +216,23 @@ public class AdminCardController {
 		tf_card_no.clear();
     	tf_pin.clear();
     	
-    	String query = "SELECT Card.cardnumber FROM `Card` ORDER BY Card.cardnumber DESC LIMIT 1";
+    	String query = Messages.getString("AdminCardController.40"); //$NON-NLS-1$
     	
-    	String oldid = "";
+    	String oldid = Messages.getString("AdminCardController.41"); //$NON-NLS-1$
     	
     	new DBInitialize().DBInitialize();
     	new DBInitialize();
     	ResultSet rsold = DBInitialize.statement.executeQuery(query);
     	while(rsold.next()) {
-    		oldid = ""+rsold.getString(1);
+    		oldid = Messages.getString("AdminCardController.42")+rsold.getString(1); //$NON-NLS-1$
     	}
     	
     	//count +1 new Id
-    	String newId = ""+(Long.parseLong(oldid) + 1 );
+    	String newId = Messages.getString("AdminCardController.43")+(Long.parseLong(oldid) + 1 ); //$NON-NLS-1$
     	tf_card_no.setText(newId);
     	
     	//generate a 4 digit integer 1000 <10000
     	int pin  = (int)(Math.random()*9000)+1000;
-    	tf_pin.setText(""+pin);
+    	tf_pin.setText(Messages.getString("AdminCardController.44")+pin); //$NON-NLS-1$
 	}
 }

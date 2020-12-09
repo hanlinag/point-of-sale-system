@@ -27,7 +27,7 @@ public class EditingCell extends TableCell<Sale, Integer> {
 	public void cancelEdit() {
 		super.cancelEdit();
 
-		setText("" + getItem());
+		setText(Messages.getString("EditingCell.0") + getItem()); //$NON-NLS-1$
 		setGraphic(null);
 	}
 
@@ -40,7 +40,7 @@ public class EditingCell extends TableCell<Sale, Integer> {
 			Sale sale = getTableView().getItems().get(row);
 
 			if (empty) {
-				setText("" + item);
+				setText(Messages.getString("EditingCell.1") + item); //$NON-NLS-1$
 				setGraphic(null);
 			} else {
 				if (isEditing()) {
@@ -69,7 +69,7 @@ public class EditingCell extends TableCell<Sale, Integer> {
 				.addListener((ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) -> {
 
 					if (!newValue) {
-						System.out.println("Commiting " + textField.getText());
+						System.out.println(Messages.getString("EditingCell.2") + textField.getText()); //$NON-NLS-1$
 						commitEdit(Integer.parseInt(textField.getText()));
 					}
 				});
@@ -77,6 +77,6 @@ public class EditingCell extends TableCell<Sale, Integer> {
 	}
 
 	private String getString() {
-		return getItem() == null ? "" : "" + getItem();
+		return getItem() == null ? Messages.getString("EditingCell.3") : Messages.getString("EditingCell.4") + getItem(); //$NON-NLS-1$ //$NON-NLS-2$
 	}
 }

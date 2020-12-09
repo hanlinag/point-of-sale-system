@@ -91,28 +91,28 @@ public class CardRedeemController {
 
 	@FXML
 	void initialize() {
-		assert tf_qr_search != null : "fx:id=\"tf_qr_search\" was not injected: check your FXML file 'Card_redeem.fxml'.";
-		assert tf_customer_name != null : "fx:id=\"tf_customer_name\" was not injected: check your FXML file 'Card_redeem.fxml'.";
-		assert bt_apply != null : "fx:id=\"bt_apply\" was not injected: check your FXML file 'Card_redeem.fxml'.";
-		assert bt_cancel != null : "fx:id=\"bt_cancel\" was not injected: check your FXML file 'Card_redeem.fxml'.";
-		assert tf_phone != null : "fx:id=\"tf_phone\" was not injected: check your FXML file 'Card_redeem.fxml'.";
-		assert tf_address != null : "fx:id=\"tf_address\" was not injected: check your FXML file 'Card_redeem.fxml'.";
-		assert tf_email != null : "fx:id=\"tf_email\" was not injected: check your FXML file 'Card_redeem.fxml'.";
-		assert tf_pin != null : "fx:id=\"tf_pin\" was not injected: check your FXML file 'Card_redeem.fxml'.";
-		assert tf_amount != null : "fx:id=\"tf_amount\" was not injected: check your FXML file 'Card_redeem.fxml'.";
-		assert tf_top_up != null : "fx:id=\"tf_top_up\" was not injected: check your FXML file 'Card_redeem.fxml'.";
-		assert bt_redeem != null : "fx:id=\"bt_redeem\" was not injected: check your FXML file 'Card_redeem.fxml'.";
-		assert tf_age != null : "fx:id=\"tf_age\" was not injected: check your FXML file 'Card_redeem.fxml'.";
-		assert tf_date_created != null : "fx:id=\"tf_date_created\" was not injected: check your FXML file 'Card_redeem.fxml'.";
-		assert tf_expired_date != null : "fx:id=\"tf_expired_date\" was not injected: check your FXML file 'Card_redeem.fxml'.";
-		assert tf_last_used != null : "fx:id=\"tf_last_used\" was not injected: check your FXML file 'Card_redeem.fxml'.";
-		assert rdo_male != null : "fx:id=\"rdo_male\" was not injected: check your FXML file 'Card_redeem.fxml'.";
-		assert gender != null : "fx:id=\"gender\" was not injected: check your FXML file 'Card_redeem.fxml'.";
-		assert rdo_female != null : "fx:id=\"rdo_female\" was not injected: check your FXML file 'Card_redeem.fxml'.";
+		assert tf_qr_search != null : Messages.getString("CardRedeemController.0"); //$NON-NLS-1$
+		assert tf_customer_name != null : Messages.getString("CardRedeemController.1"); //$NON-NLS-1$
+		assert bt_apply != null : Messages.getString("CardRedeemController.2"); //$NON-NLS-1$
+		assert bt_cancel != null : Messages.getString("CardRedeemController.3"); //$NON-NLS-1$
+		assert tf_phone != null : Messages.getString("CardRedeemController.4"); //$NON-NLS-1$
+		assert tf_address != null : Messages.getString("CardRedeemController.5"); //$NON-NLS-1$
+		assert tf_email != null : Messages.getString("CardRedeemController.6"); //$NON-NLS-1$
+		assert tf_pin != null : Messages.getString("CardRedeemController.7"); //$NON-NLS-1$
+		assert tf_amount != null : Messages.getString("CardRedeemController.8"); //$NON-NLS-1$
+		assert tf_top_up != null : Messages.getString("CardRedeemController.9"); //$NON-NLS-1$
+		assert bt_redeem != null : Messages.getString("CardRedeemController.10"); //$NON-NLS-1$
+		assert tf_age != null : Messages.getString("CardRedeemController.11"); //$NON-NLS-1$
+		assert tf_date_created != null : Messages.getString("CardRedeemController.12"); //$NON-NLS-1$
+		assert tf_expired_date != null : Messages.getString("CardRedeemController.13"); //$NON-NLS-1$
+		assert tf_last_used != null : Messages.getString("CardRedeemController.14"); //$NON-NLS-1$
+		assert rdo_male != null : Messages.getString("CardRedeemController.15"); //$NON-NLS-1$
+		assert gender != null : Messages.getString("CardRedeemController.16"); //$NON-NLS-1$
+		assert rdo_female != null : Messages.getString("CardRedeemController.17"); //$NON-NLS-1$
 
 		rdo_male.setSelected(true);
 
-		if (!tf_customer_name.getText().equals("")) {
+		if (!tf_customer_name.getText().equals(Messages.getString("CardRedeemController.18"))) { //$NON-NLS-1$
 			rdo_male.setOnAction(e -> {
 				if (rdo_male.isSelected()) {
 					rdo_male.setSelected(true);
@@ -121,7 +121,7 @@ public class CardRedeemController {
 					rdo_male.setSelected(true);
 					rdo_female.setSelected(false);
 				}
-				carduser.setGender("male");
+				carduser.setGender(Messages.getString("CardRedeemController.19")); //$NON-NLS-1$
 			});
 
 			rdo_female.setOnAction(e -> {
@@ -132,11 +132,11 @@ public class CardRedeemController {
 					rdo_male.setSelected(false);
 					rdo_female.setSelected(true);
 				}
-				carduser.setGender("female");
+				carduser.setGender(Messages.getString("CardRedeemController.20")); //$NON-NLS-1$
 			});
 
 		} else {
-			System.out.println("no action! cause nothing is how edit");
+			System.out.println(Messages.getString("CardRedeemController.21")); //$NON-NLS-1$
 		}
 
 		/*
@@ -306,14 +306,14 @@ public class CardRedeemController {
 
 	@FXML
 	void onBtRedeemAction(ActionEvent event) {
-		if( tf_top_up.getText().equals("") || tf_top_up.getText().matches(".*[a-zA-Z]+.*")) {
+		if( tf_top_up.getText().equals(Messages.getString("CardRedeemController.22")) || tf_top_up.getText().matches(Messages.getString("CardRedeemController.23"))) { //$NON-NLS-1$ //$NON-NLS-2$
 	    	
-    		Alert al = new Alert(AlertType.ERROR, "Invalid input");
+    		Alert al = new Alert(AlertType.ERROR, Messages.getString("CardRedeemController.24")); //$NON-NLS-1$
 			al.showAndWait();
     	}
 
     else if (Double.parseDouble(tf_top_up.getText().toString()) < 50000 ) {
-			Alert al = new Alert(AlertType.ERROR, "Amount Is Less than 50000");
+			Alert al = new Alert(AlertType.ERROR, Messages.getString("CardRedeemController.25")); //$NON-NLS-1$
 			al.showAndWait();
 		} else {
 			
@@ -323,14 +323,14 @@ public class CardRedeemController {
 
 				topupamount = topupamount + existingamount;
 
-				carduser.setAmount(topupamount + "");
+				carduser.setAmount(topupamount + Messages.getString("CardRedeemController.26")); //$NON-NLS-1$
 				tf_amount.setText(carduser.getAmount());
 
-				System.out.println("Do redeem " + carduser.getAmount());
+				System.out.println(Messages.getString("CardRedeemController.27") + carduser.getAmount()); //$NON-NLS-1$
 
 			} catch (Exception ex) {
-				System.out.println("exception on topup : " + ex.getMessage());
-				Alert al = new Alert(AlertType.ERROR, ""+ex.getMessage());
+				System.out.println(Messages.getString("CardRedeemController.28") + ex.getMessage()); //$NON-NLS-1$
+				Alert al = new Alert(AlertType.ERROR, Messages.getString("CardRedeemController.29")+ex.getMessage()); //$NON-NLS-1$
 				al.showAndWait();
 			}
 
@@ -359,38 +359,38 @@ public class CardRedeemController {
 		carduser.setCardno(cardno);
 
 		new DBInitialize().DBInitialize();
-		String query = "SELECT `cardnumber`, `customerid`, `amount`, `lastuseddate`, `registerdate`, `expireddate`, `pin` FROM `card` WHERE `cardnumber`='"
-				+ cardno + "';";
+		String query = Messages.getString("CardRedeemController.30") //$NON-NLS-1$
+				+ cardno + Messages.getString("CardRedeemController.31"); //$NON-NLS-1$
 
-		System.out.println("card no is : " + cardno);
+		System.out.println(Messages.getString("CardRedeemController.32") + cardno); //$NON-NLS-1$
 
 		new DBInitialize();
 		ResultSet rs = DBInitialize.statement.executeQuery(query);
 
 		if (rs.next()) {
 
-			carduser.setCardno(rs.getString("cardnumber"));
-			carduser.setCustomrid(rs.getString("customerid"));
-			carduser.setAmount(rs.getString("amount"));
-			carduser.setLastdateused(rs.getString("lastuseddate"));
-			carduser.setRegisterdate(rs.getString("registerdate"));
-			carduser.setExpireddate(rs.getString("expireddate"));
-			carduser.setPin(rs.getInt("pin") + "");
-			System.out.println("working");
+			carduser.setCardno(rs.getString(Messages.getString("CardRedeemController.33"))); //$NON-NLS-1$
+			carduser.setCustomrid(rs.getString(Messages.getString("CardRedeemController.34"))); //$NON-NLS-1$
+			carduser.setAmount(rs.getString(Messages.getString("CardRedeemController.35"))); //$NON-NLS-1$
+			carduser.setLastdateused(rs.getString(Messages.getString("CardRedeemController.36"))); //$NON-NLS-1$
+			carduser.setRegisterdate(rs.getString(Messages.getString("CardRedeemController.37"))); //$NON-NLS-1$
+			carduser.setExpireddate(rs.getString(Messages.getString("CardRedeemController.38"))); //$NON-NLS-1$
+			carduser.setPin(rs.getInt(Messages.getString("CardRedeemController.39")) + Messages.getString("CardRedeemController.40")); //$NON-NLS-1$ //$NON-NLS-2$
+			System.out.println(Messages.getString("CardRedeemController.41")); //$NON-NLS-1$
 
 			// link customer and card (finding customer info)
-			String linkquery = "SELECT `name`, `age`, `gender`, `address`, `phone`, `email` FROM `Customer` WHERE `id` = '"
-					+ carduser.getCustomrid() + "';";
+			String linkquery = Messages.getString("CardRedeemController.42") //$NON-NLS-1$
+					+ carduser.getCustomrid() + Messages.getString("CardRedeemController.43"); //$NON-NLS-1$
 			new DBInitialize();
 			ResultSet resultset = DBInitialize.statement.executeQuery(linkquery);
 			if (resultset.next()) {
-				carduser.setName(resultset.getString("name"));
-				carduser.setAge(resultset.getString("age"));
-				carduser.setGender(resultset.getString("gender"));
-				carduser.setAddress(resultset.getString("address"));
-				carduser.setPhone(resultset.getString("phone"));
-				carduser.setEmail(resultset.getString("email"));
-				System.out.println("working");
+				carduser.setName(resultset.getString(Messages.getString("CardRedeemController.44"))); //$NON-NLS-1$
+				carduser.setAge(resultset.getString(Messages.getString("CardRedeemController.45"))); //$NON-NLS-1$
+				carduser.setGender(resultset.getString(Messages.getString("CardRedeemController.46"))); //$NON-NLS-1$
+				carduser.setAddress(resultset.getString(Messages.getString("CardRedeemController.47"))); //$NON-NLS-1$
+				carduser.setPhone(resultset.getString(Messages.getString("CardRedeemController.48"))); //$NON-NLS-1$
+				carduser.setEmail(resultset.getString(Messages.getString("CardRedeemController.49"))); //$NON-NLS-1$
+				System.out.println(Messages.getString("CardRedeemController.50")); //$NON-NLS-1$
 
 				// set data to ui
 
@@ -405,7 +405,7 @@ public class CardRedeemController {
 				tf_last_used.setText(carduser.getLastdateused());
 				tf_expired_date.setText(carduser.getExpireddate());
 
-				if (carduser.getGender().equals("male")) {
+				if (carduser.getGender().equals(Messages.getString("CardRedeemController.51"))) { //$NON-NLS-1$
 					rdo_male.setSelected(true);
 					rdo_female.setSelected(false);
 				} else {
@@ -427,7 +427,7 @@ public class CardRedeemController {
 				tf_last_used.clear();
 				tf_expired_date.clear();
 
-				Alert alert = new Alert(AlertType.ERROR, "No user is found!");
+				Alert alert = new Alert(AlertType.ERROR, Messages.getString("CardRedeemController.52")); //$NON-NLS-1$
 				alert.showAndWait();
 
 				carduser = new CardUser();
@@ -437,7 +437,7 @@ public class CardRedeemController {
 		} // end of first query if
 		else {
 
-			Alert alert = new Alert(AlertType.ERROR, "No card is found!");
+			Alert alert = new Alert(AlertType.ERROR, Messages.getString("CardRedeemController.53")); //$NON-NLS-1$
 			Optional<ButtonType> result = alert.showAndWait();
 			if (result.get() == ButtonType.OK) {
 				// delete user
@@ -451,14 +451,14 @@ public class CardRedeemController {
 				tf_date_created.clear();
 				tf_last_used.clear();
 				tf_expired_date.clear();
-				System.out.println("okay is working ....");
+				System.out.println(Messages.getString("CardRedeemController.54")); //$NON-NLS-1$
 			}
 
 			carduser = new CardUser();
 
 		}
 
-		System.out.println("card ower is : " + carduser.getName() + carduser.getCustomrid() + " last used: "
+		System.out.println(Messages.getString("CardRedeemController.55") + carduser.getName() + carduser.getCustomrid() + Messages.getString("CardRedeemController.56") //$NON-NLS-1$ //$NON-NLS-2$
 				+ carduser.getLastdateused());
 
 	}
@@ -467,21 +467,21 @@ public class CardRedeemController {
 	void onBtApplyAction(ActionEvent event) throws SQLException {
 		
 
-		if (!tf_customer_name.getText().equals("") && tf_phone.getText().contains("09") && tf_phone.getText().length() > 10 && !tf_phone.getText().matches(".*[a-zA-Z]+.*")
-				&& !tf_address.getText().equals("") && tf_email.getText().contains("mail.com") && tf_email.getText().contains("@") && !tf_age.getText().matches(".*[a-zA-Z]+.*")
+		if (!tf_customer_name.getText().equals(Messages.getString("CardRedeemController.57")) && tf_phone.getText().contains(Messages.getString("CardRedeemController.58")) && tf_phone.getText().length() > 10 && !tf_phone.getText().matches(Messages.getString("CardRedeemController.59")) //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				&& !tf_address.getText().equals(Messages.getString("CardRedeemController.60")) && tf_email.getText().contains(Messages.getString("CardRedeemController.61")) && tf_email.getText().contains(Messages.getString("CardRedeemController.62")) && !tf_age.getText().matches(Messages.getString("CardRedeemController.63")) //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
 				&& Integer.parseInt(tf_age.getText()) >= 13 ) {
 
-			String pattern = "dd/MM/yyyy";
+			String pattern = Messages.getString("CardRedeemController.64"); //$NON-NLS-1$
 			String lastdateused = new SimpleDateFormat(pattern).format(new Date());
-			System.out.println("last date use is " + lastdateused);
+			System.out.println(Messages.getString("CardRedeemController.65") + lastdateused); //$NON-NLS-1$
 
 			
 
-			String gender = "";
+			String gender = Messages.getString("CardRedeemController.66"); //$NON-NLS-1$
 			if (rdo_male.isSelected()) {
-				gender = "male";
+				gender = Messages.getString("CardRedeemController.67"); //$NON-NLS-1$
 			} else {
-				gender = "female";
+				gender = Messages.getString("CardRedeemController.68"); //$NON-NLS-1$
 			}
 
 			carduser.setAmount(tf_amount.getText());
@@ -494,27 +494,27 @@ public class CardRedeemController {
 			carduser.setPhone(tf_phone.getText());
 
 			// update card data to db
-			String updatecardquery = " UPDATE `Card` SET `amount`='" + carduser.getAmount() + "',`lastuseddate`='"
-					+ carduser.getLastdateused() + "' WHERE `cardnumber` = '" + carduser.getCardno() + "' ";
+			String updatecardquery = Messages.getString("CardRedeemController.69") + carduser.getAmount() + Messages.getString("CardRedeemController.70") //$NON-NLS-1$ //$NON-NLS-2$
+					+ carduser.getLastdateused() + Messages.getString("CardRedeemController.71") + carduser.getCardno() + Messages.getString("CardRedeemController.72"); //$NON-NLS-1$ //$NON-NLS-2$
 			new DBInitialize();
 			DBInitialize.statement.executeUpdate(updatecardquery);
 
 			// update customer data to db
-			String updatecustomerquery = " UPDATE `Customer` SET `name`='" + carduser.getName() + "',`age`='"
-					+ carduser.getAge() + "',`gender`='" + gender + "',`address`='" + carduser.getAddress()
-					+ "',`phone`='" + carduser.getPhone() + "',`email`='" + carduser.getEmail() + "' WHERE `id`= '"
-					+ carduser.getCustomrid() + "' ";
+			String updatecustomerquery = Messages.getString("CardRedeemController.73") + carduser.getName() + Messages.getString("CardRedeemController.74") //$NON-NLS-1$ //$NON-NLS-2$
+					+ carduser.getAge() + Messages.getString("CardRedeemController.75") + gender + Messages.getString("CardRedeemController.76") + carduser.getAddress() //$NON-NLS-1$ //$NON-NLS-2$
+					+ Messages.getString("CardRedeemController.77") + carduser.getPhone() + Messages.getString("CardRedeemController.78") + carduser.getEmail() + Messages.getString("CardRedeemController.79") //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+					+ carduser.getCustomrid() + Messages.getString("CardRedeemController.80"); //$NON-NLS-1$
 			new DBInitialize();
 			DBInitialize.statement.executeUpdate(updatecustomerquery);
 
 			((Stage) bt_apply.getScene().getWindow()).close();
 			;
 
-			Alert alert = new Alert(AlertType.INFORMATION, "Information updated.");
+			Alert alert = new Alert(AlertType.INFORMATION, Messages.getString("CardRedeemController.81")); //$NON-NLS-1$
 			alert.showAndWait();
 
 		} else {
-			Alert alert = new Alert(AlertType.ERROR, "Error.");
+			Alert alert = new Alert(AlertType.ERROR, Messages.getString("CardRedeemController.82")); //$NON-NLS-1$
 			alert.showAndWait();
 		}
 	}

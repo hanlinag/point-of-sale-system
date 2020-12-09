@@ -71,14 +71,14 @@ public class ReportGenerator {
 		JRBeanCollectionDataSource itemsJRBean = new JRBeanCollectionDataSource(listItems);
 
 		// current date
-		String pattern = "dd/MM/yyyy";
+		String pattern = Messages.getString("ReportGenerator.0"); //$NON-NLS-1$
 		String todaydate = new SimpleDateFormat(pattern).format(new Date());
 
 		// create today current time(purhcase time)
-		String hour = "" + new Date().getHours();
-		String min = "" + new Date().getMinutes();
-		String time = hour + " : " + min;
-		System.out.println("purhcase time is : " + time);
+		String hour = Messages.getString("ReportGenerator.1") + new Date().getHours(); //$NON-NLS-1$
+		String min = Messages.getString("ReportGenerator.2") + new Date().getMinutes(); //$NON-NLS-1$
+		String time = hour + Messages.getString("ReportGenerator.3") + min; //$NON-NLS-1$
+		System.out.println(Messages.getString("ReportGenerator.4") + time); //$NON-NLS-1$
 
 		/*
 		 * //current time DateFormat format = new SimpleDateFormat("HHmm"); String time
@@ -90,9 +90,9 @@ public class ReportGenerator {
 		
 		for(int i =0; i < buyGetList.size(); i++) {
 			//get buy get by promotion
-			String getPromoQuery = "SELECT productitems.name , promotion.description FROM promotion, productitems WHERE promotion.productid = '"+buyGetList.get(i)+"' AND promotion.productid = productitems.barcode";
-			String promoDesc = "";
-			String itemName = "";
+			String getPromoQuery = Messages.getString("ReportGenerator.5")+buyGetList.get(i)+Messages.getString("ReportGenerator.6"); //$NON-NLS-1$ //$NON-NLS-2$
+			String promoDesc = Messages.getString("ReportGenerator.7"); //$NON-NLS-1$
+			String itemName = Messages.getString("ReportGenerator.8"); //$NON-NLS-1$
 			new DBInitialize().DBInitialize();
 			new DBInitialize();
 			ResultSet rsPromoDesc = DBInitialize.statement.executeQuery(getPromoQuery);
@@ -102,7 +102,7 @@ public class ReportGenerator {
 				promoDesc = rsPromoDesc.getString(2);
 			}
 			
-			toPrintPromoList.add("For Item : "+ itemName +" : "+promoDesc);
+			toPrintPromoList.add(Messages.getString("ReportGenerator.9")+ itemName +Messages.getString("ReportGenerator.10")+promoDesc); //$NON-NLS-1$ //$NON-NLS-2$
 			
 		}//ennd of for
 		
@@ -115,16 +115,16 @@ public class ReportGenerator {
 					int count = sale1.getQuantity();
 					
 					//get buy get data
-					String getBuyGetQuery = "SELECT `description` FROM `promotion` WHERE promotion.productid = '"+barcode+"'";
+					String getBuyGetQuery = Messages.getString("ReportGenerator.11")+barcode+Messages.getString("ReportGenerator.12"); //$NON-NLS-1$ //$NON-NLS-2$
 					new DBInitialize().DBInitialize();
 					new DBInitialize();
 					ResultSet rsBuyGet = DBInitialize.statement.executeQuery(getBuyGetQuery);
-					String buyGetData = "";
+					String buyGetData = Messages.getString("ReportGenerator.13"); //$NON-NLS-1$
 					while(rsBuyGet.next()) {
 						buyGetData = rsBuyGet.getString(1);
 						
 					}//end of while
-					String[] buyGetDataAry = buyGetData.split("\\s+");
+					String[] buyGetDataAry = buyGetData.split(Messages.getString("ReportGenerator.14")); //$NON-NLS-1$
 					String buy = buyGetDataAry[1];
 					String get = buyGetDataAry[3];
 					
@@ -133,21 +133,21 @@ public class ReportGenerator {
 						int realGive = tempGive * Integer.parseInt(get);
 						
 						//get current stock amount and count
-						String getCurrentStockAndCountQuery = "SELECT `stockamount`, `count` FROM `productitems` WHERE productitems.barcode = '"+barcode+"'";
+						String getCurrentStockAndCountQuery = Messages.getString("ReportGenerator.15")+barcode+Messages.getString("ReportGenerator.16"); //$NON-NLS-1$ //$NON-NLS-2$
 						new DBInitialize();
 						ResultSet rsCSAC = DBInitialize.statement.executeQuery(getCurrentStockAndCountQuery);
-						String curStock = "";
+						String curStock = Messages.getString("ReportGenerator.17"); //$NON-NLS-1$
 						int curCount = 0;
 						while(rsCSAC.next()) {
 							 curStock = rsCSAC.getString(1);
 							 curCount = rsCSAC.getInt(2);
 						}
 						
-						String newStock = ""+(Integer.parseInt(curStock) - realGive);
+						String newStock = Messages.getString("ReportGenerator.18")+(Integer.parseInt(curStock) - realGive); //$NON-NLS-1$
 						int newCount = curCount + realGive;
 						
 						//reduce the stock amount and count in db
-						String reductStockACountQuery = "UPDATE `productitems` SET `stockamount`= '"+newStock+"' ,`count`= "+newCount+" WHERE productitems.barcode = '"+barcode+"'";
+						String reductStockACountQuery = Messages.getString("ReportGenerator.19")+newStock+Messages.getString("ReportGenerator.20")+newCount+Messages.getString("ReportGenerator.21")+barcode+Messages.getString("ReportGenerator.22"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
 						new DBInitialize();
 						DBInitialize.statement.executeUpdate(reductStockACountQuery); 
 						
@@ -162,35 +162,35 @@ public class ReportGenerator {
 		}//end of for
 		
 		//getItems from toPrintPromoList
-		String toPrintPromo ="";
+		String toPrintPromo =Messages.getString("ReportGenerator.23"); //$NON-NLS-1$
 		for( int j =0 ; j < toPrintPromoList.size() ; j++) {
-			toPrintPromo = toPrintPromo +"\n"+ toPrintPromoList.get(j);
+			toPrintPromo = toPrintPromo +Messages.getString("ReportGenerator.24")+ toPrintPromoList.get(j); //$NON-NLS-1$
 		}
 
 		
-		param.put("ItemDataSource", "HELLO");
-		param.put("DS1", itemsJRBean);
-		param.put("cashiername", Common.cashierrec.getName());
-		param.put("total", Common.totalAmount);
-		param.put("pay", Common.payamount);
-		param.put("change", Common.change);
-		param.put("date", todaydate);
-		param.put("time", time);
-		param.put("slipno", Common.slipno);
-		param.put("paidtype", Common.paidtype);
-		param.put("buygetpromo", toPrintPromo);
-		param.put("cardinfo", Common.cardinfo);
+		param.put(Messages.getString("ReportGenerator.25"), Messages.getString("ReportGenerator.26")); //$NON-NLS-1$ //$NON-NLS-2$
+		param.put(Messages.getString("ReportGenerator.27"), itemsJRBean); //$NON-NLS-1$
+		param.put(Messages.getString("ReportGenerator.28"), Common.cashierrec.getName()); //$NON-NLS-1$
+		param.put(Messages.getString("ReportGenerator.29"), Common.totalAmount); //$NON-NLS-1$
+		param.put(Messages.getString("ReportGenerator.30"), Common.payamount); //$NON-NLS-1$
+		param.put(Messages.getString("ReportGenerator.31"), Common.change); //$NON-NLS-1$
+		param.put(Messages.getString("ReportGenerator.32"), todaydate); //$NON-NLS-1$
+		param.put(Messages.getString("ReportGenerator.33"), time); //$NON-NLS-1$
+		param.put(Messages.getString("ReportGenerator.34"), Common.slipno); //$NON-NLS-1$
+		param.put(Messages.getString("ReportGenerator.35"), Common.paidtype); //$NON-NLS-1$
+		param.put(Messages.getString("ReportGenerator.36"), toPrintPromo); //$NON-NLS-1$
+		param.put(Messages.getString("ReportGenerator.37"), Common.cardinfo); //$NON-NLS-1$
 
 		
 		
 		// Make sure the output directory exists.
-		File outDir = new File("../Desktop/UCSMPOS");
+		File outDir = new File(Messages.getString("ReportGenerator.38")); //$NON-NLS-1$
 		outDir.mkdirs();
 
 		//JasperCompileManager.compileReportToFile( new File("").getAbsolutePath() + "/src/jaspertemplate/voucherprint.jrxml", new File("").getAbsolutePath() + "/src/jaspertemplate/voucherprint.jasper");
 		//JasperCompileManager.compileReportToFile(new File("").getAbsolutePath() + "/src/jaspertemplate/voucherprint.jrxml", new File("").getAbsolutePath() + "/src/jaspertemplate/voucherprint.jasper");
 		
-		JasperReport jasperReport = (JasperReport) JRLoader.loadObjectFromFile(new File("").getAbsolutePath() +"/src/jaspertemplate/voucherprint.jasper");
+		JasperReport jasperReport = (JasperReport) JRLoader.loadObjectFromFile(new File(Messages.getString("ReportGenerator.39")).getAbsolutePath() +Messages.getString("ReportGenerator.40")); //$NON-NLS-1$ //$NON-NLS-2$
 		
 		//JasperDesign jasperDesign = JRXmlLoader.load(new File("").getAbsolutePath() + "/src/jaspertemplate/voucherprint.jasper");
 		//System.out.println("file is : " + new File("").getAbsolutePath() + "/src/jaspertemplate/voucherprint.jasper");
@@ -211,7 +211,7 @@ public class ReportGenerator {
 
 		// ExporterOutput
 		OutputStreamExporterOutput exporterOutput = new SimpleOutputStreamExporterOutput(
-				"../Desktop/UCSMPOS/Voucher.pdf");
+				Messages.getString("ReportGenerator.41")); //$NON-NLS-1$
 		// Output
 		exporter.setExporterOutput(exporterOutput);
 
@@ -223,12 +223,12 @@ public class ReportGenerator {
 		JasperViewer jasperViewer = new JasperViewer(jasperPrint, false);
 		jasperViewer.setVisible(true);
 		jasperViewer.setFitPageZoomRatio();
-		jasperViewer.setTitle("UCSM POS System: Printing service");
+		jasperViewer.setTitle(Messages.getString("ReportGenerator.42")); //$NON-NLS-1$
 		// jasperViewer.getIc
 		
 		Common.buygetdata.clear();
-		Common.buygetitem = "";
-		Common.buygetpromo = "";
+		Common.buygetitem = Messages.getString("ReportGenerator.43"); //$NON-NLS-1$
+		Common.buygetpromo = Messages.getString("ReportGenerator.44"); //$NON-NLS-1$
 		Common.totalAmount = 0;
 		Common.change = 0;
 		Common.payamount = 0;
@@ -243,12 +243,12 @@ public class ReportGenerator {
 		BasicConfigurator.configure();
 
 		// current date
-		String pattern = "dd/MM/yyyy";
+		String pattern = Messages.getString("ReportGenerator.45"); //$NON-NLS-1$
 		String today = new SimpleDateFormat(pattern).format(new Date());
-		System.out.println("Today is .......  " + today);
+		System.out.println(Messages.getString("ReportGenerator.46") + today); //$NON-NLS-1$
 
 		// get today total sale amount
-		String getTotalSaleQuery = "SELECT `totalamount` FROM `purchase` WHERE purchase.date = '"+today+"'";
+		String getTotalSaleQuery = Messages.getString("ReportGenerator.47")+today+Messages.getString("ReportGenerator.48"); //$NON-NLS-1$ //$NON-NLS-2$
 		new DBInitialize().DBInitialize();
 		new DBInitialize();
 		ResultSet rsGetTotalAmount = DBInitialize.statement.executeQuery(getTotalSaleQuery);
@@ -259,26 +259,26 @@ public class ReportGenerator {
 
 		
 		//get today total sale count
-		String getTotalItemCount = "SELECT `quantity` FROM `purchase` WHERE purchase.date = '"+today+"'"; 
+		String getTotalItemCount = Messages.getString("ReportGenerator.49")+today+Messages.getString("ReportGenerator.50");  //$NON-NLS-1$ //$NON-NLS-2$
 		new DBInitialize();
 		ResultSet rsGetTotalItemCount = DBInitialize.statement.executeQuery(getTotalItemCount);
 		int itemCount = 0;
 		while(rsGetTotalItemCount.next()) {
 			String tempCount = rsGetTotalItemCount.getString(1);
 			
-			String[] tempAry = tempCount.split(",");
+			String[] tempAry = tempCount.split(Messages.getString("ReportGenerator.51")); //$NON-NLS-1$
 			for( int i = 0 ; i < tempAry.length  ; i++) {
-				System.out.println("count is : "+tempAry[i]);
+				System.out.println(Messages.getString("ReportGenerator.52")+tempAry[i]); //$NON-NLS-1$
 				itemCount = itemCount + Integer.parseInt(tempAry[i]);
 			}
 		}
 		
-		System.out.println("Total sale item count : "+itemCount);
+		System.out.println(Messages.getString("ReportGenerator.53")+itemCount); //$NON-NLS-1$
 		
 		
 		//compute cash and card user for today
 		//get total purchase
-		String getTotalPurchaseCountQuery = "SELECT COUNT(*) FROM `purchase` WHERE purchase.date = '"+today+"'";
+		String getTotalPurchaseCountQuery = Messages.getString("ReportGenerator.54")+today+Messages.getString("ReportGenerator.55"); //$NON-NLS-1$ //$NON-NLS-2$
 		int totalPurchase = 0;
 		new DBInitialize();
 		ResultSet rsTotalPurchaseCount = DBInitialize.statement.executeQuery(getTotalPurchaseCountQuery);
@@ -287,7 +287,7 @@ public class ReportGenerator {
 		}
 		
 		//get total card user (from transaction table)
-		String getCardUserCountQuery = "SELECT COUNT(*) FROM transaction, purchase WHERE transaction.purchaseid = purchase.id AND purchase.date = '"+today+"'";
+		String getCardUserCountQuery = Messages.getString("ReportGenerator.56")+today+Messages.getString("ReportGenerator.57"); //$NON-NLS-1$ //$NON-NLS-2$
 		int totalCard = 0;
 		new DBInitialize();
 		ResultSet rsTotalCardUser = DBInitialize.statement.executeQuery(getCardUserCountQuery);
@@ -303,7 +303,7 @@ public class ReportGenerator {
 		//get category from db
 		//get category list from db
 		ObservableList<String> categoryList = FXCollections.observableArrayList();
-		String getCagetoryListQuery = "SELECT  `name` FROM `productcategory`;";
+		String getCagetoryListQuery = Messages.getString("ReportGenerator.58"); //$NON-NLS-1$
 		new DBInitialize();
 		ResultSet rsCategory = DBInitialize.statement.executeQuery(getCagetoryListQuery);
 		while(rsCategory.next()) {
@@ -326,15 +326,15 @@ public class ReportGenerator {
 		ObservableList<String> qtyAryList = FXCollections.observableArrayList();
 		
 		//get barcode and find category type
-		String getPurchaseBarcodeQuery = "SELECT `barcode`, `quantity` FROM `purchase` WHERE purchase.date = '"+today+"'";
+		String getPurchaseBarcodeQuery = Messages.getString("ReportGenerator.59")+today+Messages.getString("ReportGenerator.60"); //$NON-NLS-1$ //$NON-NLS-2$
 		new DBInitialize();
 		ResultSet rsPurchaseBarcode = DBInitialize.statement.executeQuery(getPurchaseBarcodeQuery);
 		while(rsPurchaseBarcode.next()) {
 			String barcode = rsPurchaseBarcode.getString(1);
 			String qty = rsPurchaseBarcode.getString(2);
 			
-			String[] barcodeAry = barcode.split(",");
-			String[] qtyAry = qty.split(",");
+			String[] barcodeAry = barcode.split(Messages.getString("ReportGenerator.61")); //$NON-NLS-1$
+			String[] qtyAry = qty.split(Messages.getString("ReportGenerator.62")); //$NON-NLS-1$
 			for(int e = 0 ; e < barcodeAry.length; e++) {
 				barcodeAryList.add(barcodeAry[e]);
 				qtyAryList.add(qtyAry[e]);
@@ -343,7 +343,7 @@ public class ReportGenerator {
 		
 		
 		for(int i = 0 ; i < barcodeAryList.size(); i++) {
-			String getCategoryQuery = "SELECT productcategory.name , productitems.price FROM productcategory, productitems WHERE productitems.barcode = '"+barcodeAryList.get(i)+"' AND productitems.categoryid = productcategory.id;";
+			String getCategoryQuery = Messages.getString("ReportGenerator.63")+barcodeAryList.get(i)+Messages.getString("ReportGenerator.64"); //$NON-NLS-1$ //$NON-NLS-2$
 			new DBInitialize();
 			ResultSet rsBarcodeToGategory = DBInitialize.statement.executeQuery(getCategoryQuery);
 			while(rsBarcodeToGategory.next()) {
@@ -390,7 +390,7 @@ public class ReportGenerator {
 		//ObservableList<String> quantityList = FXCollections.observableArrayList();
 		
 		//query for getting all the item data from db
-		String getAllItemQuery = "SELECT `barcode` FROM `productitems`";
+		String getAllItemQuery = Messages.getString("ReportGenerator.65"); //$NON-NLS-1$
 		new DBInitialize();
 		ResultSet rsAllItem = DBInitialize.statement.executeQuery(getAllItemQuery);
 		while(rsAllItem.next()) {
@@ -405,7 +405,7 @@ public class ReportGenerator {
 		
 		//add data to count 
 		for( int b = 0 ; b < barcodeCountAry.length; b++) {
-			barcodeCountAry[b] = "0";
+			barcodeCountAry[b] = Messages.getString("ReportGenerator.66"); //$NON-NLS-1$
 			barcodeAry[b] = barcodeList.get(b);
 		}
 		
@@ -415,15 +415,15 @@ public class ReportGenerator {
 		
 		
 		//query
-		String getPurchaseTodayQuery = "SELECT `barcode`, `quantity` FROM `purchase` WHERE purchase.date = '"+today+"'";
+		String getPurchaseTodayQuery = Messages.getString("ReportGenerator.67")+today+Messages.getString("ReportGenerator.68"); //$NON-NLS-1$ //$NON-NLS-2$
 		new DBInitialize();
 		ResultSet rsPurchaseToday = DBInitialize.statement.executeQuery(getPurchaseTodayQuery);
 		while(rsPurchaseToday.next()) {
 			String barcodeTemp = (rsPurchaseToday.getString(1));
 			String qtyTodayTemp = rsPurchaseToday.getString(2);
 			
-			String[] barcodeTempAry = barcodeTemp.split(",");
-			String[] qtyTodayTempAry = qtyTodayTemp.split(",");
+			String[] barcodeTempAry = barcodeTemp.split(Messages.getString("ReportGenerator.69")); //$NON-NLS-1$
+			String[] qtyTodayTempAry = qtyTodayTemp.split(Messages.getString("ReportGenerator.70")); //$NON-NLS-1$
 			
 			for(int w = 0 ; w < barcodeTempAry.length; w++) {
 				barcodeArrayList.add(barcodeTempAry[w]);
@@ -437,7 +437,7 @@ public class ReportGenerator {
 			
 			for(int l = 0; l < barcodeAry.length; l++) {
 				if(bCode.equals(barcodeAry[l])){
-					barcodeCountAry[l] = "" + (Integer.parseInt(barcodeCountAry[l]) + Integer.parseInt(qtyArrayList.get(m)) );
+					barcodeCountAry[l] = Messages.getString("ReportGenerator.71") + (Integer.parseInt(barcodeCountAry[l]) + Integer.parseInt(qtyArrayList.get(m)) ); //$NON-NLS-1$
 				}//end of if
 			}//end of inner for
 		}//end of for
@@ -445,7 +445,7 @@ public class ReportGenerator {
 		
 		//get category name and price in ordering
 		for(int g = 0 ; g < barcodeAry.length; g ++) {
-		String getCandPQuery = "SELECT productcategory.name , productitems.price, productitems.name FROM productitems, productcategory WHERE productitems.barcode = '"+barcodeAry[g]+"' AND productitems.categoryid = productcategory.id";
+		String getCandPQuery = Messages.getString("ReportGenerator.72")+barcodeAry[g]+Messages.getString("ReportGenerator.73"); //$NON-NLS-1$ //$NON-NLS-2$
 		new DBInitialize();
 		ResultSet rsGetCandP = DBInitialize.statement.executeQuery(getCandPQuery);
 		while(rsGetCandP.next()) {
@@ -480,8 +480,8 @@ public class ReportGenerator {
 			dit.setCategory(barcodeCategoryAry[v]);
 			dit.setName(barcodeNameAry[v]);
 			dit.setSalecount(barcodeCountAry[v]);
-			Double amount = Integer.parseInt(barcodeCountAry[v]+"") * Double.parseDouble(barcodePriceAry[v]); 
-			dit.setSaleamount(amount+"");
+			Double amount = Integer.parseInt(barcodeCountAry[v]+Messages.getString("ReportGenerator.74")) * Double.parseDouble(barcodePriceAry[v]);  //$NON-NLS-1$
+			dit.setSaleamount(amount+Messages.getString("ReportGenerator.75")); //$NON-NLS-1$
 			
 			listItems1.add(dit);
 		}
@@ -496,26 +496,26 @@ public class ReportGenerator {
 		JRBeanCollectionDataSource itemsJRBean = new JRBeanCollectionDataSource(listItems);
 		JRBeanCollectionDataSource itemsJRBean1 = new JRBeanCollectionDataSource(listItems1);
 		
-		param.put("CategoryDataset", "HELLO");
-		param.put("ItemDataset", "HELLO");
-		param.put("DS", itemsJRBean);
-		param.put("DSItem", itemsJRBean1);
-		param.put("totalsaleamount", Double.parseDouble(""+totalAmount));
-		param.put("totalsaleitemcount", Integer.parseInt(""+itemCount));
-		param.put("cardcustomer", Integer.parseInt(""+totalCard));
-		param.put("cashpaidcustomer", Integer.parseInt(""+totalCash));
-		param.put("initialsale", ""+initialsale);
-		param.put("netsale", ""+totalAmount);
-		param.put("promotion",""+promotion );
+		param.put(Messages.getString("ReportGenerator.76"), Messages.getString("ReportGenerator.77")); //$NON-NLS-1$ //$NON-NLS-2$
+		param.put(Messages.getString("ReportGenerator.78"), Messages.getString("ReportGenerator.79")); //$NON-NLS-1$ //$NON-NLS-2$
+		param.put(Messages.getString("ReportGenerator.80"), itemsJRBean); //$NON-NLS-1$
+		param.put(Messages.getString("ReportGenerator.81"), itemsJRBean1); //$NON-NLS-1$
+		param.put(Messages.getString("ReportGenerator.82"), Double.parseDouble(Messages.getString("ReportGenerator.83")+totalAmount)); //$NON-NLS-1$ //$NON-NLS-2$
+		param.put(Messages.getString("ReportGenerator.84"), Integer.parseInt(Messages.getString("ReportGenerator.85")+itemCount)); //$NON-NLS-1$ //$NON-NLS-2$
+		param.put(Messages.getString("ReportGenerator.86"), Integer.parseInt(Messages.getString("ReportGenerator.87")+totalCard)); //$NON-NLS-1$ //$NON-NLS-2$
+		param.put(Messages.getString("ReportGenerator.88"), Integer.parseInt(Messages.getString("ReportGenerator.89")+totalCash)); //$NON-NLS-1$ //$NON-NLS-2$
+		param.put(Messages.getString("ReportGenerator.90"), Messages.getString("ReportGenerator.91")+initialsale); //$NON-NLS-1$ //$NON-NLS-2$
+		param.put(Messages.getString("ReportGenerator.92"), Messages.getString("ReportGenerator.93")+totalAmount); //$NON-NLS-1$ //$NON-NLS-2$
+		param.put(Messages.getString("ReportGenerator.94"),Messages.getString("ReportGenerator.95")+promotion ); //$NON-NLS-1$ //$NON-NLS-2$
 		
 		// Make sure the output directory exists.
-		File outDir = new File("../Desktop/UCSMPOS");
+		File outDir = new File(Messages.getString("ReportGenerator.96")); //$NON-NLS-1$
 		outDir.mkdirs();
 
-		JasperReport jasperReport = (JasperReport) JRLoader.loadObjectFromFile(new File("").getAbsolutePath() +"/src/jaspertemplate/daily_report.jasper");
+		JasperReport jasperReport = (JasperReport) JRLoader.loadObjectFromFile(new File(Messages.getString("ReportGenerator.97")).getAbsolutePath() +Messages.getString("ReportGenerator.98")); //$NON-NLS-1$ //$NON-NLS-2$
 		
 		//JasperDesign jasperDesign = JRXmlLoader.load(new File("").getAbsolutePath() + "/src/jaspertemplate/daily_report.jasper");
-		System.out.println("file is : " + new File("").getAbsolutePath() + "/src/jaspertemplate/daily_report.jasper");
+		System.out.println(Messages.getString("ReportGenerator.99") + new File(Messages.getString("ReportGenerator.100")).getAbsolutePath() + Messages.getString("ReportGenerator.101")); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 
 		/* Using compiled version(.jasper) of Jasper report to generate PDF */
         JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, param, new JREmptyDataSource());
@@ -536,7 +536,7 @@ public class ReportGenerator {
 
 		// ExporterOutput
 		OutputStreamExporterOutput exporterOutput = new SimpleOutputStreamExporterOutput(
-				"../Desktop/UCSMPOS/daily_report.pdf");
+				Messages.getString("ReportGenerator.102")); //$NON-NLS-1$
 		// Output
 		exporter.setExporterOutput(exporterOutput);
 
@@ -548,7 +548,7 @@ public class ReportGenerator {
 		JasperViewer jasperViewer = new JasperViewer(jasperPrint, false);
 		jasperViewer.setVisible(true);
 		jasperViewer.setFitPageZoomRatio();
-		jasperViewer.setTitle("UCSM POS System: Printing service");
+		jasperViewer.setTitle(Messages.getString("ReportGenerator.103")); //$NON-NLS-1$
 		// jasperViewer.getIc
 
 	}
@@ -560,7 +560,7 @@ public class ReportGenerator {
 		
 		 //get popular item  data from db
         new DBInitialize().DBInitialize();
-        String query = "SELECT productitems.barcode, productitems.name, productcategory.name, productitems.price, supplier.companyname, productitems.dateadded, productitems.stockamount, productitems.expireddate, productitems.count FROM productitems, supplier,productcategory WHERE productitems.categoryid = productcategory.id AND productitems.supplierid = supplier.id ORDER BY productitems.count DESC LIMIT 25";
+        String query = Messages.getString("ReportGenerator.104"); //$NON-NLS-1$
         
         new DBInitialize();
 		ResultSet rs = DBInitialize.statement.executeQuery(query);
@@ -592,19 +592,19 @@ public class ReportGenerator {
 		JRBeanCollectionDataSource itemsJRBean = new JRBeanCollectionDataSource(popularData);
 
 		
-		param.put("PopularDataset", "HELLO");
-		param.put("DS1", itemsJRBean);
+		param.put(Messages.getString("ReportGenerator.105"), Messages.getString("ReportGenerator.106")); //$NON-NLS-1$ //$NON-NLS-2$
+		param.put(Messages.getString("ReportGenerator.107"), itemsJRBean); //$NON-NLS-1$
 		
 		
 
 		// Make sure the output directory exists.
-		File outDir = new File("../Desktop/UCSMPOS");
+		File outDir = new File(Messages.getString("ReportGenerator.108")); //$NON-NLS-1$
 		outDir.mkdirs();
 
 		//JasperDesign jasperDesign = JRXmlLoader.load(new File("").getAbsolutePath() + "/src/jaspertemplate/popular_item_report.jasper");
 	//	System.out.println("file is : " + new File("").getAbsolutePath() + "/src/jaspertemplate/popular_item_report.jasper");
 
-		JasperReport jasperReport = (JasperReport) JRLoader.loadObjectFromFile(new File("").getAbsolutePath() +"/src/jaspertemplate/popular_item_report.jasper");
+		JasperReport jasperReport = (JasperReport) JRLoader.loadObjectFromFile(new File(Messages.getString("ReportGenerator.109")).getAbsolutePath() +Messages.getString("ReportGenerator.110")); //$NON-NLS-1$ //$NON-NLS-2$
 		// OutputStream outputfile = new FileOutputStream(new
 		// File("/Users/tylersai/Desktop/jaspervoucher.pdf"));
 
@@ -621,7 +621,7 @@ public class ReportGenerator {
 
 		// ExporterOutput
 		OutputStreamExporterOutput exporterOutput = new SimpleOutputStreamExporterOutput(
-				"../Desktop/UCSMPOS/Popular_item.pdf");
+				Messages.getString("ReportGenerator.111")); //$NON-NLS-1$
 		// Output
 		exporter.setExporterOutput(exporterOutput);
 
@@ -633,7 +633,7 @@ public class ReportGenerator {
 		JasperViewer jasperViewer = new JasperViewer(jasperPrint, false);
 		jasperViewer.setVisible(true);
 		jasperViewer.setFitPageZoomRatio();
-		jasperViewer.setTitle("UCSM POS System: Printing service");
+		jasperViewer.setTitle(Messages.getString("ReportGenerator.112")); //$NON-NLS-1$
 	}
 	
 	
@@ -653,16 +653,16 @@ public class ReportGenerator {
 		BasicConfigurator.configure();
 
 		// current date
-		String pattern = "dd/MM/yyyy";
+		String pattern = Messages.getString("ReportGenerator.113"); //$NON-NLS-1$
 		String todayy = new SimpleDateFormat(pattern).format(new Date());
-		System.out.println("Today is .......  " + todayy);
+		System.out.println(Messages.getString("ReportGenerator.114") + todayy); //$NON-NLS-1$
 		
 		//get month
-		String [] todayAry = todayy.split("/");
-		String currentMonth = todayAry[1] + "/" + todayAry[2];
+		String [] todayAry = todayy.split(Messages.getString("ReportGenerator.115")); //$NON-NLS-1$
+		String currentMonth = todayAry[1] + Messages.getString("ReportGenerator.116") + todayAry[2]; //$NON-NLS-1$
 
 		// get today total sale amount
-		String getTotalSaleQuery = "SELECT `totalamount` FROM `purchase` WHERE purchase.date LIKE '%"+currentMonth+"'";
+		String getTotalSaleQuery = Messages.getString("ReportGenerator.117")+currentMonth+Messages.getString("ReportGenerator.118"); //$NON-NLS-1$ //$NON-NLS-2$
 		new DBInitialize().DBInitialize();
 		new DBInitialize();
 		ResultSet rsGetTotalAmount = DBInitialize.statement.executeQuery(getTotalSaleQuery);
@@ -673,26 +673,26 @@ public class ReportGenerator {
 
 		
 		//get today total sale count
-		String getTotalItemCount = "SELECT `quantity` FROM `purchase` WHERE purchase.date LIKE '%"+currentMonth+"'"; 
+		String getTotalItemCount = Messages.getString("ReportGenerator.119")+currentMonth+Messages.getString("ReportGenerator.120");  //$NON-NLS-1$ //$NON-NLS-2$
 		new DBInitialize();
 		ResultSet rsGetTotalItemCount = DBInitialize.statement.executeQuery(getTotalItemCount);
 		int itemCount = 0;
 		while(rsGetTotalItemCount.next()) {
 			String tempCount = rsGetTotalItemCount.getString(1);
 			
-			String[] tempAry = tempCount.split(",");
+			String[] tempAry = tempCount.split(Messages.getString("ReportGenerator.121")); //$NON-NLS-1$
 			for( int i = 0 ; i < tempAry.length  ; i++) {
-				System.out.println("count is : "+tempAry[i]);
+				System.out.println(Messages.getString("ReportGenerator.122")+tempAry[i]); //$NON-NLS-1$
 				itemCount = itemCount + Integer.parseInt(tempAry[i]);
 			}
 		}
 		
-		System.out.println("Total sale item count : "+itemCount);
+		System.out.println(Messages.getString("ReportGenerator.123")+itemCount); //$NON-NLS-1$
 		
 		
 		//compute cash and card user for today
 		//get total purchase
-		String getTotalPurchaseCountQuery = "SELECT COUNT(*) FROM `purchase` WHERE purchase.date LIKE '%"+currentMonth+"'";
+		String getTotalPurchaseCountQuery = Messages.getString("ReportGenerator.124")+currentMonth+Messages.getString("ReportGenerator.125"); //$NON-NLS-1$ //$NON-NLS-2$
 		int totalPurchase = 0;
 		new DBInitialize();
 		ResultSet rsTotalPurchaseCount = DBInitialize.statement.executeQuery(getTotalPurchaseCountQuery);
@@ -701,7 +701,7 @@ public class ReportGenerator {
 		}
 		
 		//get total card user (from transaction table)
-		String getCardUserCountQuery = "SELECT COUNT(*) FROM transaction, purchase WHERE transaction.purchaseid = purchase.id AND purchase.date LIKE '%"+currentMonth+"'";
+		String getCardUserCountQuery = Messages.getString("ReportGenerator.126")+currentMonth+Messages.getString("ReportGenerator.127"); //$NON-NLS-1$ //$NON-NLS-2$
 		int totalCard = 0;
 		new DBInitialize();
 		ResultSet rsTotalCardUser = DBInitialize.statement.executeQuery(getCardUserCountQuery);
@@ -717,7 +717,7 @@ public class ReportGenerator {
 		//get category from db
 		//get category list from db
 		ObservableList<String> categoryList = FXCollections.observableArrayList();
-		String getCagetoryListQuery = "SELECT  `name` FROM `productcategory`;";
+		String getCagetoryListQuery = Messages.getString("ReportGenerator.128"); //$NON-NLS-1$
 		new DBInitialize();
 		ResultSet rsCategory = DBInitialize.statement.executeQuery(getCagetoryListQuery);
 		while(rsCategory.next()) {
@@ -740,15 +740,15 @@ public class ReportGenerator {
 		ObservableList<String> qtyAryList = FXCollections.observableArrayList();
 		
 		//get barcode and find category type
-		String getPurchaseBarcodeQuery = "SELECT `barcode`, `quantity` FROM `purchase` WHERE purchase.date LIKE '%"+currentMonth+"'";
+		String getPurchaseBarcodeQuery = Messages.getString("ReportGenerator.129")+currentMonth+Messages.getString("ReportGenerator.130"); //$NON-NLS-1$ //$NON-NLS-2$
 		new DBInitialize();
 		ResultSet rsPurchaseBarcode = DBInitialize.statement.executeQuery(getPurchaseBarcodeQuery);
 		while(rsPurchaseBarcode.next()) {
 			String barcode = rsPurchaseBarcode.getString(1);
 			String qty = rsPurchaseBarcode.getString(2);
 			
-			String[] barcodeAry = barcode.split(",");
-			String[] qtyAry = qty.split(",");
+			String[] barcodeAry = barcode.split(Messages.getString("ReportGenerator.131")); //$NON-NLS-1$
+			String[] qtyAry = qty.split(Messages.getString("ReportGenerator.132")); //$NON-NLS-1$
 			for(int e = 0 ; e < barcodeAry.length; e++) {
 				barcodeAryList.add(barcodeAry[e]);
 				qtyAryList.add(qtyAry[e]);
@@ -757,7 +757,7 @@ public class ReportGenerator {
 		
 		
 		for(int i = 0 ; i < barcodeAryList.size(); i++) {
-			String getCategoryQuery = "SELECT productcategory.name , productitems.price FROM productcategory, productitems WHERE productitems.barcode = '"+barcodeAryList.get(i)+"' AND productitems.categoryid = productcategory.id;";
+			String getCategoryQuery = Messages.getString("ReportGenerator.133")+barcodeAryList.get(i)+Messages.getString("ReportGenerator.134"); //$NON-NLS-1$ //$NON-NLS-2$
 			new DBInitialize();
 			ResultSet rsBarcodeToGategory = DBInitialize.statement.executeQuery(getCategoryQuery);
 			while(rsBarcodeToGategory.next()) {
@@ -804,7 +804,7 @@ public class ReportGenerator {
 		//ObservableList<String> quantityList = FXCollections.observableArrayList();
 		
 		//query for getting all the item data from db
-		String getAllItemQuery = "SELECT `barcode` FROM `productitems`";
+		String getAllItemQuery = Messages.getString("ReportGenerator.135"); //$NON-NLS-1$
 		new DBInitialize();
 		ResultSet rsAllItem = DBInitialize.statement.executeQuery(getAllItemQuery);
 		while(rsAllItem.next()) {
@@ -819,7 +819,7 @@ public class ReportGenerator {
 		
 		//add data to count 
 		for( int b = 0 ; b < barcodeCountAry.length; b++) {
-			barcodeCountAry[b] = "0";
+			barcodeCountAry[b] = Messages.getString("ReportGenerator.136"); //$NON-NLS-1$
 			barcodeAry[b] = barcodeList.get(b);
 		}
 		
@@ -829,15 +829,15 @@ public class ReportGenerator {
 		
 		
 		//query
-		String getPurchaseTodayQuery = "SELECT `barcode`, `quantity` FROM `purchase` WHERE purchase.date LIKE '%"+currentMonth+"'";
+		String getPurchaseTodayQuery = Messages.getString("ReportGenerator.137")+currentMonth+Messages.getString("ReportGenerator.138"); //$NON-NLS-1$ //$NON-NLS-2$
 		new DBInitialize();
 		ResultSet rsPurchaseToday = DBInitialize.statement.executeQuery(getPurchaseTodayQuery);
 		while(rsPurchaseToday.next()) {
 			String barcodeTemp = (rsPurchaseToday.getString(1));
 			String qtyTodayTemp = rsPurchaseToday.getString(2);
 			
-			String[] barcodeTempAry = barcodeTemp.split(",");
-			String[] qtyTodayTempAry = qtyTodayTemp.split(",");
+			String[] barcodeTempAry = barcodeTemp.split(Messages.getString("ReportGenerator.139")); //$NON-NLS-1$
+			String[] qtyTodayTempAry = qtyTodayTemp.split(Messages.getString("ReportGenerator.140")); //$NON-NLS-1$
 			
 			for(int w = 0 ; w < barcodeTempAry.length; w++) {
 				barcodeArrayList.add(barcodeTempAry[w]);
@@ -851,7 +851,7 @@ public class ReportGenerator {
 			
 			for(int l = 0; l < barcodeAry.length; l++) {
 				if(bCode.equals(barcodeAry[l])){
-					barcodeCountAry[l] = "" + (Integer.parseInt(barcodeCountAry[l]) + Integer.parseInt(qtyArrayList.get(m)) );
+					barcodeCountAry[l] = Messages.getString("ReportGenerator.141") + (Integer.parseInt(barcodeCountAry[l]) + Integer.parseInt(qtyArrayList.get(m)) ); //$NON-NLS-1$
 				}//end of if
 			}//end of inner for
 		}//end of for
@@ -859,7 +859,7 @@ public class ReportGenerator {
 		
 		//get category name and price in ordering
 		for(int g = 0 ; g < barcodeAry.length; g ++) {
-		String getCandPQuery = "SELECT productcategory.name , productitems.price, productitems.name FROM productitems, productcategory WHERE productitems.barcode = '"+barcodeAry[g]+"' AND productitems.categoryid = productcategory.id";
+		String getCandPQuery = Messages.getString("ReportGenerator.142")+barcodeAry[g]+Messages.getString("ReportGenerator.143"); //$NON-NLS-1$ //$NON-NLS-2$
 		new DBInitialize();
 		ResultSet rsGetCandP = DBInitialize.statement.executeQuery(getCandPQuery);
 		while(rsGetCandP.next()) {
@@ -875,7 +875,7 @@ public class ReportGenerator {
 		}//end of for loop
 		
 		//check point
-		System.out.println("checking ............");
+		System.out.println(Messages.getString("ReportGenerator.144")); //$NON-NLS-1$
 		for(int i =0 ; i< barcodeAry.length ; i++) {
 			System.out.print(barcodeAry[i]);
 			System.out.print(barcodeCategoryAry[i]);
@@ -894,8 +894,8 @@ public class ReportGenerator {
 			dit.setCategory(barcodeCategoryAry[v]);
 			dit.setName(barcodeNameAry[v]);
 			dit.setSalecount(barcodeCountAry[v]);
-			Double amount = Integer.parseInt(barcodeCountAry[v]+"") * Double.parseDouble(barcodePriceAry[v]); 
-			dit.setSaleamount(amount+"");
+			Double amount = Integer.parseInt(barcodeCountAry[v]+Messages.getString("ReportGenerator.145")) * Double.parseDouble(barcodePriceAry[v]);  //$NON-NLS-1$
+			dit.setSaleamount(amount+Messages.getString("ReportGenerator.146")); //$NON-NLS-1$
 			
 			listItems1.add(dit);
 		}
@@ -910,25 +910,25 @@ public class ReportGenerator {
 		
 		//set data to  arrays
 		for(int z =0 ; z < daysAry.length; z++) {
-			daysAry[z] = String.format("%02d", (z+1));
-			daysAmountAry[z] = 0+""; 
-			daysCountAry[z] = "0";
+			daysAry[z] = String.format(Messages.getString("ReportGenerator.147"), (z+1)); //$NON-NLS-1$
+			daysAmountAry[z] = 0+Messages.getString("ReportGenerator.148");  //$NON-NLS-1$
+			daysCountAry[z] = Messages.getString("ReportGenerator.149"); //$NON-NLS-1$
 		}
 		
 		//get daily purchase in this month
-		String getDailyPurchaseQuery = "SELECT `date`, `totalamount` FROM `purchase` WHERE purchase.date LIKE '%"+currentMonth+"'";
+		String getDailyPurchaseQuery = Messages.getString("ReportGenerator.150")+currentMonth+Messages.getString("ReportGenerator.151"); //$NON-NLS-1$ //$NON-NLS-2$
 		new DBInitialize();
 		ResultSet rsDailyPurchase = DBInitialize.statement.executeQuery(getDailyPurchaseQuery);
 		while(rsDailyPurchase.next()) {
 			String dateTemp = rsDailyPurchase.getString(1);
 			String totalAmountTemp = rsDailyPurchase.getString(2);
 			
-			String[] dateTempAry = dateTemp.split("/");
+			String[] dateTempAry = dateTemp.split(Messages.getString("ReportGenerator.152")); //$NON-NLS-1$
 			//String totalAmountTempAry 
 			
 			for(int r =0 ; r < daysAry.length; r++) {
 				if(dateTempAry[0].equals(daysAry[r])) {
-					daysAmountAry[r] = "" + (Double.parseDouble(daysAmountAry[r]) + Double.parseDouble(totalAmountTemp));
+					daysAmountAry[r] = Messages.getString("ReportGenerator.153") + (Double.parseDouble(daysAmountAry[r]) + Double.parseDouble(totalAmountTemp)); //$NON-NLS-1$
 				}
 			}
 		}
@@ -936,14 +936,14 @@ public class ReportGenerator {
 		//get the total count , initial sale and discount
 		for(int s =0 ; s < daysAry.length; s++) {
 			//get totalCount
-			String getTotalCountQueryy = "SELECT `quantity` FROM `purchase` WHERE purchase.date = '"+daysAry[s]+"/"+currentMonth+"'";
+			String getTotalCountQueryy = Messages.getString("ReportGenerator.154")+daysAry[s]+Messages.getString("ReportGenerator.155")+currentMonth+Messages.getString("ReportGenerator.156"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 			new DBInitialize();
 			ResultSet rsTotalCountt = DBInitialize.statement.executeQuery(getTotalCountQueryy);
 			while(rsTotalCountt.next() ) {
 				String coulntTemppp = rsTotalCountt.getString(1);
-				String[] countTempAryyy = coulntTemppp.split(",");
+				String[] countTempAryyy = coulntTemppp.split(Messages.getString("ReportGenerator.157")); //$NON-NLS-1$
 				for(int c =0 ; c < countTempAryyy.length; c++) {
-					daysCountAry[s] = "" + ( Integer.parseInt(daysCountAry[s]) + Integer.parseInt(countTempAryyy[c]));
+					daysCountAry[s] = Messages.getString("ReportGenerator.158") + ( Integer.parseInt(daysCountAry[s]) + Integer.parseInt(countTempAryyy[c])); //$NON-NLS-1$
 				}//end of inner for
 				
 			}//end of while
@@ -969,7 +969,7 @@ public class ReportGenerator {
 		//adding data object
 		for(int q =0; q < daysAry.length; q ++) {
 			DailyTable dat = new DailyTable();
-			dat.setDate(daysAry[q]+"/"+currentMonth);
+			dat.setDate(daysAry[q]+Messages.getString("ReportGenerator.159")+currentMonth); //$NON-NLS-1$
 			dat.setItemcount(daysCountAry[q]);
 			dat.setNetsale(daysAmountAry[q]);
 			
@@ -987,27 +987,27 @@ public class ReportGenerator {
 		JRBeanCollectionDataSource itemsJRBean1 = new JRBeanCollectionDataSource(listItems1);
 		JRBeanCollectionDataSource itemsJRBean2 = new JRBeanCollectionDataSource(listItems2);
 		
-		param.put("CategoryDataset", "HELLO");
-		param.put("ItemDataset", "HELLO");
-		param.put("Dataset1", "HELLO");
-		param.put("DS", itemsJRBean);
-		param.put("DSItem", itemsJRBean1);
-		param.put("DS1", itemsJRBean2);
-		param.put("totalsaleamount", Double.parseDouble(""+totalAmount));
-		param.put("totalsaleitemcount", Integer.parseInt(""+itemCount));
-		param.put("cardcustomer", Integer.parseInt(""+totalCard));
-		param.put("cashpaidcustomer", Integer.parseInt(""+totalCash));
-		param.put("initialsale", ""+initialsale);
-		param.put("netsale", ""+totalAmount);
-		param.put("promotion",""+promotion );
-		param.put("categorysale","Item Sale" );
+		param.put(Messages.getString("ReportGenerator.160"), Messages.getString("ReportGenerator.161")); //$NON-NLS-1$ //$NON-NLS-2$
+		param.put(Messages.getString("ReportGenerator.162"), Messages.getString("ReportGenerator.163")); //$NON-NLS-1$ //$NON-NLS-2$
+		param.put(Messages.getString("ReportGenerator.164"), Messages.getString("ReportGenerator.165")); //$NON-NLS-1$ //$NON-NLS-2$
+		param.put(Messages.getString("ReportGenerator.166"), itemsJRBean); //$NON-NLS-1$
+		param.put(Messages.getString("ReportGenerator.167"), itemsJRBean1); //$NON-NLS-1$
+		param.put(Messages.getString("ReportGenerator.168"), itemsJRBean2); //$NON-NLS-1$
+		param.put(Messages.getString("ReportGenerator.169"), Double.parseDouble(Messages.getString("ReportGenerator.170")+totalAmount)); //$NON-NLS-1$ //$NON-NLS-2$
+		param.put(Messages.getString("ReportGenerator.171"), Integer.parseInt(Messages.getString("ReportGenerator.172")+itemCount)); //$NON-NLS-1$ //$NON-NLS-2$
+		param.put(Messages.getString("ReportGenerator.173"), Integer.parseInt(Messages.getString("ReportGenerator.174")+totalCard)); //$NON-NLS-1$ //$NON-NLS-2$
+		param.put(Messages.getString("ReportGenerator.175"), Integer.parseInt(Messages.getString("ReportGenerator.176")+totalCash)); //$NON-NLS-1$ //$NON-NLS-2$
+		param.put(Messages.getString("ReportGenerator.177"), Messages.getString("ReportGenerator.178")+initialsale); //$NON-NLS-1$ //$NON-NLS-2$
+		param.put(Messages.getString("ReportGenerator.179"), Messages.getString("ReportGenerator.180")+totalAmount); //$NON-NLS-1$ //$NON-NLS-2$
+		param.put(Messages.getString("ReportGenerator.181"),Messages.getString("ReportGenerator.182")+promotion ); //$NON-NLS-1$ //$NON-NLS-2$
+		param.put(Messages.getString("ReportGenerator.183"),Messages.getString("ReportGenerator.184") ); //$NON-NLS-1$ //$NON-NLS-2$
 		
 		// Make sure the output directory exists.
-		File outDir = new File("../Desktop/UCSMPOS");
+		File outDir = new File(Messages.getString("ReportGenerator.185")); //$NON-NLS-1$
 		outDir.mkdirs();
 
 		
-		JasperReport jasperReport = (JasperReport) JRLoader.loadObjectFromFile(new File("").getAbsolutePath() +"/src/jaspertemplate/monthly_report.jasper");
+		JasperReport jasperReport = (JasperReport) JRLoader.loadObjectFromFile(new File(Messages.getString("ReportGenerator.186")).getAbsolutePath() +Messages.getString("ReportGenerator.187")); //$NON-NLS-1$ //$NON-NLS-2$
 		
 		//JasperDesign jasperDesign = JRXmlLoader.load(new File("").getAbsolutePath() + "/src/jaspertemplate/monthly_report.jasper");
 	//	System.out.println("file is : " + new File("").getAbsolutePath() + "/src/jaspertemplate/monthly_report.jasper");
@@ -1028,7 +1028,7 @@ public class ReportGenerator {
 
 		// ExporterOutput
 		OutputStreamExporterOutput exporterOutput = new SimpleOutputStreamExporterOutput(
-				"../Desktop/UCSMPOS/monthly_report.pdf");
+				Messages.getString("ReportGenerator.188")); //$NON-NLS-1$
 		// Output
 		exporter.setExporterOutput(exporterOutput);
 
@@ -1040,7 +1040,7 @@ public class ReportGenerator {
 		JasperViewer jasperViewer = new JasperViewer(jasperPrint, false);
 		jasperViewer.setVisible(true);
 		jasperViewer.setFitPageZoomRatio();
-		jasperViewer.setTitle("UCSM POS System: Printing service");
+		jasperViewer.setTitle(Messages.getString("ReportGenerator.189")); //$NON-NLS-1$
 		
 		
 	}

@@ -71,12 +71,12 @@ public class LoginController{
 
 	    @FXML // This method is called by the FXMLLoader when initialization is complete
 	    void initialize() throws ClassNotFoundException, SQLException, InstantiationException, IllegalAccessException {
-	        assert tf_id != null : "fx:id=\"tf_id\" was not injected: check your FXML file 'Page_login.fxml'.";
-	        assert tf_pass != null : "fx:id=\"tf_pass\" was not injected: check your FXML file 'Page_login.fxml'.";
-	        assert bt_login != null : "fx:id=\"bt_login\" was not injected: check your FXML file 'Page_login.fxml'.";
-	        assert bt_rdo_admin != null : "fx:id=\"bt_rdo_admin\" was not injected: check your FXML file 'Page_login.fxml'.";
-	        assert usertype != null : "fx:id=\"usertype\" was not injected: check your FXML file 'Page_login.fxml'.";
-	        assert bt_rdo_cashier != null : "fx:id=\"bt_rdo_cashier\" was not injected: check your FXML file 'Page_login.fxml'.";
+	        assert tf_id != null : Messages.getString("LoginController.0"); //$NON-NLS-1$
+	        assert tf_pass != null : Messages.getString("LoginController.1"); //$NON-NLS-1$
+	        assert bt_login != null : Messages.getString("LoginController.2"); //$NON-NLS-1$
+	        assert bt_rdo_admin != null : Messages.getString("LoginController.3"); //$NON-NLS-1$
+	        assert usertype != null : Messages.getString("LoginController.4"); //$NON-NLS-1$
+	        assert bt_rdo_cashier != null : Messages.getString("LoginController.5"); //$NON-NLS-1$
 
 	   
 	        //database
@@ -112,14 +112,14 @@ public class LoginController{
 	    	
 	    	
 	    	if(bt_rdo_admin.isSelected()) {
-	    		System.out.println("Admin is seleted");
+	    		System.out.println(Messages.getString("LoginController.6")); //$NON-NLS-1$
 		    	
-		    	realId = "pos-2018-ad"; //ucsmpos-2018-ad
-		    	realPw = "admin@2018";//admin@2018
+		    	realId = Messages.getString("LoginController.7"); //ucsmpos-2018-ad //$NON-NLS-1$
+		    	realPw = Messages.getString("LoginController.8");//admin@2018 //$NON-NLS-1$
 
         	if(id.equals(realId) && pw.equals(realPw)) {
         		
-	    		System.out.println("Success!");
+	    		System.out.println(Messages.getString("LoginController.9")); //$NON-NLS-1$
 	    		
 	    		//scene transaction
 	    		try {
@@ -132,24 +132,24 @@ public class LoginController{
 	    	}
 	    	else{
 	    		//System.out.println("Login Fail! User name or password incorrect! because realid is "+ realId+" and id is "+id+" real password is "+ realPw+ " password is "+pw);
-	    		Alert alert = new Alert(AlertType.ERROR, " Login Fail !");
+	    		Alert alert = new Alert(AlertType.ERROR, Messages.getString("LoginController.10")); //$NON-NLS-1$
 				alert.showAndWait();
 				tf_id.clear();
 				tf_pass.clear();
 
-				System.out.println("login fail Error showed");
+				System.out.println(Messages.getString("LoginController.11")); //$NON-NLS-1$
 	    	}
         	
 	    	}//end of admin selected
 	    	else {
 	    		
-		    		System.out.println("Cashier is seleted");
-		    		if(!isInteger(id+"")) {
+		    		System.out.println(Messages.getString("LoginController.12")); //$NON-NLS-1$
+		    		if(!isInteger(id+Messages.getString("LoginController.13"))) { //$NON-NLS-1$
 		    			tf_id.clear();
 		    			tf_pass.clear();
 		    			
-		    			System.out.println("cashier id enter is String...");
-		    			Alert all = new Alert(AlertType.ERROR, "Invalid input!");
+		    			System.out.println(Messages.getString("LoginController.14")); //$NON-NLS-1$
+		    			Alert all = new Alert(AlertType.ERROR, Messages.getString("LoginController.15")); //$NON-NLS-1$
 		    			all.showAndWait();
 		    			
 		    			
@@ -158,38 +158,38 @@ public class LoginController{
 
 		    		//if(id.equals(int))
 			    	//get user name and password from db
-			    	dbQuery = "SELECT * from cashier where id = "+id+";";
+			    	dbQuery = Messages.getString("LoginController.16")+id+Messages.getString("LoginController.17"); //$NON-NLS-1$ //$NON-NLS-2$
 			    	resultSet = DBInitialize.statement.executeQuery(dbQuery);
 			    	 
 			    	if(resultSet.next()) {
-			    	realId = ""+resultSet.getInt("id");
-			    	realPw = resultSet.getString("password");
+			    	realId = Messages.getString("LoginController.18")+resultSet.getInt(Messages.getString("LoginController.19")); //$NON-NLS-1$ //$NON-NLS-2$
+			    	realPw = resultSet.getString(Messages.getString("LoginController.20")); //$NON-NLS-1$
 			    	
-			    	name = resultSet.getString("name");
-			    	age = resultSet.getInt("age");
-			    	gender = resultSet.getString("gender");
-			    	addr = resultSet.getString("address");
-			    	ph = resultSet.getString("phone");
-			    	mail = resultSet.getString("email");
-			    	date = resultSet.getString("date created");
+			    	name = resultSet.getString(Messages.getString("LoginController.21")); //$NON-NLS-1$
+			    	age = resultSet.getInt(Messages.getString("LoginController.22")); //$NON-NLS-1$
+			    	gender = resultSet.getString(Messages.getString("LoginController.23")); //$NON-NLS-1$
+			    	addr = resultSet.getString(Messages.getString("LoginController.24")); //$NON-NLS-1$
+			    	ph = resultSet.getString(Messages.getString("LoginController.25")); //$NON-NLS-1$
+			    	mail = resultSet.getString(Messages.getString("LoginController.26")); //$NON-NLS-1$
+			    	date = resultSet.getString(Messages.getString("LoginController.27")); //$NON-NLS-1$
 			    	
-			    	System.out.println("Id is "+id);
-			    	System.out.println("Password is "+pw);
+			    	System.out.println(Messages.getString("LoginController.28")+id); //$NON-NLS-1$
+			    	System.out.println(Messages.getString("LoginController.29")+pw); //$NON-NLS-1$
 
 		        	if(id.equals(realId) && pw.equals(realPw)) {
 		        		
 		        		//add cashier info to temp
-		        		Common.cashierrec.setId(""+realId);
+		        		Common.cashierrec.setId(Messages.getString("LoginController.30")+realId); //$NON-NLS-1$
 		        		Common.cashierrec.setPassword(realPw);
 		        		Common.cashierrec.setName(name);
 		        		Common.cashierrec.setGender(gender);
 		        		Common.cashierrec.setAddress(addr);
-		        		Common.cashierrec.setAge(""+age);
+		        		Common.cashierrec.setAge(Messages.getString("LoginController.31")+age); //$NON-NLS-1$
 		        		Common.cashierrec.setPhone(ph);
 		        		Common.cashierrec.setEmail(mail);
 		        		Common.cashierrec.setDateCreated(date);
-			    		System.out.println("Success!");
-			    		System.out.println("cashier name is : "+Common.cashierrec.getName());
+			    		System.out.println(Messages.getString("LoginController.32")); //$NON-NLS-1$
+			    		System.out.println(Messages.getString("LoginController.33")+Common.cashierrec.getName()); //$NON-NLS-1$
 			    		
 			    		//scene transaction
 			    		try {
@@ -201,22 +201,22 @@ public class LoginController{
 			    	}
 			    	else{
 			    		//System.out.println("Login Fail! User name or password incorrect! because realid is "+ realId+" and id is "+id+" real password is "+ realPw+ " password is "+pw);
-			    		Alert alert = new Alert(AlertType.ERROR, "Login fail! Incorrect Password");
+			    		Alert alert = new Alert(AlertType.ERROR, Messages.getString("LoginController.34")); //$NON-NLS-1$
 						alert.showAndWait();
 						tf_id.clear();
 						tf_pass.clear();
 
-						System.out.println("login fail Error showed");
+						System.out.println(Messages.getString("LoginController.35")); //$NON-NLS-1$
 			    	}
 			    	 
 			    	}//end of rs.next()
 			    	else {
-			    		Alert alert = new Alert(AlertType.ERROR, "No such user");
+			    		Alert alert = new Alert(AlertType.ERROR, Messages.getString("LoginController.36")); //$NON-NLS-1$
 						alert.showAndWait();
 						tf_id.clear();
 						tf_pass.clear();
 
-						System.out.println("no user Error showed");
+						System.out.println(Messages.getString("LoginController.37")); //$NON-NLS-1$
 			    		//System.out.println("No such user!!");
 			    	}
 		    	
@@ -226,10 +226,10 @@ public class LoginController{
 	    	}//end of check is Integer
 			}
 			catch(NumberFormatException nfe) {
-				Alert alert = new Alert(AlertType.ERROR, "Invalid input!");
+				Alert alert = new Alert(AlertType.ERROR, Messages.getString("LoginController.38")); //$NON-NLS-1$
 				alert.showAndWait();
 
-				System.out.println("input Error showed"+nfe.getMessage());
+				System.out.println(Messages.getString("LoginController.39")+nfe.getMessage()); //$NON-NLS-1$
 			}
 			
 			
@@ -240,17 +240,17 @@ public class LoginController{
 
 		    @Override
 		    public void start(Stage primaryStage) throws Exception {
-		        Parent root = FXMLLoader.load(getClass().getResource("/ui/cashier_main.fxml"));
+		        Parent root = FXMLLoader.load(getClass().getResource(Messages.getString("LoginController.40"))); //$NON-NLS-1$
 
 	
 		    
 		        
 		        Scene scene = new Scene(root, 1320, 700);
 				primaryStage.setScene(scene);
-				primaryStage.setTitle("Cashier Panel");
+				primaryStage.setTitle(Messages.getString("LoginController.41")); //$NON-NLS-1$
 				//primaryStage.sizeToScene();
 				primaryStage.setResizable(false);
-				primaryStage.getIcons().add(new Image("graphic/poslogorect.png"));
+				primaryStage.getIcons().add(new Image(Messages.getString("LoginController.42"))); //$NON-NLS-1$
 				primaryStage.setMaximized(false);
 				primaryStage.show();
 		    }
@@ -261,17 +261,17 @@ public class LoginController{
 
 		    @Override
 		    public void start(Stage primaryStage) throws Exception {
-		        Parent root = FXMLLoader.load(getClass().getResource("/ui/Admin_panel.fxml"));
+		        Parent root = FXMLLoader.load(getClass().getResource(Messages.getString("LoginController.43"))); //$NON-NLS-1$
 
 	
 		    
 		        
 		        Scene scene = new Scene(root,1320,700);
 				primaryStage.setScene(scene);
-				primaryStage.setTitle("Admin Panel");
+				primaryStage.setTitle(Messages.getString("LoginController.44")); //$NON-NLS-1$
 				//primaryStage.sizeToScene();
 				primaryStage.setResizable(false);
-				primaryStage.getIcons().add(new Image("graphic/poslogorect.png"));
+				primaryStage.getIcons().add(new Image(Messages.getString("LoginController.45"))); //$NON-NLS-1$
 				primaryStage.setMaximized(false);
 				primaryStage.show();
 		    }

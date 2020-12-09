@@ -54,11 +54,11 @@ public class CardPayController {
 
     @FXML
     void initialize() throws ClassNotFoundException, SQLException, InstantiationException, IllegalAccessException {
-        assert tf_purchase_id != null : "fx:id=\"tf_purchase_id\" was not injected: check your FXML file 'Card_pay.fxml'.";
-        assert tf_total_amount != null : "fx:id=\"tf_total_amount\" was not injected: check your FXML file 'Card_pay.fxml'.";
-        assert tf_card_no != null : "fx:id=\"tf_card_no\" was not injected: check your FXML file 'Card_pay.fxml'.";
-        assert bt_pay != null : "fx:id=\"bt_pay\" was not injected: check your FXML file 'Card_pay.fxml'.";
-        assert tf_pay_amount != null : "fx:id=\"tf_pay_amount\" was not injected: check your FXML file 'Card_pay.fxml'.";
+        assert tf_purchase_id != null : Messages.getString("CardPayController.0"); //$NON-NLS-1$
+        assert tf_total_amount != null : Messages.getString("CardPayController.1"); //$NON-NLS-1$
+        assert tf_card_no != null : Messages.getString("CardPayController.2"); //$NON-NLS-1$
+        assert bt_pay != null : Messages.getString("CardPayController.3"); //$NON-NLS-1$
+        assert tf_pay_amount != null : Messages.getString("CardPayController.4"); //$NON-NLS-1$
 
         
         tf_card_no.setEditable(true);
@@ -90,26 +90,26 @@ public class CardPayController {
         	}
         }).start();
 */
-        tf_total_amount.setText(""+Common.totalAmount);
+        tf_total_amount.setText(Messages.getString("CardPayController.5")+Common.totalAmount); //$NON-NLS-1$
         
         //get purchase id from previous row
         //get previous id and create now id
   		new DBInitialize().DBInitialize();
-  		String previousgetpurchaseid = " SELECT `id` FROM `purchase` ORDER BY `id` DESC LIMIT 1 ";
+  		String previousgetpurchaseid = Messages.getString("CardPayController.6"); //$NON-NLS-1$
   		new DBInitialize();
   		ResultSet rs = DBInitialize.statement.executeQuery(previousgetpurchaseid);
-  		String previousid = "";
+  		String previousid = Messages.getString("CardPayController.7"); //$NON-NLS-1$
   		while(rs.next()) {
-  			previousid = rs.getString("id");
+  			previousid = rs.getString(Messages.getString("CardPayController.8")); //$NON-NLS-1$
   		}
   		int nowid = Integer.parseInt(previousid) + 1;
   		
-  		tf_purchase_id.setText(""+nowid);
+  		tf_purchase_id.setText(Messages.getString("CardPayController.9")+nowid); //$NON-NLS-1$
   		Common.purchaseid = nowid;
   		
   		tf_card_no.setOnAction(e->{
   			 cardno = tf_card_no.getText().toString();
-  			String getCardInfoQuery = "SELECT * FROM `Card` WHERE Card.cardnumber = '"+cardno+"';";
+  			String getCardInfoQuery = Messages.getString("CardPayController.10")+cardno+Messages.getString("CardPayController.11"); //$NON-NLS-1$ //$NON-NLS-2$
   			
   			CardUser c = new CardUser();
   			try {
@@ -124,28 +124,28 @@ public class CardPayController {
 					c.setLastdateused(rsc.getString(4));
 					c.setRegisterdate(rsc.getString(5));
 					c.setExpireddate(rsc.getString(6));
-					c.setPin(""+rsc.getInt(7));
+					c.setPin(Messages.getString("CardPayController.12")+rsc.getInt(7)); //$NON-NLS-1$
 					
 					
 					double totalamount = Double.parseDouble(tf_total_amount.getText().toString());
 		  			 cardamount = Double.parseDouble(c.getAmount());
 		  			
 		  			if(totalamount> cardamount) {
-		  				Alert al = new Alert(AlertType.ERROR, "Insufficient Card Balance!");
+		  				Alert al = new Alert(AlertType.ERROR, Messages.getString("CardPayController.13")); //$NON-NLS-1$
 						al.showAndWait();
 		  			}
 		  			else {
 		  				
 		  				double tominus = (totalamount) * (0.15);
-		  				System.out.println("to minus is : "+tominus);
+		  				System.out.println(Messages.getString("CardPayController.14")+tominus); //$NON-NLS-1$
 		  				 payamount = totalamount - tominus;
-		  				System.out.println("payamount is : "+payamount);
-		  				tf_pay_amount.setText(""+payamount);
+		  				System.out.println(Messages.getString("CardPayController.15")+payamount); //$NON-NLS-1$
+		  				tf_pay_amount.setText(Messages.getString("CardPayController.16")+payamount); //$NON-NLS-1$
 		  				Common.payamount = payamount;
 		  			}
 		  			///
 				}else {
-					Alert al = new Alert(AlertType.ERROR, "Invalid Card!");
+					Alert al = new Alert(AlertType.ERROR, Messages.getString("CardPayController.17")); //$NON-NLS-1$
 					al.showAndWait();
 				}
 				
@@ -172,103 +172,103 @@ public class CardPayController {
     	}else {
     		
     		String cardinfoforprint = tf_card_no.getText().toString();
-    		Common.cardinfo = "A/C    XXXXXX XXX XXXX XX "+ cardinfoforprint.substring(cardinfoforprint.length() - 4);
+    		Common.cardinfo = Messages.getString("CardPayController.18")+ cardinfoforprint.substring(cardinfoforprint.length() - 4); //$NON-NLS-1$
     	
     	
     	//get purchase id from previous row
         //get previous id and create now id
   		new DBInitialize().DBInitialize();
-  		String previousgetpurchaseid = " SELECT `id` FROM `purchase` ORDER BY `id` DESC LIMIT 1 ";
+  		String previousgetpurchaseid = Messages.getString("CardPayController.19"); //$NON-NLS-1$
   		new DBInitialize();
   		ResultSet rs = DBInitialize.statement.executeQuery(previousgetpurchaseid);
-  		String previousid = "";
+  		String previousid = Messages.getString("CardPayController.20"); //$NON-NLS-1$
   		while(rs.next()) {
-  			previousid = rs.getString("id");
+  			previousid = rs.getString(Messages.getString("CardPayController.21")); //$NON-NLS-1$
   		}
   		int nowid = Integer.parseInt(previousid) + 1;
-  		System.out.println("purchase id for now is : "+nowid);
+  		System.out.println(Messages.getString("CardPayController.22")+nowid); //$NON-NLS-1$
   		Common.purchaseid = nowid;
   		
   		//create today date
-  		String pattern = "dd/MM/yyyy";
+  		String pattern = Messages.getString("CardPayController.23"); //$NON-NLS-1$
 		 purchasedate =new SimpleDateFormat(pattern).format(new Date());
-		System.out.println("date purchase is "+purchasedate);
+		System.out.println(Messages.getString("CardPayController.24")+purchasedate); //$NON-NLS-1$
 		
 		//create today current time(purhcase time)
-		 String hour = ""+new Date().getHours();
-		 String min = ""+new Date().getMinutes();
-		String time  = hour+" : "+min;
-	    System.out.println("purhcase time is : "+time);
+		 String hour = Messages.getString("CardPayController.25")+new Date().getHours(); //$NON-NLS-1$
+		 String min = Messages.getString("CardPayController.26")+new Date().getMinutes(); //$NON-NLS-1$
+		String time  = hour+Messages.getString("CardPayController.27")+min; //$NON-NLS-1$
+	    System.out.println(Messages.getString("CardPayController.28")+time); //$NON-NLS-1$
 		
 	   
 	    
 		//db
     	new DBInitialize().DBInitialize();
     	new DBInitialize();
-    	String querycreatepurchase = "INSERT INTO `purchase`(`id`, `date`, `time`, `cashierid`, `barcode`, `quantity`, `totalamount` ) "
-    			+ "VALUES ("+Common.purchaseid+", '"+purchasedate+"', '"+time+"',"+Common.cashierrec.getId()+",'"+Common.productids+"','"+Common.productqtys+"','"+payamount+"')";
+    	String querycreatepurchase = Messages.getString("CardPayController.29") //$NON-NLS-1$
+    			+ Messages.getString("CardPayController.30")+Common.purchaseid+Messages.getString("CardPayController.31")+purchasedate+Messages.getString("CardPayController.32")+time+Messages.getString("CardPayController.33")+Common.cashierrec.getId()+Messages.getString("CardPayController.34")+Common.productids+Messages.getString("CardPayController.35")+Common.productqtys+Messages.getString("CardPayController.36")+payamount+Messages.getString("CardPayController.37"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$ //$NON-NLS-6$ //$NON-NLS-7$ //$NON-NLS-8$
     	DBInitialize.statement.executeUpdate(querycreatepurchase);
     	
     	
     	//get old transaction id and count +1 for new INSERT
-    	String getTranasctionIDQuery = "SELECT `id` FROM `transaction` ORDER BY transaction.id DESC LIMIT 1";
+    	String getTranasctionIDQuery = Messages.getString("CardPayController.38"); //$NON-NLS-1$
     	new DBInitialize();
     	ResultSet rstid = DBInitialize.statement.executeQuery(getTranasctionIDQuery);
-    	String oldtid = "";
+    	String oldtid = Messages.getString("CardPayController.39"); //$NON-NLS-1$
     	while (rstid.next()) {
     		oldtid = rstid.getString(1);
     	}
-    	String newtid = ""+(Integer.parseInt(oldtid) + 1);
+    	String newtid = Messages.getString("CardPayController.40")+(Integer.parseInt(oldtid) + 1); //$NON-NLS-1$
     	
     	//add to transaction table
-    	String addtransactionquery = "INSERT INTO `transaction`(`id`, `cashierid`, `cardid`, `purchaseid`, `amount`) VALUES ('"+newtid+"','"+Common.cashierrec.getId()+"','"+cardno+"','"+Common.purchaseid+"','"+payamount+"')";
+    	String addtransactionquery = Messages.getString("CardPayController.41")+newtid+Messages.getString("CardPayController.42")+Common.cashierrec.getId()+Messages.getString("CardPayController.43")+cardno+Messages.getString("CardPayController.44")+Common.purchaseid+Messages.getString("CardPayController.45")+payamount+Messages.getString("CardPayController.46"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$ //$NON-NLS-6$
     	new DBInitialize();
     	DBInitialize.statement.executeUpdate(addtransactionquery);
     	
     	//compute the new card balance amount
     	double newbalance = cardamount - payamount;
-    	String reductcardmoneyquery = "UPDATE `Card` SET `amount`='"+newbalance+"',`lastuseddate`='"+purchasedate+"' WHERE Card.cardnumber = '"+cardno+"';";
+    	String reductcardmoneyquery = Messages.getString("CardPayController.47")+newbalance+Messages.getString("CardPayController.48")+purchasedate+Messages.getString("CardPayController.49")+cardno+Messages.getString("CardPayController.50"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
     	new DBInitialize();
     	DBInitialize.statement.executeUpdate(reductcardmoneyquery);
     	
     	
     	//update count and stock amount
     	//get all the purchase id and count +1 in db
-    	String[] purchasedproductitemsid = Common.productids.split(",");
-    	String[] purchasedproductitemsqty = Common.productqtys.split(",");
+    	String[] purchasedproductitemsid = Common.productids.split(Messages.getString("CardPayController.51")); //$NON-NLS-1$
+    	String[] purchasedproductitemsqty = Common.productqtys.split(Messages.getString("CardPayController.52")); //$NON-NLS-1$
     	
     	for(int i=0; i< purchasedproductitemsid.length; i++) {
     		int oldcount = 0 ;
     		int newcount = 0;
     		//get old count
-    		String getOldCountQuery = "SELECT `count` FROM `productitems` WHERE productitems.barcode = '"+purchasedproductitemsid[i]+"';";
-    		System.out.println("product barcode is "+purchasedproductitemsid[i]);
+    		String getOldCountQuery = Messages.getString("CardPayController.53")+purchasedproductitemsid[i]+Messages.getString("CardPayController.54"); //$NON-NLS-1$ //$NON-NLS-2$
+    		System.out.println(Messages.getString("CardPayController.55")+purchasedproductitemsid[i]); //$NON-NLS-1$
     		new DBInitialize().DBInitialize();
     		new DBInitialize();
     		ResultSet rsoldc = DBInitialize.statement.executeQuery(getOldCountQuery);
     		while(rsoldc.next()) {
     			oldcount = rsoldc.getInt(1);
     		}
-    		System.out.println("old count is : "+oldcount);
+    		System.out.println(Messages.getString("CardPayController.56")+oldcount); //$NON-NLS-1$
     		
     		newcount  = oldcount + Integer.parseInt(purchasedproductitemsqty[i]);
-    		System.out.println("new count is "+newcount+"purchase qty"+purchasedproductitemsqty[i]);
-    		String updatecountQuery = "UPDATE `productitems` SET `count`= "+newcount+" WHERE productitems.barcode = '"+purchasedproductitemsid[i]+"'";
+    		System.out.println(Messages.getString("CardPayController.57")+newcount+Messages.getString("CardPayController.58")+purchasedproductitemsqty[i]); //$NON-NLS-1$ //$NON-NLS-2$
+    		String updatecountQuery = Messages.getString("CardPayController.59")+newcount+Messages.getString("CardPayController.60")+purchasedproductitemsid[i]+Messages.getString("CardPayController.61"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
     		new DBInitialize().DBInitialize();
     		new DBInitialize();
     		DBInitialize.statement.executeUpdate(updatecountQuery);
     		
     		//get stock amount
-    		String getstockquery = "SELECT `stockamount` FROM `productitems` WHERE productitems.barcode = '"+purchasedproductitemsid[i]+"';";
-    		String oldstock = ""; 
+    		String getstockquery = Messages.getString("CardPayController.62")+purchasedproductitemsid[i]+Messages.getString("CardPayController.63"); //$NON-NLS-1$ //$NON-NLS-2$
+    		String oldstock = Messages.getString("CardPayController.64");  //$NON-NLS-1$
     		new DBInitialize();
     		ResultSet rsst = DBInitialize.statement.executeQuery(getstockquery);
     		while(rsst.next()) {
     			oldstock = rsst.getString(1);
     		}
-    		String newstock = ""+(Integer.parseInt(oldstock) - Integer.parseInt(purchasedproductitemsqty[i]));
+    		String newstock = Messages.getString("CardPayController.65")+(Integer.parseInt(oldstock) - Integer.parseInt(purchasedproductitemsqty[i])); //$NON-NLS-1$
     		//update stock
-    		String updatestockquery = "UPDATE `productitems` SET `stockamount`='"+newstock+"' WHERE productitems.barcode = '"+purchasedproductitemsid[i]+"'";
+    		String updatestockquery = Messages.getString("CardPayController.66")+newstock+Messages.getString("CardPayController.67")+purchasedproductitemsid[i]+Messages.getString("CardPayController.68"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
     		new DBInitialize();
     		DBInitialize.statement.executeUpdate(updatestockquery);
     	
@@ -282,7 +282,7 @@ public class CardPayController {
     	//MainCashierController.clearsaletableitems();
     	((Stage)bt_pay.getScene().getWindow()).close();
     	//alert
-    	Alert trancompleteal = new Alert(AlertType.INFORMATION, "Transaction Complete! "+payamount+" kyats has reduced from the card. Click Ok to print voucher.");
+    	Alert trancompleteal = new Alert(AlertType.INFORMATION, Messages.getString("CardPayController.69")+payamount+Messages.getString("CardPayController.70")); //$NON-NLS-1$ //$NON-NLS-2$
     	trancompleteal.showAndWait();
     
     	

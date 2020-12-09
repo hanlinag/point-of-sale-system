@@ -14,7 +14,7 @@ public class MainCashier extends Application{
 	public void start(Stage primaryStage) throws Exception {
 		// TODO Auto-generated method stub
 		
-		FXMLLoader root = new FXMLLoader(getClass().getResource("/ui/template/cashier_main.fxml"));
+		FXMLLoader root = new FXMLLoader(getClass().getResource(Messages.getString("MainCashier.0"))); //$NON-NLS-1$
 		
 	//	LoginController logincontroller = root.getController();
 		 

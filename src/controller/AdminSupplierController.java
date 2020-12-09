@@ -68,38 +68,38 @@ public class AdminSupplierController {
 
 	@FXML
 	void initialize() throws ClassNotFoundException, SQLException, InstantiationException, IllegalAccessException {
-		assert tb_supplier != null : "fx:id=\"tb_supplier\" was not injected: check your FXML file 'Admin_supplier.fxml'.";
-		assert bt_add != null : "fx:id=\"bt_add\" was not injected: check your FXML file 'Admin_supplier.fxml'.";
-		assert tf_id != null : "fx:id=\"tf_id\" was not injected: check your FXML file 'Admin_supplier.fxml'.";
-		assert tb_supplier != null : "fx:id=\"tb_supplier\" was not injected: check your FXML file 'Admin_supplier.fxml'.";
-		assert tf_name != null : "fx:id=\"tf_name\" was not injected: check your FXML file 'Admin_supplier.fxml'.";
-		assert tf_supplied_date != null : "fx:id=\"tf_supplied_date\" was not injected: check your FXML file 'Admin_supplier.fxml'.";
-		assert bt_new != null : "fx:id=\"bt_new\" was not injected: check your FXML file 'Admin_supplier.fxml'.";
+		assert tb_supplier != null : Messages.getString("AdminSupplierController.0"); //$NON-NLS-1$
+		assert bt_add != null : Messages.getString("AdminSupplierController.1"); //$NON-NLS-1$
+		assert tf_id != null : Messages.getString("AdminSupplierController.2"); //$NON-NLS-1$
+		assert tb_supplier != null : Messages.getString("AdminSupplierController.3"); //$NON-NLS-1$
+		assert tf_name != null : Messages.getString("AdminSupplierController.4"); //$NON-NLS-1$
+		assert tf_supplied_date != null : Messages.getString("AdminSupplierController.5"); //$NON-NLS-1$
+		assert bt_new != null : Messages.getString("AdminSupplierController.6"); //$NON-NLS-1$
 
 
 		tf_id.setEditable(false);
 		//tf_supplied_date.setEditable(false);
 		
-		col_item_id = new TableColumn<Supplier, String>("ID");
-		col_item_name = new TableColumn<Supplier, String>("Compant Name");
-		col_item_supplied_last = new TableColumn<Supplier, String>("Last Supplied Date");
+		col_item_id = new TableColumn<Supplier, String>(Messages.getString("AdminSupplierController.7")); //$NON-NLS-1$
+		col_item_name = new TableColumn<Supplier, String>(Messages.getString("AdminSupplierController.8")); //$NON-NLS-1$
+		col_item_supplied_last = new TableColumn<Supplier, String>(Messages.getString("AdminSupplierController.9")); //$NON-NLS-1$
 
 		col_item_id.setMinWidth(110.0);
 		col_item_name.setMinWidth(380.0);
 		col_item_supplied_last.setMinWidth(180.0);
 
-		col_item_id.setStyle("-fx-font-size: 18");
-		col_item_name.setStyle("-fx-font-size: 18");
-		col_item_supplied_last.setStyle("-fx-font-size: 18");
+		col_item_id.setStyle(Messages.getString("AdminSupplierController.10")); //$NON-NLS-1$
+		col_item_name.setStyle(Messages.getString("AdminSupplierController.11")); //$NON-NLS-1$
+		col_item_supplied_last.setStyle(Messages.getString("AdminSupplierController.12")); //$NON-NLS-1$
 
-		col_item_id.setCellValueFactory(new PropertyValueFactory<Supplier, String>("id"));
-		col_item_name.setCellValueFactory(new PropertyValueFactory<Supplier, String>("name"));
-		col_item_supplied_last.setCellValueFactory(new PropertyValueFactory<Supplier, String>("lastSupplied"));
+		col_item_id.setCellValueFactory(new PropertyValueFactory<Supplier, String>(Messages.getString("AdminSupplierController.13"))); //$NON-NLS-1$
+		col_item_name.setCellValueFactory(new PropertyValueFactory<Supplier, String>(Messages.getString("AdminSupplierController.14"))); //$NON-NLS-1$
+		col_item_supplied_last.setCellValueFactory(new PropertyValueFactory<Supplier, String>(Messages.getString("AdminSupplierController.15"))); //$NON-NLS-1$
 
 		tb_supplier.getColumns().addAll(col_item_id, col_item_name, col_item_supplied_last);
 
 		// get data from db
-		String query = "SELECT * FROM `supplier`;";
+		String query = Messages.getString("AdminSupplierController.16"); //$NON-NLS-1$
 		new DBInitialize().DBInitialize();
 		new DBInitialize();
 		ResultSet rs = DBInitialize.statement.executeQuery(query);
@@ -123,7 +123,7 @@ public class AdminSupplierController {
 
 				if (e.getClickCount() == 2 && (!row.isEmpty())) {
 					Supplier su = tb_supplier.getSelectionModel().getSelectedItem();
-					System.out.println("Double click is: " + su.getName());
+					System.out.println(Messages.getString("AdminSupplierController.17") + su.getName()); //$NON-NLS-1$
 
 					// set to tf
 					tf_id.setText(su.getId());
@@ -135,14 +135,14 @@ public class AdminSupplierController {
 			
 			  final ContextMenu rowMenu = new ContextMenu();
 	            
-	            MenuItem removeItem = new MenuItem("Delete");
+	            MenuItem removeItem = new MenuItem(Messages.getString("AdminSupplierController.18")); //$NON-NLS-1$
 	            removeItem.setOnAction(new EventHandler<ActionEvent>() {
 
 	                @Override
 	                public void handle(ActionEvent event) {
 	                	Supplier su = tb_supplier.getSelectionModel().getSelectedItem();
 
-	                	Alert alert = new Alert(AlertType.CONFIRMATION, "Are U Sure To Delete " + su.getName() + " ?", ButtonType.YES, ButtonType.NO);
+	                	Alert alert = new Alert(AlertType.CONFIRMATION, Messages.getString("AdminSupplierController.19") + su.getName() + Messages.getString("AdminSupplierController.20"), ButtonType.YES, ButtonType.NO); //$NON-NLS-1$ //$NON-NLS-2$
 	                	alert.showAndWait();
 
 	                	if (alert.getResult() == ButtonType.YES) {
@@ -150,7 +150,7 @@ public class AdminSupplierController {
 	                		//check if this current category is used in product items
 	                    	//get count 
 	                		int cateCount = 0;
-	                    	String getSupplierUsedCount = "SELECT COUNT(*) FROM productitems, supplier WHERE supplier.id = productitems.supplierid AND supplier.id = '"+su.getId()+"'";
+	                    	String getSupplierUsedCount = Messages.getString("AdminSupplierController.21")+su.getId()+Messages.getString("AdminSupplierController.22"); //$NON-NLS-1$ //$NON-NLS-2$
 	                    	try {
 								new DBInitialize().DBInitialize();
 								new DBInitialize();
@@ -169,13 +169,13 @@ public class AdminSupplierController {
 	                    	
 	                    	if(cateCount > 0 ) {
 	                    		//show can't delete Alert 
-	                    		Alert aal = new Alert(AlertType.ERROR, "Cannot Delete! This Supplier has been used in product items. You can delete the product items that link with this category and try again. Thanks!");
+	                    		Alert aal = new Alert(AlertType.ERROR, Messages.getString("AdminSupplierController.23")); //$NON-NLS-1$
 	                    		aal.showAndWait();
 	                    		
 	                    	}else {
 	                    	
 	                	    //do stuff
-	                     	String removequery = "DELETE FROM `supplier` WHERE supplier.id = '"+su.getId()+"';";
+	                     	String removequery = Messages.getString("AdminSupplierController.24")+su.getId()+Messages.getString("AdminSupplierController.25"); //$NON-NLS-1$ //$NON-NLS-2$
 	                    	try {
 	    						new DBInitialize().DBInitialize();
 	    						new DBInitialize();
@@ -184,10 +184,10 @@ public class AdminSupplierController {
 	    	                	//update table
 	    	            		//update table data
 	    	           		 new DBInitialize().DBInitialize();
-	    	           	        String queryupdatetable = "SELECT * FROM `supplier`;";
+	    	           	        String queryupdatetable = Messages.getString("AdminSupplierController.26"); //$NON-NLS-1$
 	    	           	        
 	    	           	    	// get data from db
-	    	           	 		String query = "SELECT * FROM `supplier`;";
+	    	           	 		String query = Messages.getString("AdminSupplierController.27"); //$NON-NLS-1$
 	    	           	 		new DBInitialize().DBInitialize();
 	    	           	 		new DBInitialize();
 	    	           	 		supplierData.clear();//clear previous data
@@ -211,7 +211,7 @@ public class AdminSupplierController {
 	    	        			al.showAndWait();*/
 	    	           			
 	    	           		//show alert
-	    	           	    	Alert al = new Alert(AlertType.INFORMATION, "Item deleted!");
+	    	           	    	Alert al = new Alert(AlertType.INFORMATION, Messages.getString("AdminSupplierController.28")); //$NON-NLS-1$
 	    	           			al.showAndWait();
 	    	                	
 	    	                	
@@ -246,25 +246,25 @@ public class AdminSupplierController {
 	    	tf_name.clear();
 	    	tf_supplied_date.clear();
 	    	
-	    	String query = "SELECT supplier.id FROM `supplier` ORDER BY supplier.id DESC LIMIT 1";
+	    	String query = Messages.getString("AdminSupplierController.29"); //$NON-NLS-1$
 	    	
-	    	String oldid = "";
+	    	String oldid = Messages.getString("AdminSupplierController.30"); //$NON-NLS-1$
 	    	
 	    	new DBInitialize().DBInitialize();
 	    	new DBInitialize();
 	    	ResultSet rs = DBInitialize.statement.executeQuery(query);
 	    	while(rs.next()) {
-	    		oldid = ""+rs.getInt(1);
+	    		oldid = Messages.getString("AdminSupplierController.31")+rs.getInt(1); //$NON-NLS-1$
 	    	}
 	    	
 	    	//count +1 new Id
-	    	String newId = ""+(Integer.parseInt(oldid) + 1 );
+	    	String newId = Messages.getString("AdminSupplierController.32")+(Integer.parseInt(oldid) + 1 ); //$NON-NLS-1$
 	    	tf_id.setText(newId);
 	    	
 	    	//create today date
-	    	String pattern = "dd/MM/yyyy";
+	    	String pattern = Messages.getString("AdminSupplierController.33"); //$NON-NLS-1$
 			String todaydate =new SimpleDateFormat(pattern).format(new Date());
-			System.out.println("today is "+todaydate);
+			System.out.println(Messages.getString("AdminSupplierController.34")+todaydate); //$NON-NLS-1$
 			tf_supplied_date.setText(todaydate);
 			
 	    }
@@ -272,8 +272,8 @@ public class AdminSupplierController {
 	@FXML
 	void onAddAction(ActionEvent event) throws ClassNotFoundException, InstantiationException, IllegalAccessException, SQLException {
 
-		if(tf_id.getText().equals("") || tf_name.getText().equals("") || tf_supplied_date.getText().equals("") ||tf_supplied_date.getText().length() < 10 ) {
-			Alert al = new Alert(AlertType.ERROR, "Invalid input or data missing!");
+		if(tf_id.getText().equals(Messages.getString("AdminSupplierController.35")) || tf_name.getText().equals(Messages.getString("AdminSupplierController.36")) || tf_supplied_date.getText().equals(Messages.getString("AdminSupplierController.37")) ||tf_supplied_date.getText().length() < 10 ) { //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+			Alert al = new Alert(AlertType.ERROR, Messages.getString("AdminSupplierController.38")); //$NON-NLS-1$
 			al.showAndWait();
 		}
 		else {
@@ -284,7 +284,7 @@ public class AdminSupplierController {
 		String lastsupplied = tf_supplied_date.getText().toString();
     	
 		try {
-    	String addquery = "INSERT INTO `supplier`(`id`, `companyname`, `lastdatesupplied`) VALUES ("+id+",'"+name+"','"+lastsupplied+"');";
+    	String addquery = Messages.getString("AdminSupplierController.39")+id+Messages.getString("AdminSupplierController.40")+name+Messages.getString("AdminSupplierController.41")+lastsupplied+Messages.getString("AdminSupplierController.42"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
 
     	
     	new DBInitialize().DBInitialize();
@@ -294,7 +294,7 @@ public class AdminSupplierController {
     	
     	//update table
     	// get data from db
- 		String query = "SELECT * FROM `supplier`;";
+ 		String query = Messages.getString("AdminSupplierController.43"); //$NON-NLS-1$
  		new DBInitialize().DBInitialize();
  		new DBInitialize();
  		supplierData.clear();
@@ -316,11 +316,11 @@ public class AdminSupplierController {
  		tf_supplied_date.clear();
  		
     	//Alert
-    	 Alert al = new Alert(AlertType.INFORMATION, "Item added!");
+    	 Alert al = new Alert(AlertType.INFORMATION, Messages.getString("AdminSupplierController.44")); //$NON-NLS-1$
  		al.showAndWait();
 		}//end of try
     	catch(Exception ex) {
-    		Alert al = new Alert(AlertType.ERROR, ""+ex.getMessage());
+    		Alert al = new Alert(AlertType.ERROR, Messages.getString("AdminSupplierController.45")+ex.getMessage()); //$NON-NLS-1$
     		al.showAndWait();
     	}
 		
@@ -330,8 +330,8 @@ public class AdminSupplierController {
 	@FXML
 	void onUpdateAction(ActionEvent event) throws ClassNotFoundException, InstantiationException, IllegalAccessException, SQLException {
 
-		if(tf_id.getText().equals("") || tf_name.getText().equals("") || tf_supplied_date.getText().equals("") ||tf_supplied_date.getText().length() < 10 ) {
-			Alert al = new Alert(AlertType.ERROR, "Invalid input or data missing!");
+		if(tf_id.getText().equals(Messages.getString("AdminSupplierController.46")) || tf_name.getText().equals(Messages.getString("AdminSupplierController.47")) || tf_supplied_date.getText().equals(Messages.getString("AdminSupplierController.48")) ||tf_supplied_date.getText().length() < 10 ) { //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+			Alert al = new Alert(AlertType.ERROR, Messages.getString("AdminSupplierController.49")); //$NON-NLS-1$
 			al.showAndWait();
 		}
 		else {
@@ -340,7 +340,7 @@ public class AdminSupplierController {
 		String name = tf_name.getText().toString();
 		String lastsupplied = tf_supplied_date.getText().toString();
     	
-    	String upquery = "UPDATE `supplier` SET `companyname`='"+name+"',`lastdatesupplied`='"+lastsupplied+"' WHERE `id`='"+id+"'";
+    	String upquery = Messages.getString("AdminSupplierController.50")+name+Messages.getString("AdminSupplierController.51")+lastsupplied+Messages.getString("AdminSupplierController.52")+id+Messages.getString("AdminSupplierController.53"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
 
     	
     	new DBInitialize().DBInitialize();
@@ -349,7 +349,7 @@ public class AdminSupplierController {
 		
     	//update table
     	// get data from db
- 		String query = "SELECT * FROM `supplier`;";
+ 		String query = Messages.getString("AdminSupplierController.54"); //$NON-NLS-1$
  		new DBInitialize().DBInitialize();
  		new DBInitialize();
  		supplierData.clear();
@@ -371,7 +371,7 @@ public class AdminSupplierController {
  		tf_supplied_date.clear();
  		
     	//Alert
-    	 Alert al = new Alert(AlertType.INFORMATION, "Item updated!");
+    	 Alert al = new Alert(AlertType.INFORMATION, Messages.getString("AdminSupplierController.55")); //$NON-NLS-1$
  		al.showAndWait();
 	}
 	}//end of else

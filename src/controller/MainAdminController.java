@@ -67,23 +67,23 @@ public class MainAdminController {
 
 	@FXML
 	void initialize() {
-		assert bt_cashier != null : "fx:id=\"bt_cashier\" was not injected: check your FXML file 'Admin_panel.fxml'.";
-		assert bt_report != null : "fx:id=\"bt_report\" was not injected: check your FXML file 'Admin_panel.fxml'.";
-		assert bt_popular != null : "fx:id=\"bt_popular\" was not injected: check your FXML file 'Admin_panel.fxml'.";
-		assert bt_chart != null : "fx:id=\"bt_chart\" was not injected: check your FXML file 'Admin_panel.fxml'.";
-		assert bt_product != null : "fx:id=\"bt_product\" was not injected: check your FXML file 'Admin_panel.fxml'.";
-		assert bt_promotion != null : "fx:id=\"bt_promotion\" was not injected: check your FXML file 'Admin_panel.fxml'.";
-		assert bt_category != null : "fx:id=\"bt_category\" was not injected: check your FXML file 'Admin_panel.fxml'.";
-		assert bt_customer != null : "fx:id=\"bt_customer\" was not injected: check your FXML file 'Admin_panel.fxml'.";
-		assert bt_logout != null : "fx:id=\"bt_logout\" was not injected: check your FXML file 'Admin_panel.fxml'.";
-		assert common_pane != null : "fx:id=\"common_pane\" was not injected: check your FXML file 'Admin_panel.fxml'.";
-		assert bt_supplier != null : "fx:id=\"bt_supplier\" was not injected: check your FXML file 'Admin_panel.fxml'.";
-		assert bt_card != null : "fx:id=\"bt_card\" was not injected: check your FXML file 'Admin_panel.fxml'.";
+		assert bt_cashier != null : Messages.getString("MainAdminController.0"); //$NON-NLS-1$
+		assert bt_report != null : Messages.getString("MainAdminController.1"); //$NON-NLS-1$
+		assert bt_popular != null : Messages.getString("MainAdminController.2"); //$NON-NLS-1$
+		assert bt_chart != null : Messages.getString("MainAdminController.3"); //$NON-NLS-1$
+		assert bt_product != null : Messages.getString("MainAdminController.4"); //$NON-NLS-1$
+		assert bt_promotion != null : Messages.getString("MainAdminController.5"); //$NON-NLS-1$
+		assert bt_category != null : Messages.getString("MainAdminController.6"); //$NON-NLS-1$
+		assert bt_customer != null : Messages.getString("MainAdminController.7"); //$NON-NLS-1$
+		assert bt_logout != null : Messages.getString("MainAdminController.8"); //$NON-NLS-1$
+		assert common_pane != null : Messages.getString("MainAdminController.9"); //$NON-NLS-1$
+		assert bt_supplier != null : Messages.getString("MainAdminController.10"); //$NON-NLS-1$
+		assert bt_card != null : Messages.getString("MainAdminController.11"); //$NON-NLS-1$
         
 
 		AnchorPane pane = null;
 		try {
-			pane = FXMLLoader.load(getClass().getResource("/ui/admin_product.fxml"));
+			pane = FXMLLoader.load(getClass().getResource(Messages.getString("MainAdminController.12"))); //$NON-NLS-1$
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -99,11 +99,11 @@ public class MainAdminController {
 
 		@Override
 		public void start(Stage primaryStage) throws Exception {
-			Parent root = FXMLLoader.load(getClass().getResource("/ui/Page_login.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource(Messages.getString("MainAdminController.13"))); //$NON-NLS-1$
 
 			Scene scene = new Scene(root, 1320, 700);
 			primaryStage.setScene(scene);
-			primaryStage.setTitle("Cashier");
+			primaryStage.setTitle(Messages.getString("MainAdminController.14")); //$NON-NLS-1$
 			//primaryStage.sizeToScene();
 			primaryStage.setResizable(false);
 			primaryStage.setMaximized(false);
@@ -116,7 +116,7 @@ public class MainAdminController {
 
 		AnchorPane pane = null;
 		try {
-			pane = FXMLLoader.load(getClass().getResource("/ui/Admin_cashier.fxml"));
+			pane = FXMLLoader.load(getClass().getResource(Messages.getString("MainAdminController.15"))); //$NON-NLS-1$
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -142,7 +142,7 @@ public class MainAdminController {
 	void onProductAction(ActionEvent event) {
 		AnchorPane pane = null;
 		try {
-			pane = FXMLLoader.load(getClass().getResource("/ui/Admin_product.fxml"));
+			pane = FXMLLoader.load(getClass().getResource(Messages.getString("MainAdminController.16"))); //$NON-NLS-1$
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -169,7 +169,7 @@ public class MainAdminController {
 
 		AnchorPane pane = null;
 		try {
-			pane = FXMLLoader.load(getClass().getResource("/ui/Admin_category.fxml"));
+			pane = FXMLLoader.load(getClass().getResource(Messages.getString("MainAdminController.17"))); //$NON-NLS-1$
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -196,7 +196,7 @@ public class MainAdminController {
 
 		AnchorPane pane = null;
 		try {
-			pane = FXMLLoader.load(getClass().getResource("/ui/Admin_customer.fxml"));
+			pane = FXMLLoader.load(getClass().getResource(Messages.getString("MainAdminController.18"))); //$NON-NLS-1$
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -223,7 +223,7 @@ public class MainAdminController {
 
 		AnchorPane pane = null;
 		try {
-			pane = FXMLLoader.load(getClass().getResource("/ui/Admin_promotion.fxml"));
+			pane = FXMLLoader.load(getClass().getResource(Messages.getString("MainAdminController.19"))); //$NON-NLS-1$
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -251,7 +251,7 @@ public class MainAdminController {
 
 		AnchorPane pane = null;
 		try {
-			pane = FXMLLoader.load(getClass().getResource("/ui/Admin_supplier.fxml"));
+			pane = FXMLLoader.load(getClass().getResource(Messages.getString("MainAdminController.20"))); //$NON-NLS-1$
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -278,7 +278,7 @@ public class MainAdminController {
 
 		AnchorPane pane = null;
 		try {
-			pane = FXMLLoader.load(getClass().getResource("/ui/Admin_popular_item.fxml"));
+			pane = FXMLLoader.load(getClass().getResource(Messages.getString("MainAdminController.21"))); //$NON-NLS-1$
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -307,7 +307,7 @@ public class MainAdminController {
 
 		   AnchorPane pane = null;
 			try {
-				pane = FXMLLoader.load(getClass().getResource("/ui/Admin_card.fxml"));
+				pane = FXMLLoader.load(getClass().getResource(Messages.getString("MainAdminController.22"))); //$NON-NLS-1$
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -334,7 +334,7 @@ public class MainAdminController {
 
 			AnchorPane pane = null;
 			try {
-				pane = FXMLLoader.load(getClass().getResource("/ui/Admin_view_report.fxml"));
+				pane = FXMLLoader.load(getClass().getResource(Messages.getString("MainAdminController.23"))); //$NON-NLS-1$
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -362,7 +362,7 @@ public class MainAdminController {
 			
 			AnchorPane pane = null;
 			try {
-				pane = FXMLLoader.load(getClass().getResource("/ui/Admin_view_chart.fxml"));
+				pane = FXMLLoader.load(getClass().getResource(Messages.getString("MainAdminController.24"))); //$NON-NLS-1$
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
