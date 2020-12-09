@@ -1,14 +1,5 @@
 package controller;
 
-import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXTextField;
-
-import common.Common;
-import database.DBInitialize;
-import functs.EditingCell;
-import functs.ReportGenerator;
-import functs.SearchBarcode;
-
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.FileNotFoundException;
@@ -25,6 +16,14 @@ import java.time.temporal.ChronoField;
 import java.util.Date;
 import java.util.ResourceBundle;
 
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXTextField;
+
+import common.Common;
+import database.DBInitialize;
+import functs.EditingCell;
+import functs.ReportGenerator;
+import functs.SearchBarcode;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.beans.binding.Bindings;
@@ -38,19 +37,19 @@ import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.ContextMenu;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableColumn.CellEditEvent;
 import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
-import javafx.scene.control.TableColumn.CellEditEvent;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -304,6 +303,7 @@ public class MainCashierController {
 		col_purchase_quantity.setCellValueFactory(new PropertyValueFactory<Sale, Integer>("quantity"));
 		col_purchase_quantity.setCellFactory(cellFactory);
 		col_purchase_quantity.setOnEditCommit(new EventHandler<CellEditEvent<Sale, Integer>>() {
+			@SuppressWarnings("unlikely-arg-type")
 			@Override
 			public void handle(CellEditEvent<Sale, Integer> t) {
 				((Sale) t.getTableView().getItems().get(t.getTablePosition().getRow())).setQuantity((t.getNewValue()));

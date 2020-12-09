@@ -1,11 +1,10 @@
 package controller;
 
-import com.jfoenix.controls.JFXButton;
-
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import com.jfoenix.controls.JFXButton;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;

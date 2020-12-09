@@ -1,12 +1,12 @@
 package controller;
 
-import com.jfoenix.controls.JFXButton;
-
-import functs.ReportGenerator;
-
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+
+import com.jfoenix.controls.JFXButton;
+
+import functs.ReportGenerator;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import net.sf.jasperreports.engine.JRException;

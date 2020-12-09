@@ -9,7 +9,6 @@ import java.util.HashSet;
 import java.util.ResourceBundle;
 import java.util.Set;
 
-
 import database.DBInitialize;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

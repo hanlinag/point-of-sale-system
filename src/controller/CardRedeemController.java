@@ -1,11 +1,5 @@
 package controller;
 
-import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXRadioButton;
-import com.jfoenix.controls.JFXTextField;
-
-import database.DBInitialize;
-
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.net.ServerSocket;
@@ -16,12 +10,17 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Optional;
 
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXRadioButton;
+import com.jfoenix.controls.JFXTextField;
+
+import database.DBInitialize;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
-import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
 import model.CardUser;
 

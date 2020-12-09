@@ -1,12 +1,5 @@
 package controller;
 
-import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXTextField;
-
-import common.Common;
-import database.DBInitialize;
-import functs.ReportGenerator;
-
 import java.io.FileNotFoundException;
 import java.net.URL;
 import java.sql.ResultSet;
@@ -15,6 +8,12 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.ResourceBundle;
 
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXTextField;
+
+import common.Common;
+import database.DBInitialize;
+import functs.ReportGenerator;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
