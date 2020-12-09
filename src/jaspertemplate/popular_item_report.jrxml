@@ -318,14 +318,10 @@
 				</textElement>
 				<text><![CDATA[	The following list is the 25 most selling items of this store ordering by their popularity desending.]]></text>
 			</staticText>
-			<image>
-				<reportElement x="480" y="-71" width="88" height="71" uuid="aceae212-66cb-49d4-99b5-88b397ba4e4c"/>
-				<imageExpression><![CDATA["/src/graphic/poslogorect.png"]]></imageExpression>
-			</image>
 		</band>
 	</detail>
 	<summary>
-		<band height="132" splitType="Stretch">
+		<band height="131" splitType="Stretch">
 			<staticText>
 				<reportElement x="5" y="112" width="48" height="19" uuid="966a05a9-fa3f-4ac0-aea7-47e0b7618eb4"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -347,10 +343,6 @@
 				</textElement>
 				<text><![CDATA[Provided by ACPCE POS System]]></text>
 			</staticText>
-			<image>
-				<reportElement x="402" y="1" width="149" height="110" uuid="9f7a5fd4-318a-4a5c-a483-04507026ef48"/>
-				<imageExpression><![CDATA["/src/graphic/tm.png"]]></imageExpression>
-			</image>
 		</band>
 	</summary>
 </jasperReport>

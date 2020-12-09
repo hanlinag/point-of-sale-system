@@ -103,10 +103,6 @@
 				</textElement>
 				<text><![CDATA[Daily Sale Report]]></text>
 			</staticText>
-			<image>
-				<reportElement x="414" y="6" width="135" height="130" uuid="aceae212-66cb-49d4-99b5-88b397ba4e4c"/>
-				<imageExpression><![CDATA["/src/graphic/poslogorect.png"]]></imageExpression>
-			</image>
 			<textField pattern="MMMMM dd, yyyy">
 				<reportElement x="46" y="17" width="100" height="20" uuid="1945ee84-e868-4fd0-8af0-38a6ac9f1e94"/>
 				<textElement verticalAlignment="Middle">
@@ -495,10 +491,6 @@
 				</textElement>
 				<text><![CDATA[Provided by ACPCE POS System]]></text>
 			</staticText>
-			<image>
-				<reportElement x="400" y="0" width="149" height="110" uuid="9f7a5fd4-318a-4a5c-a483-04507026ef48"/>
-				<imageExpression><![CDATA["/src/graphic/tm.png"]]></imageExpression>
-			</image>
 			<staticText>
 				<reportElement x="-9" y="10" width="111" height="21" uuid="ca557554-0890-44f2-a0bb-526b55eb654c"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
@@ -507,28 +499,28 @@
 				<text><![CDATA[Initial Sale Amount : ]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="106" y="11" width="84" height="20" uuid="9e70d559-77b7-4edf-af49-36d17a8422ed"/>
+				<reportElement x="143" y="10" width="84" height="20" uuid="9e70d559-77b7-4edf-af49-36d17a8422ed"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{initialsale}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="190" y="11" width="53" height="21" uuid="f980fd2f-1bb7-4262-97bf-d2f311c8a1b7"/>
+				<reportElement x="102" y="10" width="38" height="21" uuid="f980fd2f-1bb7-4262-97bf-d2f311c8a1b7"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial"/>
 				</textElement>
 				<text><![CDATA[₹]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="190" y="33" width="53" height="21" uuid="8b937f10-4056-439a-80f2-07dbcc4aa46c"/>
+				<reportElement x="105" y="33" width="35" height="21" uuid="8b937f10-4056-439a-80f2-07dbcc4aa46c"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial"/>
 				</textElement>
 				<text><![CDATA[₹]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="106" y="34" width="84" height="20" uuid="02aa4683-3af3-4cde-8e67-9a554a06e877"/>
+				<reportElement x="143" y="34" width="84" height="20" uuid="02aa4683-3af3-4cde-8e67-9a554a06e877"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial"/>
 				</textElement>
@@ -549,14 +541,14 @@
 				<text><![CDATA[Discount Amount : ]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="106" y="69" width="84" height="20" uuid="4115060d-0271-4b71-959d-cddacba1e052"/>
+				<reportElement x="140" y="68" width="84" height="20" uuid="4115060d-0271-4b71-959d-cddacba1e052"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{promotion}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="190" y="68" width="53" height="21" uuid="3c5e0d81-5b93-41c2-8eb8-c7e7b2e90681"/>
+				<reportElement x="102" y="68" width="38" height="21" uuid="3c5e0d81-5b93-41c2-8eb8-c7e7b2e90681"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial"/>
 				</textElement>
