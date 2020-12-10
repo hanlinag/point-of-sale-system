@@ -8,7 +8,7 @@ In the admin panel, there are fields which are effective for the administration 
 
 In the cashier panel, the user will be provided with interfaces to sell items to the customer. He/she can search the selling items by barcode or item-name. The cashier can also redeem the payment card or create new cards.
 
-In card, we put each card’s QR-code. We included this function because we believe that the card payment system is more convenient than the cash payment. Cashlessness is made effortless.
+In card, we put each card’s QR-code. We included this function as we believe that the card payment system is more convenient than the cash payment. Being Cashless is made effortless.
 
 This project is implemented with Model–view–controller (MVC) software design pattern.
 
@@ -101,14 +101,6 @@ Popular Item Sample
 ![alt text](https://github.com/spandu500/point-of-sale-system/blob/master/images/popularitem.png?raw=true) 
 
 
-<hr>
-
-# Gift Card Design
-Front side
-![alt text](https://github.com/spandu500/point-of-sale-system/blob/master/images/cardfinalfront.png?raw=true)
-
-Back side
-![alt text](https://github.com/spandu500/point-of-sale-system/blob/master/images/cardfinalback.png?raw=true)
 <hr>
 
 # Conclusion

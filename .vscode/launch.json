@@ -1,0 +1,36 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "type": "java",
+            "name": "Debug (Launch) - Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Login<point-of-sale-system>",
+            "request": "launch",
+            "mainClass": "major.Login",
+            "projectName": "point-of-sale-system"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-MainAdmin<point-of-sale-system>",
+            "request": "launch",
+            "mainClass": "major.MainAdmin",
+            "projectName": "point-of-sale-system"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-MainCashier<point-of-sale-system>",
+            "request": "launch",
+            "mainClass": "major.MainCashier",
+            "projectName": "point-of-sale-system"
+        }
+    ]
+}
