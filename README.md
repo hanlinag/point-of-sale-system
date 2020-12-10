@@ -60,7 +60,7 @@ System flowchart (Cashier)
 ![alt text](https://github.com/spandu500/point-of-sale-system/blob/master/images/cashierflowchart.png?raw=true)
 
 Usecase Diagram
-![alt text](https://github.com/spandu500/point-of-sale-system/blob/master/images/ucscasefinal.png?raw=true)
+![alt text](https://github.com/spandu500/point-of-sale-system/blob/master/images/usecasefinal.png?raw=true)
 
 
 ER Diagram
