@@ -88,17 +88,17 @@ Chart View
 <hr>
 
 # Report Samples
-Voucher Sample
-![alt text](https://github.com/spandu500/point-of-sale-system/blob/master/images/voucher.png?raw=true)
+Reciept Sample
+![alt text](https://github.com/spandu500/point-of-sale-system/blob/master/images/reciept.png?raw=true)
 
 Daily Report Sample
-![alt text](https://github.com/spandu500/point-of-sale-system/blob/master/images/dailysale.png?raw=true)
+![alt text](https://github.com/spandu500/point-of-sale-system/blob/master/images/dailysalereport.png?raw=true)
 
 Monthly Report Sample
-![alt text](https://github.com/spandu500/point-of-sale-system/blob/master/images/monthlysale.png?raw=true)
+![alt text](https://github.com/spandu500/point-of-sale-system/blob/master/images/monthlysalereport.png?raw=true)
 
 Popular Item Sample
-![alt text](https://github.com/spandu500/point-of-sale-system/blob/master/images/popularitem.png?raw=true) 
+![alt text](https://github.com/spandu500/point-of-sale-system/blob/master/images/popularitemreport.png?raw=true) 
 
 
 <hr>
