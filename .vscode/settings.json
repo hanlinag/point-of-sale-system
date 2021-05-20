@@ -1,0 +1,13 @@
+{
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.project.referencedLibraries": {
+        "include": [
+            "lib/**/*.jar",
+            "mysql-connector-java-8.0.22.jar",
+            "jasperreports-6.17.0.jar"
+        ],
+        "exclude": [
+            "e:\\Eclipse_Workspace\\point-of-sale-system\\mysql-connector-java-8.0.22.jar"
+        ]
+    }
+}

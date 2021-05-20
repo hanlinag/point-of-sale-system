@@ -5,6 +5,11 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>ACPCE POS</name>
   <description>Basic Point of Sale System based on javafx</description>
+  <properties>
+  <maven.compiler.source>1.8</maven.compiler.source>
+  <maven.compiler.target>1.8</maven.compiler.target>
+</properties>
+
   <build>
     <sourceDirectory>src</sourceDirectory>
     <resources>
@@ -20,9 +25,37 @@
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.8.1</version>
         <configuration>
-          <release>14</release>
+          <release>1.8</release>
         </configuration>
       </plugin>
     </plugins>
   </build>
+  <dependencies>
+
+    <dependency>
+      <groupId>net.sf.jasperreports</groupId>
+      <artifactId>jasperreports</artifactId>
+      <version>6.17.0</version>
+    </dependency>
+
+
+    <dependency>
+      <groupId>org.eclipse.birt.runtime.3_7_1</groupId>
+      <artifactId>com.lowagie.text</artifactId>
+      <version>2.1.7</version>
+    </dependency>
+
+
+    <dependency>
+      <groupId>com.lowagie</groupId>
+      <artifactId>itext</artifactId>
+      <version>4.2.2</version>
+    </dependency>
+
+    <dependency>
+      <groupId>joda-time</groupId>
+      <artifactId>joda-time</artifactId>
+      <version>2.9.4</version>
+    </dependency>
+  </dependencies>
 </project>
